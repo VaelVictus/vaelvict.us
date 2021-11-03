@@ -1,0 +1,27 @@
+{
+  "name": "vaelvict.us",
+  "version": "1.0.0",
+  "description": "Personal/Portfolio Website",
+  "main": "base.js",
+  "dependencies": {
+    "autoprefixer": "^10.4.0",
+    "postcss": "^8.3.11",
+    "tailwindcss": "^2.2.19",
+    "sass": "^1.43.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "tailwind": "npx tailwindcss -i ./css/style.scss -o ./css/style.css",
+    "style": "npx tailwindcss -i ./css/style.scss -o ./css/style.css --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VaelVictus/vaelvict.us.git"
+  },
+  "author": "Vael Victus",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/VaelVictus/vaelvict.us/issues"
+  },
+  "homepage": "https://github.com/VaelVictus/vaelvict.us#readme"
+}
