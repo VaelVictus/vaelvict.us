@@ -9,8 +9,13 @@
     "tailwindcss": "^2.2.19",
     "sass": "^1.43.4"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "vite": "^2.6.4"
+  },
   "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview",
     "tailwind": "npx tailwindcss -i ./css/style.scss -o ./css/style.css",
     "style": "npx tailwindcss -i ./css/style.scss -o ./css/style.css --watch"
   },
