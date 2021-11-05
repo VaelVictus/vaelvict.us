@@ -10,9 +10,23 @@
   <body>
     <script type="module" src="http://localhost:1337/main.js"></script>
 
-    <div class='grid place-content-center w-screen h-screen bg-gray-50'>
-        <div class='bg-gray-400 w-1/2 h-1/2'>
-            <span class='text-gray-900 text-2xl m-5'>Soon.</span>
+    <style>
+        .card {
+            display: flex;
+            flex-direction: column;
+        }
+    </style>
+
+    <div class="grid h-screen place-items-center bg-cover" style='background-image: url("img/bg.png");'>
+        <div class="w-full flex flex-wrap shadow-md 
+                    md:w-9/12 xl:w-6/12
+                  bg-white bg-opacity-70 bg-cover">
+
+            <div class='flex border-b-2'>
+                <div class="w-9/12"></div>
+            </div>
+
+            hi im vael
         </div>
     </div>
     
