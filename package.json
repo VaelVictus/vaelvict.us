@@ -6,8 +6,10 @@
   "dependencies": {
     "autoprefixer": "^10.4.0",
     "postcss": "^8.3.11",
-    "tailwindcss": "^2.2.19",
-    "sass": "^1.43.4"
+    "postcss-import": "^14.0.2",
+    "postcss-scss": "^4.0.2",
+    "sass": "^1.43.4",
+    "tailwindcss": "^2.2.19"
   },
   "devDependencies": {
     "vite": "^2.6.4"
@@ -16,8 +18,8 @@
     "dev": "vite",
     "build": "vite build",
     "serve": "vite preview",
-    "tailwind": "npx tailwindcss -i ./css/style.scss -o ./css/style.css",
-    "style": "npx tailwindcss -i ./css/style.scss -o ./css/style.css --watch"
+    "tailwind": "npx tailwindcss -i ./scss/style.scss -o ./css/style.css --parser postcss-scss",
+    "style": "npx tailwindcss -i ./scss/style.scss -o ./css/style.css --watch --parser postcss-scss"
   },
   "repository": {
     "type": "git",
