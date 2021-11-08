@@ -19,4 +19,8 @@ body {
     display: grid;
     justify-content: start; align-content: center;
 }
-  
+
+/* Grid Bubbles */
+.grid-bubbles {
+    grid-template-columns: repeat(auto-fill, 48%); grid-gap: 10% 2%;
+}
