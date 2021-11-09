@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-* {
+*, *::before, *::after {
     box-sizing: border-box;
 }
 
@@ -22,5 +22,6 @@ body {
 
 /* Grid Bubbles */
 .grid-bubbles {
-    grid-template-columns: repeat(auto-fill, 48%); grid-gap: 10% 2%;
+    grid-template-columns: repeat(auto-fill, 100%);
+    /* grid-gap: 10px 15px; */
 }
