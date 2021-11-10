@@ -18,8 +18,8 @@
     "dev": "vite",
     "build": "vite build",
     "serve": "vite preview",
-    "tailwind": "npx tailwindcss -i ./scss/style.scss -o ./css/style.css --parser postcss-scss",
-    "style": "npx tailwindcss -i ./scss/style.scss -o ./css/style.css --watch --parser postcss-scss"
+    "style": "sass ./scss:./css --style=compressed --watch --quiet",
+    "tailwind": "npx tailwindcss -i ./scss/style.scss -o ./css/style.css --parser postcss-scss"
   },
   "repository": {
     "type": "git",
