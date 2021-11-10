@@ -58,7 +58,7 @@
         }
     </style>
 
-    <div class="grid text-base h-screen place-items-center bg-cover" style='background-image: url("img/bg.png");'>
+    <div class="grid text-base h-screen place-items-center bg-cover" style='background-image: url("img/bg-min.png");'>
         <div class="w-full md:w-9/12 max-w-3xl shadow-xl
                   bg-white bg-opacity-30">
 
