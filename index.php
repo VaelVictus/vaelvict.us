@@ -25,7 +25,7 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
 
     <title>Vael Victus</title>
 
@@ -58,16 +58,35 @@
         }
     </style>
 
-    <div class="grid h-screen place-items-center bg-cover" style='background-image: url("img/bg.png");'>
-        <div class="w-full md:w-9/12 max-w-3xl
-                  bg-white bg-opacity-40">
+    <div class="grid text-base h-screen place-items-center bg-cover" style='background-image: url("img/bg.png");'>
+        <div class="w-full md:w-9/12 max-w-3xl shadow-xl
+                  bg-white bg-opacity-30">
 
-            <div class="w-full text-black">
-                <h1 class='m-0 p-2 bg-white bg-opacity-40'>Connect</h1>
-                <div class='text-gray-800 p-2'>Links open in new window</div>
+            <div class="w-full p-2 shadow-sm  text-black bg-white bg-opacity-40">
+                <h1 class='m-0 text-xl'>About Me</h1>
+            </div>
+            
+            <div class='w-full p-2 py-3'>
+                <div class='text-base'>Hi, I'm Vael Victus. I run <a href='https://tinydark.com'>tinydark</a>, an ethics-focused indie game microstudio. I'm married to the incomparable <a href='https://500px.com/p/evelynvictus?view=galleries'>Evelyn Victus</a>. We have two kids: Abel, 10, and Violet, 10 months.</div>
+            </div>
+            
+            <div class="w-full p-2 shadow-sm  text-black bg-white bg-opacity-40">
+                <h1 class='m-0 text-xl'>My Work</h1>
             </div>
 
-            <div class='w-full my-2 grid grid-bubbles px-2'>
+            <div class='w-full p-2 py-3'>
+                <ul>
+                    <li>Bullets? Eh.</li>
+                    <li>Bullets? Eh.</li>
+                </ul>
+            </div>
+
+            <div class="w-full p-2 shadow-sm  text-black bg-white bg-opacity-40">
+                <h1 class='m-0 text-xl'>Connect</h1>
+                <!-- <div class='text-gray-800 pt-1'>Links open in new window</div> -->
+            </div>
+
+            <div class='w-full p-2 py-3 grid grid-bubbles'>
                 
                 <? /* Email.  Mobile: most people have mailto: functionality */ ?>
                 <a class='flex align-items no-underline bg-white  text-black md:hidden hover:shadow-md transition-shadow' href='mailto:vael@tinydark.com' target='_blank'>
@@ -82,7 +101,7 @@
                 <div class='hidden align-items bg-white  text-black md:flex hover:shadow-md transition-shadow cursor-pointer' onClick="copyToClipboard('vael@tinydark.com')" target='_blank'>
                     <img class='w-1/6 md:w-1/5 mx-1 my-2' src='img/brands/mail.svg'>
                     <div class='card_txt w-4/5 text-base pl-1'>
-                        <span class='underline'>vael@tinydark.com</span>
+                        vael@tinydark.com
                         <div class='text-gray-600 text-xs mt-1' id='click2copy'>click to copy</div>
                     </div>
                 </div>
@@ -92,7 +111,7 @@
                 <div class='flex align-items no-underline bg-white  hover:shadow-md transition-shadow' target='_blank'>
                     <img class='w-1/6 md:w-1/5 mx-1 my-2' src='img/brands/discord.svg'>
                     <div class='w-4/5 card_txt text-base pl-2' style='color: #5865F2;'>
-                        <span class='underline'>Vael Victus#0001</span>
+                        Vael Victus#0001
                         <div class='text-xs mt-1'>Discord</div>
                     </div>
                 </div>
