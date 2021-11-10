@@ -1,6 +1,11 @@
 <? 
     $manifest = json_decode(file_get_contents('dist/manifest.json'), true);
 
+    require_once('inc/helpers.php');
+
+    $abel   = GetAge('2011-01-03');
+    $violet = GetAge('2021-01-05');
+
     // ! Cards with text, opting for just icons for now.
     /*    <div class="flex flex-grow mr-2 align-items bg-white rounded">
             <img class='w-1/6 md:w-1/5 mx-1 my-2 mr-2' src='img/brands/discord.svg'>
@@ -29,10 +34,10 @@
 
     <title>Vael Victus</title>
 
-    <script type="module" crossorigin src="dist/<?=$manifest['index.html']['file']?>"></script>
-    <link rel="stylesheet" href="dist/<?=$manifest['index.html']['css'][0]?>">
+    <!-- <script type="module" crossorigin src="dist/<?=$manifest['index.html']['file']?>"></script>
+    <link rel="stylesheet" href="dist/<?=$manifest['index.html']['css'][0]?>"> -->
 
-    <!-- <script type="module" src="http://localhost:1337/main.js"></script> -->
+    <script type="module" src="http://localhost:1337/main.js"></script>
   </head>
 
   <body>
@@ -58,7 +63,7 @@
         }
     </style>
 
-    <div class="grid text-base h-screen place-items-center bg-cover" style='background-image: url("img/bg-min.png");'>
+    <main class="grid text-base h-screen place-items-center bg-cover" style='background-image: url("img/bg-min.png");'>
         <div class="w-full md:w-9/12 max-w-3xl shadow-xl
                   bg-white bg-opacity-30">
 
@@ -67,7 +72,7 @@
             </div>
             
             <div class='w-full p-2 py-3'>
-                <div class='text-base'>Hi, I'm Vael Victus. I run <a href='https://tinydark.com'>tinydark</a>, an ethics-focused indie game microstudio. I'm married to the incomparable <a href='https://500px.com/p/evelynvictus?view=galleries'>Evelyn Victus</a>. We have two kids: Abel, 10, and Violet, 10 months.</div>
+                <div class='text-base'>Hi, I'm Vael Victus. I run <a href='https://tinydark.com'>tinydark</a>, an ethics-focused indie game microstudio. I'm married to the incomparable <a href='https://500px.com/p/evelynvictus?view=galleries'>Evelyn Victus</a>. We have two kids: Abel, <?=$abel?>, and Violet, <?=$violet?>.</div>
             </div>
             
             <div class="w-full p-2 shadow-sm  text-black bg-white bg-opacity-40">
@@ -163,7 +168,7 @@
 
             </div>
         </div>
-    </div>
+    </main>
     
   </body>
 </html>
