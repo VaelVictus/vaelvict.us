@@ -29,10 +29,10 @@
 
     <title>Vael Victus</title>
 
-    <!-- <script type="module" crossorigin src="dist/<?=$manifest['index.html']['file']?>"></script>
-    <link rel="stylesheet" href="dist/<?=$manifest['index.html']['css'][0]?>"> -->
+    <script type="module" crossorigin src="dist/<?=$manifest['index.html']['file']?>"></script>
+    <link rel="stylesheet" href="dist/<?=$manifest['index.html']['css'][0]?>">
 
-    <script type="module" src="http://localhost:1337/main.js"></script>
+    <!-- <script type="module" src="http://localhost:1337/main.js"></script> -->
   </head>
 
   <body>
