@@ -73,30 +73,33 @@
                     Vael Victus
                 </h1>
                 <div>
-                    <div class="w-full p-2 shadow-xs  text-black" style="background-color: rgba(255, 160, 11, 1)">
+                    <div class="w-full px-3 py-2 shadow-xs  text-black" style="background-color: rgba(255, 160, 11, 1)">
                         <h2 class='m-0 text-xl'>About Me</h2>
                     </div>
                     
-                    <div class='w-full bg-white p-2 py-3'>
+                    <div class='w-full bg-white p-3'>
                         <div class='text-base'>
                             I'm a web developer, game developer, writer, and father of two. I run <a href='https://tinydark.com'>tinydark</a>, an ethics-focused indie game microstudio. I spend most of my time making games, playing games, and raising my kids.
                         </div>
                         
                         <div class='text-base mt-2'>
-                            I live in Greenville, South Carolina. I'm married to the incomparable <a href='https://500px.com/p/evelynvictus?view=galleries'>Evelyn Victus</a>. We have two kids: Abel (<?=$abel?> old) and Violet (<?=$violet?> old).
+                            I live in upstate South Carolina with my wife, <a href='https://500px.com/p/evelynvictus?view=galleries'>Evelyn Victus</a>, and our two kids: Abel (<?=$abel?> old) and Violet (<?=$violet?> old).
                         </div>
                     </div>
                 </div>
                 
                 <div>
-                    <div class="w-full p-2 shadow-xs  text-black" style="background-color: rgba(255, 78, 50, 1);">
+                    <div class="w-full px-3 py-2 shadow-xs  text-black" style="background-color: rgba(255, 78, 50, 1);">
                         <h2 class='m-0 text-xl'>My Work</h2>
                     </div>
 
-                    <div class='w-full bg-white p-2 py-3'>
-                        I publish my games under <a href='https://tinydark.com'>tinydark</a>. I adhere to a <a href='https://tinydark.com'>code of ethics</a> with my design.
+                    <div class='w-full bg-white p-3'>
+                        <h3 class='m-0'>Games</h3>
 
-                        <h3 class='mb-2'>Games</h3>
+                        <div class='mb-2'>
+                            I publish my games under <a href='https://tinydark.com'>tinydark</a>. I adhere to a <a href='https://tinydark.com'>code of ethics</a> with my design because I believe games should be doing more to directly benefit the player.
+                        </div>
+
                         <ul>
                             <li><a href='https://www.theorbium.com/urpg'>URPG (alpha)</a> - Open-World Roleplaying MMO</li>
                             <li>Black Crown (2022) - Narrative Horror Game</li>
