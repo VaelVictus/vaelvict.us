@@ -8,7 +8,7 @@
 
     // ! Cards with text, opting for just icons for now.
     /*    <div class="flex flex-grow mr-2 align-items bg-white rounded">
-            <img class='w-1/6 md:w-1/5 mx-1 my-2 mr-2' src='img/brands/discord.svg'>
+            <img class='w-1/6 md:w-1/5 mx-1 my-3 mr-2' src='img/brands/discord.svg'>
             <div class='card_txt w-4/5 text-base' style='color: #5865F2;'>
                 Vael Victus#0001
             </div>
@@ -41,13 +41,6 @@
   </head>
 
   <body>
-
-    <style>
-        .card {
-            display: flex;
-            flex-direction: column;
-        }
-    </style>
 
     <main class="grid text-base h-screen place-items-center bg-cover" style='background-image: url("img/bg-min.png");'>
         <div class="w-full md:w-9/12 max-w-4xl shadow-xl
@@ -83,7 +76,7 @@
                     <div class='w-full p-2 py-3'>
                         I publish my games under <a href='https://tinydark.com'>tinydark</a>. I adhere to a <a href='https://tinydark.com'>code of ethics</a> with my design.
 
-                        <h3>Games</h3>
+                        <h3 class='mb-1'>Games</h3>
                         <ul>
                             <li><a href='https://www.theorbium.com/urpg'>URPG (alpha)</a> - Open-World Roleplaying MMO</li>
                             <li>Black Crown (2022) - Narrative Horror Game</li>
@@ -91,14 +84,14 @@
                             <li><a href='https://monbre.com/'>MonBre</a> (2010) - Monster MMORPG</li>
                         </ul>
 
-                        <h3>Software</h3>
+                        <h3 class='mb-1'>Software</h3>
                         <ul>
                             <li>GAM3, proprietary web game engine</li>
                             <li><a href='http://hub.tinydark.com/'>Tinydark Hub</a></li>
                             <li><a href='http://lab.tinydark.com/'>Tinydark Lab</a>, </li>
                         </ul>
 
-                        <h3>Writing</h3>
+                        <h3 class='mb-1'>Writing</h3>
                         More soon.
                         <ul>
                             <li>Two analytical teardowns of browser games: <a href='https://vael.tumblr.com/post/187341440887/die2nite-teardown-a-teardown-is-a-document-that'>Die2Nite</a> and <a href='https://vael.tumblr.com/post/634149707769430016/marosia-teardown-2020-final'>Marosia</a></li>
@@ -118,7 +111,7 @@
                     
                     <? /* Email.  Mobile: most people have mailto: functionality */ ?>
                     <a class='flex align-items shadow no-underline bg-white  text-black md:hidden' href='mailto:vael@tinydark.com' target='_blank'>
-                        <img class='w-1/6 md:w-1/5 mx-1 my-2' src='img/brands/mail.svg'>
+                        <img class='w-1/6 md:w-1/5 mx-1 my-3' src='img/brands/mail.svg'>
                         <div class='card_txt w-4/5 text-base pl-1'>
                             <span class='underline'>vael@tinydark.com</span>
                             <div class='text-gray-600 text-xs mt-1'>tap to mail</div>
@@ -127,7 +120,7 @@
 
                     <? /* Email. Plaintext for desktop */ ?>
                     <div class='hidden align-items shadow bg-white  text-black md:flex cursor-pointer' onClick="copyToClipboard('vael@tinydark.com')" target='_blank'>
-                        <img class='w-1/6 md:w-1/5 mx-1 my-2' src='img/brands/mail.svg'>
+                        <img class='w-1/6 md:w-1/5 mx-1 my-3' src='img/brands/mail.svg'>
                         <div class='card_txt w-4/5 text-base pl-1'>
                             vael@tinydark.com
                             <div class='text-gray-600 text-xs mt-1' id='click2copy'>click to copy</div>
@@ -137,7 +130,7 @@
                     
                     <? /* Discord */ ?>
                     <div class='flex align-items shadow no-underline bg-white ' target='_blank'>
-                        <img class='w-1/6 md:w-1/5 mx-1 my-2' src='img/brands/discord.svg'>
+                        <img class='w-1/6 md:w-1/5 mx-1 my-3' src='img/brands/discord.svg'>
                         <div class='w-4/5 card_txt text-base pl-2' style='color: #5865F2;'>
                             Vael Victus#0001
                             <div class='text-xs mt-1'>Discord</div>
@@ -146,7 +139,7 @@
                     
                     <? /* Twitch */ ?>
                     <a class='flex align-items shadow no-underline bg-white ' href='https://www.twitch.tv/vaelvictus' target='_blank' style='color: #6441a4;'>
-                        <img class='w-1/6 md:w-1/5 mx-1 my-2' src='img/brands/twitch.svg'>
+                        <img class='w-1/6 md:w-1/5 mx-1 my-3' src='img/brands/twitch.svg'>
                         <div class='card_txt w-4/5 text-base pl-1'>
                             <span class='underline'>Vael Victus</span>
                             <div class='text-xs mt-1'>Twitch</div>
@@ -155,7 +148,7 @@
 
                     <? /* Twitter */ ?>
                     <a class='flex align-items shadow no-underline text-white' href='https://twitter.com/VaelVictus' target='_blank' style='background: #1DA1F2;'>
-                        <img class='w-1/6 md:w-1/5 mx-1 my-2' src='img/brands/twitter.svg'>
+                        <img class='w-1/6 md:w-1/5 mx-1 my-3' src='img/brands/twitter.svg'>
                         <div class='card_txt w-4/5 text-base pl-1'>
                             <span class='underline'>@VaelVictus</span>
                             <div class='text-xs mt-1'>Twitter</div>
@@ -164,7 +157,7 @@
 
                     <? /* Steam */ ?>
                     <a class='flex align-items shadow no-underline  text-white' href='https://steamcommunity.com/id/vaelvictus/' target='_blank' style='background: #171a21;'>
-                        <img class='w-1/6 md:w-1/5 mx-1 my-2' src='img/brands/steam.svg'>
+                        <img class='w-1/6 md:w-1/5 mx-1 my-3' src='img/brands/steam.svg'>
                         <div class='card_txt w-4/5 text-base pl-1'>
                             <span class='underline'>Vael Victus</span>
                             <div class='text-xs mt-1'>Steam</div>
@@ -173,7 +166,7 @@
                     
                     <? /* Github */ ?>
                     <a class='flex align-items shadow no-underline text-white' href='https://github.com/VaelVictus' target='_blank' style='background: #111;'>
-                        <img class='w-1/6 md:w-1/5 mx-1 my-2' src='img/brands/github.svg'>
+                        <img class='w-1/6 md:w-1/5 mx-1 my-3' src='img/brands/github.svg'>
                         <div class='card_txt w-4/5 text-base pl-1'>
                             <span class='underline'>Vael Victus</span>
                             <div class='text-xs mt-1'>GitHub</div>
@@ -182,7 +175,7 @@
 
                     <? /* Stack Exchange */ ?>
                     <a class='flex align-items shadow no-underline bg-white  text-black' href='https://stackexchange.com/users/262546/vael-victus' target='_blank'>
-                        <img class='w-1/6 md:w-1/5 mx-1 my-2' src='img/brands/stackexchange.svg'>
+                        <img class='w-1/6 md:w-1/5 mx-1 my-3' src='img/brands/stackexchange.svg'>
                         <div class='card_txt w-4/5 text-base pl-1'>
                             <span class='underline'>Vael Victus</span>
                             <div class='text-xs mt-1'>Stack Exchange</div>
