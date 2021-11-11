@@ -1,4 +1,10 @@
 <?
+    if ($_SERVER['SERVER_NAME'] == 'localhost' OR strstr($_SERVER['SERVER_NAME'], '.loc') OR strstr($_SERVER['HTTP_HOST'], '192.168')) {
+        define('DEV_ENV', 'dev');
+    } else {
+        define('DEV_ENV', 'prod');
+    }
+
     function GetAge($birthdate) {
             // explode the date into meaningful variables
             list($birthyear, $birthmonth, $birthday) = explode("-", $birthdate);
