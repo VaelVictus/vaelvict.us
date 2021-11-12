@@ -110,7 +110,7 @@
                             <li><b><a href='https://www.theorbium.com/urpg'>URPG (alpha)</a></b> - Open-World Roleplaying MMO</li>
                             <li><b>Black Crown: Exhumed (2022)</b> - Narrative horror; revival of the original game by Rob Sherman</li>
                             <li><b>Bean Grower (2018)</b> - Casual strategy game about growing beans</li>
-                            <li><b><a href='https://monbre.com/'>MonBre</a></b> (2010) - Monster MMORPG</li>
+                            <li><b><a href='https://monbre.com/'>MonBre</a> (2010)</b> - Monster MMORPG</li>
                         </ul>
 
                         <h3 class='mb-2'>Software</h3>
