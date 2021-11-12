@@ -4,6 +4,7 @@
   "description": "Personal/Portfolio Website",
   "main": "base.js",
   "dependencies": {
+    "animejs": "^2.2.0",
     "autoprefixer": "^10.4.0",
     "postcss": "^8.3.11",
     "postcss-import": "^14.0.2",

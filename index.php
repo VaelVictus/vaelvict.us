@@ -68,7 +68,7 @@
     
         <? // ! It's me! ?>
         <div class="w-full py-3 sm:w-9/12 max-w-4xl text-center mx-auto">
-            <h1 class='p-2 m-0 text-black text-5xl' style='font-family: Charm;'>
+            <h1 id='vael_victus' class='p-2 m-0 text-black text-5xl' style='font-family: Charm;'>
                 Vael Victus
             </h1>
 
@@ -85,11 +85,11 @@
                     
                     <div class='w-full bg-white p-3'>
                         <div class='text-base'>
-                            My name is Spencer "Vael" Victus. I work in the financial tech industry and in my spare time I run <a href='https://tinydark.com'>tinydark</a>, an ethics-focused indie game microstudio. I spend most of my time making games, playing games, and raising my kids.
+                            My name is Spencer "Vael" Victus. I work in the financial tech industry and in my spare time I run <a href='https://tinydark.com'>tinydark</a>, an ethics-focused indie game microstudio.
                         </div>
                         
                         <div class='text-base mt-2'>
-                            I live in upstate South Carolina with my wife, <a href='https://500px.com/p/evelynvictus?view=photos'>Evelyn Victus</a>, and our two kids: Abel (<?=$abel?> old) and Violet (<?=$violet?> old).
+                            I live in upstate South Carolina with my wife, <a href='https://500px.com/p/evelynvictus?view=galleries'>Evelyn Victus</a>, and our two kids: Abel (<?=$abel?> old) and Violet (<?=$violet?> old). I spend most of my time making games, playing games, and raising my kids.
                         </div>
                     </div>
                 </div>
