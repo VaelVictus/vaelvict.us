@@ -17,7 +17,7 @@ html, body {
 }
 
 main {
-    background-image: url("/img/bg-min.png");
+    background-image: url("https://vaelvict.us/img/bg-min.png"); // TODO: get better build process (RollupOptions); could not simply /img/bg-min.png
 }
 
 ul {
@@ -40,14 +40,6 @@ ul {
     grid-template-columns: repeat(auto-fill, 100%);
     /* grid-gap: 10px 15px; */
 }
-
-/*@media only screen and (min-width: 320px) and (max-width: 479px) {
-    
-}
-
-@media only screen and (min-width: 480px) and (max-width: 767px) {
-    
-}*/
 
 @media only screen and (min-width: 768px) {
     ul {
