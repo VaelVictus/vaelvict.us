@@ -72,7 +72,7 @@
                 Vael Victus
             </h1>
 
-            <h3 class='m-0'>web developer • game developer • writer</h3>
+            <h2 class='m-0 text-base md:text-lg'>web developer • game developer • writer</h2>
         </div>
 
         <div class="w-full sm:w-9/12 max-w-4xl flex flex-wrap mx-auto">
