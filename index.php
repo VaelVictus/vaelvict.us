@@ -64,7 +64,7 @@
 
   <body>
 
-    <main class="text-base overflow-auto bg-cover w-full h-full" style='background-image: url("img/bg-min.png");'>
+    <main class="text-base overflow-auto bg-cover w-full h-full">
     
         <? // ! It's me! ?>
         <div class="w-full py-3 sm:w-9/12 max-w-4xl text-center mx-auto">

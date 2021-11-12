@@ -7,13 +7,17 @@
 }
 
 html {
-    font-size: 10px; background: #ddd;
+    font-size: 10px; background: #ccc;
     font-family: 'Inter', serif;
 }
 
 html, body {
     width: 100%; height: 100%;
     padding: 0; margin: 0;
+}
+
+main {
+    background-image: url("img/bg-min.png");
 }
 
 ul {

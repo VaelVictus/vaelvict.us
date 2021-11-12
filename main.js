@@ -12,7 +12,7 @@ anime.timeline({loop: false})
     translateZ: 0,
     opacity: [0,1],
     easing: "easeOutExpo",
-    duration: 2500,
+    duration: 3500,
     delay: (el, i) => 100 + 30 * i
   });
 
