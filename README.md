@@ -1,1 +1,1 @@
-Just a placeholder for now. Will make a site using SvelteKit one day.
+Single-page personal/portfolio site. Built with vite, tailwind, and good ole vanilla PHP.

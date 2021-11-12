@@ -103,26 +103,26 @@
                         <h3 class='m-0'>Games</h3>
 
                         <div class='mb-2'>
-                            I publish my games under <a href='https://tinydark.com'>tinydark</a>. I adhere to a <a href='https://tinydark.com/mission'>code of ethics</a> with my design because I believe games should be doing more to directly benefit the player.
+                            I publish my games under <a href='https://tinydark.com'>tinydark</a>. I adhere to a <a href='https://tinydark.com/mission'>code of ethics</a> with my design, because I believe games should be doing more to directly benefit the player.
                         </div>
 
                         <ul>
-                            <li><a href='https://www.theorbium.com/urpg'>URPG (alpha)</a> - Open-World Roleplaying MMO</li>
-                            <li>Black Crown (2022) - Narrative Horror Game</li>
-                            <li>Bean Grower (2018) - Casual Strategy Game</li>
-                            <li><a href='https://monbre.com/'>MonBre</a> (2010) - Monster MMORPG</li>
+                            <li><b><a href='https://www.theorbium.com/urpg'>URPG (alpha)</a></b> - Open-World Roleplaying MMO</li>
+                            <li><b>Black Crown: Exhumed (2022)</b> - Narrative horror; revival of the original game by Rob Sherman</li>
+                            <li><b>Bean Grower (2018)</b> - Casual strategy game about growing beans</li>
+                            <li><b><a href='https://monbre.com/'>MonBre</a></b> (2010) - Monster MMORPG</li>
                         </ul>
 
                         <h3 class='mb-2'>Software</h3>
                         <ul>
-                            <li>GAM3 - tinydark's proprietary web game engine</li>
-                            <li><a href='http://hub.tinydark.com/'>Tinydark Hub</a> - single sign-on for all tinydark games </li>
-                            <li><a href='http://lab.tinydark.com/'>Tinydark Lab</a> - prototypes and demos of unfinished games</li>
+                            <li><b>GAM3</b> - tinydark's proprietary web game engine</li>
+                            <li><b><a href='http://hub.tinydark.com/'>Tinydark Hub</a></b> - Single sign-on for all tinydark games</li>
+                            <li><b><a href='http://lab.tinydark.com/'>Tinydark Lab</a></b> - Prototypes and demos of unfinished games</li>
                         </ul>
 
                         <h3 class='mb-2'>Writing</h3>
                         <ul>
-                            <li>Two analytical teardowns of browser games: <a href='https://vael.tumblr.com/post/187341440887/die2nite-teardown-a-teardown-is-a-document-that'>Die2Nite</a> and <a href='https://vael.tumblr.com/post/634149707769430016/marosia-teardown-2020-final'>Marosia</a></li>
+                            <li>Two design analyses of browser games: <a href='https://vael.tumblr.com/post/187341440887/die2nite-teardown-a-teardown-is-a-document-that'>Die2Nite</a> and <a href='https://vael.tumblr.com/post/634149707769430016/marosia-teardown-2020-final'>Marosia</a></li>
                             <li>Blogging <a href='https://vael.tumblr.com/'>on Tumblr</a></li>
                             <li>More soon...</li>
                         </ul>
@@ -142,7 +142,7 @@
                         <? /* Email.  Mobile: most people have mailto: functionality */ ?>
                         <a class='flex align-items shadow no-underline bg-white  text-black sm:hidden' href='mailto:vael@tinydark.com' target='_blank'>
                             <img class='w-1/6 sm:w-1/5 mx-1 my-3' src='img/brands/mail.svg'>
-                            <div class='card_txt w-4/5 text-base pl-1'>
+                            <div class='w-4/5 card_txt text-base pl-1'>
                                 <span class='underline'>vael@tinydark.com</span>
                                 <div class='text-gray-600 text-xs mt-1'>tap to mail</div>
                             </div>
@@ -151,7 +151,7 @@
                         <? /* Email. Plaintext for desktop */ ?>
                         <div class='hidden align-items shadow bg-white  text-black sm:flex cursor-pointer' onClick="copyToClipboard('vael@tinydark.com')" target='_blank'>
                             <img class='w-1/6 sm:w-1/5 mx-1 my-3' src='img/brands/mail.svg'>
-                            <div class='card_txt w-4/5 text-base pl-1'>
+                            <div class='w-4/5 card_txt text-base pl-1'>
                                 vael@tinydark.com
                                 <div class='text-gray-600 text-xs mt-1' id='click2copy'>click to copy</div>
                             </div>
@@ -161,7 +161,7 @@
                         <? /* Discord */ ?>
                         <div class='flex align-items shadow no-underline bg-white ' target='_blank'>
                             <img class='w-1/6 sm:w-1/5 mx-1 my-3' src='img/brands/discord.svg'>
-                            <div class='w-4/5 card_txt text-base pl-2' style='color: #5865F2;'>
+                            <div class='w-4/5 card_txt text-base pl-1' style='color: #5865F2;'>
                                 Vael Victus#0001
                                 <div class='text-xs mt-1'>Discord</div>
                             </div>
@@ -170,7 +170,7 @@
                         <? /* Twitch */ ?>
                         <a class='flex align-items shadow no-underline bg-white ' href='https://www.twitch.tv/vaelvictus' target='_blank' style='color: #6441a4;'>
                             <img class='w-1/6 sm:w-1/5 mx-1 my-3' src='img/brands/twitch.svg'>
-                            <div class='card_txt w-4/5 text-base pl-1'>
+                            <div class='w-4/5 card_txt text-base pl-1'>
                                 <span class='underline'>Vael Victus</span>
                                 <div class='text-xs mt-1'>Twitch</div>
                             </div>
@@ -179,7 +179,7 @@
                         <? /* Twitter */ ?>
                         <a class='flex align-items shadow no-underline text-white' href='https://twitter.com/VaelVictus' target='_blank' style='background: #1DA1F2;'>
                             <img class='w-1/6 sm:w-1/5 mx-1 my-3' src='img/brands/twitter.svg'>
-                            <div class='card_txt w-4/5 text-base pl-1'>
+                            <div class='w-4/5 card_txt text-base pl-1'>
                                 <span class='underline'>@VaelVictus</span>
                                 <div class='text-xs mt-1'>Twitter</div>
                             </div>
@@ -188,7 +188,7 @@
                         <? /* Steam */ ?>
                         <a class='flex align-items shadow no-underline  text-white' href='https://steamcommunity.com/id/vaelvictus/' target='_blank' style='background: #171a21;'>
                             <img class='w-1/6 sm:w-1/5 mx-1 my-3' src='img/brands/steam.svg'>
-                            <div class='card_txt w-4/5 text-base pl-1'>
+                            <div class='w-4/5 card_txt text-base pl-1'>
                                 <span class='underline'>Vael Victus</span>
                                 <div class='text-xs mt-1'>Steam</div>
                             </div>
@@ -197,7 +197,7 @@
                         <? /* Github */ ?>
                         <a class='flex align-items shadow no-underline text-white' href='https://github.com/VaelVictus' target='_blank' style='background: #111;'>
                             <img class='w-1/6 sm:w-1/5 mx-1 my-3' src='img/brands/github.svg'>
-                            <div class='card_txt w-4/5 text-base pl-1'>
+                            <div class='w-4/5 card_txt text-base pl-1'>
                                 <span class='underline'>Vael Victus</span>
                                 <div class='text-xs mt-1'>GitHub</div>
                             </div>
@@ -206,7 +206,7 @@
                         <? /* Stack Exchange */ ?>
                         <a class='flex align-items shadow no-underline bg-white  text-black' href='https://stackexchange.com/users/262546/vael-victus' target='_blank'>
                             <img class='w-1/6 sm:w-1/5 mx-1 my-3' src='img/brands/stackexchange.svg'>
-                            <div class='card_txt w-4/5 text-base pl-1'>
+                            <div class='w-4/5 card_txt text-base pl-1'>
                                 <span class='underline'>Vael Victus</span>
                                 <div class='text-xs mt-1'>Stack Exchange</div>
                             </div>
