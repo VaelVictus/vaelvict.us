@@ -8,7 +8,7 @@
 
     // ! Cards with text, opting for just icons for now.
     /*    <div class="flex flex-grow mr-2 align-items bg-white rounded">
-            <img class='w-1/6 md:w-1/5 mx-1 my-3 mr-2' src='img/brands/discord.svg'>
+            <img class='w-1/6 sm:w-1/5 mx-1 my-3 mr-2' src='img/brands/discord.svg'>
             <div class='card_txt w-4/5 text-base' style='color: #5865F2;'>
                 Vael Victus#0001
             </div>
@@ -50,8 +50,8 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Charm:wght@400;700&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    
     <title>Vael Victus</title>
 
     <? if (DEV_ENV == 'prod') { ?>
@@ -64,22 +64,28 @@
 
   <body>
 
-    <main class="grid text-base h-screen place-items-center bg-cover" style='background-image: url("img/bg-min.png");'>
-        <div class="w-full md:w-9/12 max-w-4xl
-                    flex flex-wrap">
+    <main class="text-base overflow-auto bg-cover w-full h-full" style='background-image: url("img/bg-min.png");'>
+    
+        <? // ! It's me! ?>
+        <div class="w-full py-3 sm:w-9/12 max-w-4xl text-center mx-auto">
+            <h1 class='p-2 m-0 text-black text-5xl' style='font-family: Charm;'>
+                Vael Victus
+            </h1>
 
-            <div class='w-full md:w-3/4 shadow'>
-                <h1 class='w-full p-2 m-0 text-center bg-black text-white text-2xl'>
-                    Vael Victus
-                </h1>
-                <div>
-                    <div class="w-full px-3 py-2 shadow-xs  text-black" style="background-color: rgba(255, 160, 11, 1)">
+            <h3 class='m-0'>web developer • game developer • writer</h3>
+        </div>
+
+        <div class="w-full sm:w-9/12 max-w-4xl flex flex-wrap mx-auto">
+
+            <div class='w-full sm:w-3/4'>
+                <div class='shadow'>
+                    <div class="w-full px-3 py-2 shadow-xs  text-white" style="background-color: rgb(2 64 118);">
                         <h2 class='m-0 text-xl'>About Me</h2>
                     </div>
                     
                     <div class='w-full bg-white p-3'>
                         <div class='text-base'>
-                            I'm a web developer, game developer, writer, and father of two. I run <a href='https://tinydark.com'>tinydark</a>, an ethics-focused indie game microstudio. I spend most of my time making games, playing games, and raising my kids.
+                            My name is Spencer "Vael" Victus. I work in the financial tech industry and in my spare time I run <a href='https://tinydark.com'>tinydark</a>, an ethics-focused indie game microstudio. I spend most of my time making games, playing games, and raising my kids.
                         </div>
                         
                         <div class='text-base mt-2'>
@@ -88,8 +94,8 @@
                     </div>
                 </div>
                 
-                <div>
-                    <div class="w-full px-3 py-2 shadow-xs  text-black" style="background-color: rgba(255, 78, 50, 1);">
+                <div class='shadow mt-0 sm:mt-3'>
+                    <div class="w-full px-3 py-2 shadow-xs  text-white" style="background-color: rgb(153 21 0);">
                         <h2 class='m-0 text-xl'>My Work</h2>
                     </div>
 
@@ -97,7 +103,7 @@
                         <h3 class='m-0'>Games</h3>
 
                         <div class='mb-2'>
-                            I publish my games under <a href='https://tinydark.com'>tinydark</a>. I adhere to a <a href='https://tinydark.com'>code of ethics</a> with my design because I believe games should be doing more to directly benefit the player.
+                            I publish my games under <a href='https://tinydark.com'>tinydark</a>. I adhere to a <a href='https://tinydark.com/mission'>code of ethics</a> with my design because I believe games should be doing more to directly benefit the player.
                         </div>
 
                         <ul>
@@ -118,23 +124,24 @@
                         <ul>
                             <li>Two analytical teardowns of browser games: <a href='https://vael.tumblr.com/post/187341440887/die2nite-teardown-a-teardown-is-a-document-that'>Die2Nite</a> and <a href='https://vael.tumblr.com/post/634149707769430016/marosia-teardown-2020-final'>Marosia</a></li>
                             <li>Blogging <a href='https://vael.tumblr.com/'>on Tumblr</a></li>
+                            <li>More soon...</li>
                         </ul>
                     </div>
                 </div>
             </div>
 
-            <div class='w-full pl-0 md:w-1/4 md:pl-3'>
+            <div class='w-full pl-0 sm:w-1/4 sm:pl-3'>
                 <div class='shadow'>
-                    <div class="w-full p-2 shadow-xs  text-black " style="background-color: rgba(0, 212, 129, 1);">
-                        <h1 class='m-0 text-2xl'>Connect</h1>
+                    <div class="w-full px-3 py-2 shadow-xs  text-white" style="background-color: #407602;">
+                        <h2 class='m-0 text-xl'>Connect</h2>
                         <!-- <div class='text-gray-800 pt-1'>Links open in new window</div> -->
                     </div>
 
                     <div class='w-full grid grid-bubbles'>
                         
                         <? /* Email.  Mobile: most people have mailto: functionality */ ?>
-                        <a class='flex align-items shadow no-underline bg-white  text-black md:hidden' href='mailto:vael@tinydark.com' target='_blank'>
-                            <img class='w-1/6 md:w-1/5 mx-1 my-3' src='img/brands/mail.svg'>
+                        <a class='flex align-items shadow no-underline bg-white  text-black sm:hidden' href='mailto:vael@tinydark.com' target='_blank'>
+                            <img class='w-1/6 sm:w-1/5 mx-1 my-3' src='img/brands/mail.svg'>
                             <div class='card_txt w-4/5 text-base pl-1'>
                                 <span class='underline'>vael@tinydark.com</span>
                                 <div class='text-gray-600 text-xs mt-1'>tap to mail</div>
@@ -142,8 +149,8 @@
                         </a>
 
                         <? /* Email. Plaintext for desktop */ ?>
-                        <div class='hidden align-items shadow bg-white  text-black md:flex cursor-pointer' onClick="copyToClipboard('vael@tinydark.com')" target='_blank'>
-                            <img class='w-1/6 md:w-1/5 mx-1 my-3' src='img/brands/mail.svg'>
+                        <div class='hidden align-items shadow bg-white  text-black sm:flex cursor-pointer' onClick="copyToClipboard('vael@tinydark.com')" target='_blank'>
+                            <img class='w-1/6 sm:w-1/5 mx-1 my-3' src='img/brands/mail.svg'>
                             <div class='card_txt w-4/5 text-base pl-1'>
                                 vael@tinydark.com
                                 <div class='text-gray-600 text-xs mt-1' id='click2copy'>click to copy</div>
@@ -153,7 +160,7 @@
                         
                         <? /* Discord */ ?>
                         <div class='flex align-items shadow no-underline bg-white ' target='_blank'>
-                            <img class='w-1/6 md:w-1/5 mx-1 my-3' src='img/brands/discord.svg'>
+                            <img class='w-1/6 sm:w-1/5 mx-1 my-3' src='img/brands/discord.svg'>
                             <div class='w-4/5 card_txt text-base pl-2' style='color: #5865F2;'>
                                 Vael Victus#0001
                                 <div class='text-xs mt-1'>Discord</div>
@@ -162,7 +169,7 @@
                         
                         <? /* Twitch */ ?>
                         <a class='flex align-items shadow no-underline bg-white ' href='https://www.twitch.tv/vaelvictus' target='_blank' style='color: #6441a4;'>
-                            <img class='w-1/6 md:w-1/5 mx-1 my-3' src='img/brands/twitch.svg'>
+                            <img class='w-1/6 sm:w-1/5 mx-1 my-3' src='img/brands/twitch.svg'>
                             <div class='card_txt w-4/5 text-base pl-1'>
                                 <span class='underline'>Vael Victus</span>
                                 <div class='text-xs mt-1'>Twitch</div>
@@ -171,7 +178,7 @@
 
                         <? /* Twitter */ ?>
                         <a class='flex align-items shadow no-underline text-white' href='https://twitter.com/VaelVictus' target='_blank' style='background: #1DA1F2;'>
-                            <img class='w-1/6 md:w-1/5 mx-1 my-3' src='img/brands/twitter.svg'>
+                            <img class='w-1/6 sm:w-1/5 mx-1 my-3' src='img/brands/twitter.svg'>
                             <div class='card_txt w-4/5 text-base pl-1'>
                                 <span class='underline'>@VaelVictus</span>
                                 <div class='text-xs mt-1'>Twitter</div>
@@ -180,7 +187,7 @@
 
                         <? /* Steam */ ?>
                         <a class='flex align-items shadow no-underline  text-white' href='https://steamcommunity.com/id/vaelvictus/' target='_blank' style='background: #171a21;'>
-                            <img class='w-1/6 md:w-1/5 mx-1 my-3' src='img/brands/steam.svg'>
+                            <img class='w-1/6 sm:w-1/5 mx-1 my-3' src='img/brands/steam.svg'>
                             <div class='card_txt w-4/5 text-base pl-1'>
                                 <span class='underline'>Vael Victus</span>
                                 <div class='text-xs mt-1'>Steam</div>
@@ -189,7 +196,7 @@
                         
                         <? /* Github */ ?>
                         <a class='flex align-items shadow no-underline text-white' href='https://github.com/VaelVictus' target='_blank' style='background: #111;'>
-                            <img class='w-1/6 md:w-1/5 mx-1 my-3' src='img/brands/github.svg'>
+                            <img class='w-1/6 sm:w-1/5 mx-1 my-3' src='img/brands/github.svg'>
                             <div class='card_txt w-4/5 text-base pl-1'>
                                 <span class='underline'>Vael Victus</span>
                                 <div class='text-xs mt-1'>GitHub</div>
@@ -198,7 +205,7 @@
 
                         <? /* Stack Exchange */ ?>
                         <a class='flex align-items shadow no-underline bg-white  text-black' href='https://stackexchange.com/users/262546/vael-victus' target='_blank'>
-                            <img class='w-1/6 md:w-1/5 mx-1 my-3' src='img/brands/stackexchange.svg'>
+                            <img class='w-1/6 sm:w-1/5 mx-1 my-3' src='img/brands/stackexchange.svg'>
                             <div class='card_txt w-4/5 text-base pl-1'>
                                 <span class='underline'>Vael Victus</span>
                                 <div class='text-xs mt-1'>Stack Exchange</div>
