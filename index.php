@@ -89,7 +89,7 @@
                         </div>
                         
                         <div class='text-base mt-2'>
-                            I live in upstate South Carolina with my wife, <a href='https://500px.com/p/evelynvictus?view=galleries'>Evelyn Victus</a>, and our two kids: Abel (<?=$abel?> old) and Violet (<?=$violet?> old). I spend most of my time making games, playing games, and raising my kids.
+                            I live in upstate South Carolina with my wife, <a href='https://500px.com/p/evelynvictus?view=photos'>Evelyn Victus</a>, and our two kids: Abel (<?=$abel?> old) and Violet (<?=$violet?> old). I spend most of my time making games, playing games, and raising my kids.
                         </div>
                     </div>
                 </div>
