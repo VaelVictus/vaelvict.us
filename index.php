@@ -72,7 +72,7 @@
                 Vael Victus
             </h1>
 
-            <h2 class='m-0 text-base sm:text-lg'>web developer • game developer • writer</h2>
+            <h2 id='vael_victus_subtitle' class='m-0 text-base sm:text-lg'>web developer • game developer • writer</h2>
         </div>
 
         <div class="w-full lg:pl-6 max-w-4xl flex flex-wrap mx-auto">
@@ -141,7 +141,8 @@
                     <div class='w-full grid grid-bubbles'>
                         
                         <? /* Email.  Mobile: most people have mailto: functionality */ ?>
-                        <a class='flex align-items shadow no-underline bg-white  text-black sm:hidden' href='mailto:vael@tinydark.com' target='_blank'>
+                        <a class='flex align-items no-underline bg-white  text-black sm:hidden
+                                  connect_border' href='mailto:vael@tinydark.com' target='_blank'>
                             <img class='w-1/6 sm:w-1/5 mx-1 my-3' src='img/brands/mail.svg'>
                             <div class='w-4/5 card_txt text-base pl-1'>
                                 <span class='underline'>vael@tinydark.com</span>
@@ -150,7 +151,8 @@
                         </a>
 
                         <? /* Email. Plaintext for desktop */ ?>
-                        <div class='hidden align-items shadow bg-white  text-black sm:flex cursor-pointer' onClick="copyToClipboard('vael@tinydark.com')" target='_blank'>
+                        <div class='hidden align-items bg-white  text-black sm:flex cursor-pointer
+                                  connect_border' onClick="copyToClipboard('vael@tinydark.com')" target='_blank'>
                             <img class='w-1/6 sm:w-1/5 mx-1 my-3' src='img/brands/mail.svg'>
                             <div class='w-4/5 card_txt text-base pl-1'>
                                 vael@tinydark.com
@@ -160,7 +162,8 @@
 
                         
                         <? /* Discord */ ?>
-                        <div class='flex align-items shadow no-underline bg-white ' target='_blank'>
+                        <div class='flex align-items no-underline bg-white 
+                                    connect_border' target='_blank'>
                             <img class='w-1/6 sm:w-1/5 mx-1 my-3' src='img/brands/discord.svg'>
                             <div class='w-4/5 card_txt text-base pl-1' style='color: #5865F2;'>
                                 Vael Victus#0001
@@ -169,7 +172,8 @@
                         </div>
                         
                         <? /* Twitch */ ?>
-                        <a class='flex align-items shadow no-underline bg-white ' href='https://www.twitch.tv/vaelvictus' target='_blank' style='color: #6441a4;'>
+                        <a class='flex align-items no-underline bg-white 
+                                    connect_border' href='https://www.twitch.tv/vaelvictus' target='_blank' style='color: #6441a4;'>
                             <img class='w-1/6 sm:w-1/5 mx-1 my-3' src='img/brands/twitch.svg'>
                             <div class='w-4/5 card_txt text-base pl-1'>
                                 <span class='underline'>Vael Victus</span>
@@ -178,7 +182,8 @@
                         </a>
 
                         <? /* Twitter */ ?>
-                        <a class='flex align-items shadow no-underline text-white' href='https://twitter.com/VaelVictus' target='_blank' style='background: #1DA1F2;'>
+                        <a class='flex align-items no-underline text-white
+                                  connect_border' href='https://twitter.com/VaelVictus' target='_blank' style='background: #1DA1F2;'>
                             <img class='w-1/6 sm:w-1/5 mx-1 my-3' src='img/brands/twitter.svg'>
                             <div class='w-4/5 card_txt text-base pl-1'>
                                 <span class='underline'>@VaelVictus</span>
@@ -187,7 +192,8 @@
                         </a>
 
                         <? /* Steam */ ?>
-                        <a class='flex align-items shadow no-underline  text-white' href='https://steamcommunity.com/id/vaelvictus/' target='_blank' style='background: #171a21;'>
+                        <a class='flex align-items no-underline  text-white
+                                  connect_border' href='https://steamcommunity.com/id/vaelvictus/' target='_blank' style='background: #171a21;'>
                             <img class='w-1/6 sm:w-1/5 mx-1 my-3' src='img/brands/steam.svg'>
                             <div class='w-4/5 card_txt text-base pl-1'>
                                 <span class='underline'>Vael Victus</span>
@@ -196,7 +202,8 @@
                         </a>
                         
                         <? /* Github */ ?>
-                        <a class='flex align-items shadow no-underline text-white' href='https://github.com/VaelVictus' target='_blank' style='background: #111;'>
+                        <a class='flex align-items no-underline text-white
+                                  connect_border' href='https://github.com/VaelVictus' target='_blank' style='background: #111;'>
                             <img class='w-1/6 sm:w-1/5 mx-1 my-3' src='img/brands/github.svg'>
                             <div class='w-4/5 card_txt text-base pl-1'>
                                 <span class='underline'>Vael Victus</span>
@@ -205,7 +212,8 @@
                         </a>
 
                         <? /* Stack Exchange */ ?>
-                        <a class='flex align-items shadow no-underline bg-white  text-black' href='https://stackexchange.com/users/262546/vael-victus' target='_blank'>
+                        <a class='flex align-items no-underline bg-white  text-black
+                                  connect_border' href='https://stackexchange.com/users/262546/vael-victus' target='_blank'>
                             <img class='w-1/6 sm:w-1/5 mx-1 my-3' src='img/brands/stackexchange.svg'>
                             <div class='w-4/5 card_txt text-base pl-1'>
                                 <span class='underline'>Vael Victus</span>

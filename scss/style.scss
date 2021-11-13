@@ -41,6 +41,15 @@ ul {
     /* grid-gap: 10px 15px; */
 }
 
+/* Connect */
+.connect_border {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+
+    &:last-child {
+        border-bottom: none;
+    }
+}
+
 @media only screen and (min-width: 768px) {
     ul {
         padding-left: 30px;
