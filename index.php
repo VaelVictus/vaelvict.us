@@ -117,7 +117,8 @@
                         <ul>
                             <li><b>GAM3</b> - tinydark's proprietary web game engine</li>
                             <li><b><a href='http://hub.tinydark.com/'>Tinydark Hub</a></b> - Single sign-on for all tinydark games</li>
-                            <li><b><a href='http://lab.tinydark.com/'>Tinydark Lab</a></b> - Prototypes and demos of unfinished games</li>
+                            <li><b>Tinydark Lab</b> - Prototypes and demos of unfinished games</li>
+                            <!-- <li><b><a href='http://tinydark.com/lab'>Tinydark Lab</a></b> - Prototypes and demos of unfinished games</li> -->
                         </ul>
 
                         <h3 class='mb-2'>Writing</h3>
