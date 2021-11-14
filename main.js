@@ -26,8 +26,8 @@ anime.timeline({loop: false})
     translateZ: 0,
     opacity: [0,1],
     easing: "easeOutCubic",
-    duration: 4000,
-    delay: (el, i) => 1250 + 30 * i
+    duration: 3500,
+    delay: (el, i) => 900 + 30 * i
   });
 
 // ! HELPERS
