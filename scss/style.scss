@@ -16,10 +16,6 @@ html, body {
     padding: 0; margin: 0;
 }
 
-main {
-    background-image: url("https://vaelvict.us/img/bg-min.png"); // TODO: get better build process (RollupOptions); could not simply /img/bg-min.png
-}
-
 ul {
     margin: 0px;
     padding-left: 20px;
@@ -47,6 +43,12 @@ ul {
 
     &:last-child {
         border-bottom: none;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    #vv {
+        background: #fff; //radial-gradient(circle, rgba(240,240,240,1) 5%, rgba(226,226,226,1) 95%);
     }
 }
 

@@ -64,10 +64,10 @@
 
   <body>
 
-    <main class="text-base overflow-auto bg-cover w-full h-full">
+    <main class="text-base overflow-auto bg-cover w-full h-full" style='background-image: url("https://vaelvict.us/img/bg-min.png")'>
     
         <? // ! It's me! ?>
-        <div class="w-full py-3 sm:w-9/12 max-w-4xl text-center mx-auto">
+        <div id='vv' class="w-full py-3 sm:w-9/12 max-w-4xl text-center mx-auto">
             <h1 id='vael_victus' class='p-2 m-0 text-black text-5xl' style='font-family: Charm;'>
                 Vael Victus
             </h1>
@@ -75,11 +75,11 @@
             <h2 id='vael_victus_subtitle' class='m-0 text-base sm:text-lg'>web developer • game developer • writer</h2>
         </div>
 
-        <div class="w-full lg:pl-6 max-w-4xl flex flex-wrap mx-auto">
+        <div class="w-full max-w-4xl flex flex-wrap mx-auto">
 
             <div class='w-full sm:w-3/4'>
                 <div class='shadow'>
-                    <div class="w-full px-3 py-2 shadow-xs  text-white" style="background-color: rgb(2 64 118);">
+                    <div class="w-full px-3 py-2 shadow-xs  text-white" style="background-color: rgb(11 51 86);">
                         <h2 class='m-0 text-xl'>About Me</h2>
                     </div>
                     
@@ -95,7 +95,7 @@
                 </div>
                 
                 <div class='shadow mt-0 sm:mt-3'>
-                    <div class="w-full px-3 py-2 shadow-xs  text-white" style="background-color: rgb(153 21 0);">
+                    <div class="w-full px-3 py-2 shadow-xs  text-white" style="background-color: rgb(112 28 15);">
                         <h2 class='m-0 text-xl'>My Work</h2>
                     </div>
 
@@ -124,7 +124,7 @@
                         <h3 class='mb-2'>Writing</h3>
                         <ul>
                             <li>Two design analyses of browser games: <a href='https://vael.tumblr.com/post/187341440887/die2nite-teardown-a-teardown-is-a-document-that'>Die2Nite</a> and <a href='https://vael.tumblr.com/post/634149707769430016/marosia-teardown-2020-final'>Marosia</a></li>
-                            <li>Blogging <a href='https://vael.tumblr.com/'>on Tumblr</a></li>
+                            <!-- <li>Blogging <a href='https://vael.tumblr.com/'>on Tumblr</a></li> -->
                             <li>More soon...</li>
                         </ul>
                     </div>
@@ -133,7 +133,7 @@
 
             <div class='w-full pl-0 sm:w-1/4 sm:pl-3'>
                 <div class='shadow'>
-                    <div class="w-full px-3 py-2 shadow-xs  text-white" style="background-color: #407602;">
+                    <div class="w-full px-3 py-2 shadow-xs  text-white" style="background-color: rgb(45 78 7);">
                         <h2 class='m-0 text-xl'>Connect</h2>
                         <!-- <div class='text-gray-800 pt-1'>Links open in new window</div> -->
                     </div>
@@ -143,7 +143,7 @@
                         <? /* Email.  Mobile: most people have mailto: functionality */ ?>
                         <a class='flex align-items no-underline bg-white  text-black sm:hidden
                                   connect_border' href='mailto:vael@tinydark.com' target='_blank'>
-                            <img class='w-1/6 sm:w-1/5 mx-1 my-3' src='img/brands/mail.svg'>
+                            <img class='w-1/6 sm:w-1/5 mx-1 my-3 p-1' src='img/brands/email.svg'>
                             <div class='w-4/5 card_txt text-base pl-1'>
                                 <span class='underline'>vael@tinydark.com</span>
                                 <div class='text-gray-600 text-xs mt-1'>tap to mail</div>
@@ -153,7 +153,7 @@
                         <? /* Email. Plaintext for desktop */ ?>
                         <div class='hidden align-items bg-white  text-black sm:flex cursor-pointer
                                   connect_border' onClick="copyToClipboard('vael@tinydark.com')" target='_blank'>
-                            <img class='w-1/6 sm:w-1/5 mx-1 my-3' src='img/brands/mail.svg'>
+                            <img class='w-1/6 sm:w-1/5 mx-1 my-3' src='img/brands/email.svg'>
                             <div class='w-4/5 card_txt text-base pl-1'>
                                 vael@tinydark.com
                                 <div class='text-gray-600 text-xs mt-1' id='click2copy'>click to copy</div>
@@ -193,7 +193,7 @@
 
                         <? /* Steam */ ?>
                         <a class='flex align-items no-underline  text-white
-                                  connect_border' href='https://steamcommunity.com/id/vaelvictus/' target='_blank' style='background: #171a21;'>
+                                  connect_border' href='https://steamcommunity.com/id/vaelvictus/' target='_blank' style='background: #231f20;'>
                             <img class='w-1/6 sm:w-1/5 mx-1 my-3' src='img/brands/steam.svg'>
                             <div class='w-4/5 card_txt text-base pl-1'>
                                 <span class='underline'>Vael Victus</span>
