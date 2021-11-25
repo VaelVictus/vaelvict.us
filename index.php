@@ -75,9 +75,10 @@
             <h2 id='vael_victus_subtitle' class='m-0 text-base sm:text-lg'>web developer • game developer • writer</h2>
         </div>
 
-        <div class="w-full max-w-4xl flex flex-wrap mx-auto">
+        <!-- max-w-4xl -->
+        <div class="w-full max-w-3xl flex flex-wrap mx-auto">
 
-            <div class='w-full sm:w-3/4'>
+            <div class='w-full'>
                 <div class='shadow'>
                     <div class="w-full px-3 py-2 shadow-xs  text-white" style="background-color: rgb(11 51 86);">
                         <h2 class='m-0 text-xl'>About Me</h2>
@@ -131,7 +132,7 @@
                 </div>
             </div>
 
-            <div class='w-full pl-0 sm:w-1/4 sm:pl-3'>
+            <div class='w-full pl-0 mt-0 sm:my-3 bg-white'>
                 <div class='shadow'>
                     <div class="w-full px-3 py-2 shadow-xs  text-white" style="background-color: rgb(45 78 7);">
                         <h2 class='m-0 text-xl'>Connect</h2>

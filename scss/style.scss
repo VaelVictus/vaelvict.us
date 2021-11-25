@@ -7,7 +7,7 @@
 }
 
 html {
-    font-size: 10px; background: #ccc;
+    font-size: 10px; background: #bbb;
     font-family: 'Inter', serif;
 }
 
@@ -55,5 +55,10 @@ ul {
 @media only screen and (min-width: 768px) {
     ul {
         padding-left: 30px;
+    }
+
+    .grid-bubbles {
+        grid-template-columns: repeat(auto-fill, 25%);
+        /* grid-gap: 10px 15px; */
     }
 }
