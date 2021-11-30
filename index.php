@@ -80,7 +80,7 @@
 
             <div class='w-full'>
                 <div class='shadow'>
-                    <div class="w-full px-3 py-2 shadow-xs  text-white" style="background-color: rgb(11 51 86);">
+                    <div class="w-full px-3 py-1 shadow-xs  text-white section_header" style="background-color: rgb(11 51 86);">
                         <h2 class='m-0 text-xl'>About Me</h2>
                     </div>
                     
@@ -96,7 +96,7 @@
                 </div>
                 
                 <div class='shadow mt-0 sm:mt-3'>
-                    <div class="w-full px-3 py-2 shadow-xs  text-white" style="background-color: rgb(112 28 15);">
+                    <div class="w-full px-3 py-1 shadow-xs  text-white section_header" style="background-color: rgb(112 28 15);">
                         <h2 class='m-0 text-xl'>My Work</h2>
                     </div>
 
@@ -108,7 +108,7 @@
                         </div>
 
                         <ul>
-                            <li><b><a href='https://www.theorbium.com/urpg'>URPG (alpha)</a></b> - Open-World Roleplaying MMO</li>
+                            <li><b><a href='https://www.theorbium.com/urpg'>URPG (alpha)</a></b> - Open-World Roleplaying MMORPG</li>
                             <li><b>Black Crown: Exhumed (2022)</b> - Narrative horror; revival of the original game by Rob Sherman</li>
                             <li><b>Bean Grower (2018)</b> - Casual strategy game about growing beans</li>
                             <li><b><a href='https://monbre.com/'>MonBre</a> (2010)</b> - Monster MMORPG</li>
@@ -132,14 +132,14 @@
                 </div>
             </div>
 
-            <div class='w-full pl-0 mt-0 sm:my-3 bg-white'>
+            <div class='w-full pl-0 mt-0 sm:my-3 sm:mb-5'>
                 <div class='shadow'>
-                    <div class="w-full px-3 py-2 shadow-xs  text-white" style="background-color: rgb(45 78 7);">
+                    <div class="w-full px-3 py-1 shadow-xs  text-white section_header" style="background-color: rgb(45 78 7);">
                         <h2 class='m-0 text-xl'>Connect</h2>
                         <!-- <div class='text-gray-800 pt-1'>Links open in new window</div> -->
                     </div>
 
-                    <div class='w-full grid grid-bubbles'>
+                    <div class='w-full grid grid-bubbles bg-white'>
                         
                         <? /* Email.  Mobile: most people have mailto: functionality */ ?>
                         <a class='flex align-items no-underline bg-white  text-black sm:hidden

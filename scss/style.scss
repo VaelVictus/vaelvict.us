@@ -46,13 +46,19 @@ ul {
     }
 }
 
+// Mobile
 @media only screen and (max-width: 767px) {
     #vv {
         background: #fff; //radial-gradient(circle, rgba(240,240,240,1) 5%, rgba(226,226,226,1) 95%);
     }
 }
 
+// "Desktop"
 @media only screen and (min-width: 768px) {
+    .section_header {
+        border-radius: 5px 5px 0 0;
+    }
+    
     ul {
         padding-left: 30px;
     }
