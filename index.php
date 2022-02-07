@@ -1,24 +1,14 @@
 <? 
-    $manifest = json_decode(file_get_contents('dist/manifest.json'), true);
-
     require_once('inc/helpers.php');
 
     $abel   = GetAge('2011-01-03');
     $violet = GetAge('2021-01-05');
-
-    // ! Cards with text, opting for just icons for now.
-    /*    <div class="flex flex-grow mr-2 align-items bg-white rounded">
-            <img class='w-1/6 sm:w-1/5 mx-1 my-3 mr-2' src='img/brands/discord.svg'>
-            <div class='card_txt w-4/5 text-base' style='color: #5865F2;'>
-                Vael Victus#0001
-            </div>
-        </div> */
 ?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="title" content="Vael Victus">
     <meta name="description" content="Vael Victus is a web-based game designer and application developer.">
@@ -55,8 +45,8 @@
     <title>Vael Victus</title>
 
     <? if (DEV_ENV == 'prod') { ?>
-        <script type="module" crossorigin src="dist/<?=$manifest['index.html']['file']?>"></script>
-        <link rel="stylesheet" href="dist/<?=$manifest['index.html']['css'][0]?>">
+        <link rel="stylesheet" href="dist/assets/index.css">
+        <script type="module" crossorigin src="dist/assets/index.js"></script>
     <? } else { ?>
         <script type="module" src="http://localhost:1337/main.js"></script>
     <? } ?>
@@ -72,7 +62,17 @@
                 Vael Victus
             </h1>
 
-            <h2 id='vael_victus_subtitle' class='m-0 text-base sm:text-lg'>web developer • game developer • writer</h2>
+            <h2 id='vael_victus_subtitle' class='m-0 text-base sm:text-lg'>
+                <span id='web_dev'>
+                    <img src='img/dev_web.svg'> web dev
+                </span>
+                <span id='dev_game'>
+                    <img src='img/dev_game.svg'> game dev
+                </span>
+                <span id='writer'>
+                    <img src='img/writer.svg'> writer
+                </span>
+            </h2>
         </div>
 
         <!-- max-w-4xl -->

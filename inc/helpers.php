@@ -6,35 +6,34 @@
     }
 
     function GetAge($birthdate) {
-            // explode the date into meaningful variables
-            list($birthyear, $birthmonth, $birthday) = explode("-", $birthdate);
-            
-            // find the difference between current value for the date, and input date
-            $yeardiff = date("Y") - $birthyear;
-            $monthdiff = date("n") - $birthmonth;
-            
-            // it will be negative if the date has not occured this year
-            if ($monthdiff < 0)
-            $yeardiff--;
-            
-            // while the kids are age 4 or younger, display 1/2
-            $half = '';
-            
-            if ($yeardiff <= 4) {
-                $mos = months($birthdate);
-                if (($mos - ($yeardiff * 12)) > 6) {
-                    $half = '&#189;';
-                }
-            }
+        // explode the date into meaningful variables
+        list($birth_year, $birth_month) = explode("-", $birthdate);
+        
+        // find the difference between current value for the date, and input date
+        $years_old = intval(date("Y") - $birth_year);
+        $months_diff = intval(date("n") - $birth_month);
+        
+        // it will be negative if the date has not occured this year
+        if ($months_diff < 0)
+        $years_old--;
+        
+        // Just give months for our cute little babies!
+        if ($years_old === 0) {
+            $months_old = months($birthdate);
+            $label = ($months_old > 1 ? 'months' : 'month');
+            return $months_old . " $label";
+        }
 
-            $age = $yeardiff.$half. ' years';
+        // while the kids are age 2 or younger, display 1/2 ages
+        if ($years_old <= 2) {
+            $mos = months($birthdate);
+            $half = ($mos - ($years_old * 12) > 6) ? '&#189;' : '';
+            $label = ($years_old > 1 ? 'years' : 'year');
 
-            // Just give months for our cute little babies!
-            if ($yeardiff == 0) {
-                $age = months($birthdate) . ' months';
-            }
+            return "$years_old $half $label";
+        }
             
-        return "<span title='$birthdate'>$age</span>";
+        return "$years_old years";
     }
 
     function months($date)

@@ -5,9 +5,6 @@ import anime from 'animejs'
 var textWrapper = document.querySelector('#vael_victus');
 textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
 
-var textWrapper = document.querySelector('#vael_victus_subtitle');
-textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
-
 anime.timeline({loop: false})
   .add({
     targets: '#vael_victus .letter',
@@ -19,16 +16,10 @@ anime.timeline({loop: false})
     delay: (el, i) => 150 + 30 * i
   });
 
-anime.timeline({loop: false})
-  .add({
-    targets: '#vael_victus_subtitle .letter',
-    translateX: [40,0],
-    translateZ: 0,
-    opacity: [0,1],
-    easing: "easeOutCubic",
-    duration: 3500,
-    delay: (el, i) => 900 + 30 * i
-  });
+setTimeout(() => {
+  document.getElementById("web_dev").classList.add('fadeIn');
+}, 0);
+
 
 // ! HELPERS
 window.copyToClipboard = function(message) {
