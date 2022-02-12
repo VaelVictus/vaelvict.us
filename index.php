@@ -3,10 +3,21 @@
 
     $abel   = GetAge('2011-01-03');
     $violet = GetAge('2021-01-05');
+
+    // TODO:
+    // Fade in content
+    // try glass again
 ?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
+<? if (DEV_ENV == 'prod') { ?>
+    <link rel="stylesheet" href="dist/assets/index.css">
+    <script type="module" crossorigin src="dist/assets/index.js"></script>
+<? } else { ?>
+    <script type="module" src="http://localhost:1337/main.js"></script>
+<? } ?>
+
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -43,18 +54,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Charm:wght@400;700&family=Inter:wght@400;700&display=swap" rel="stylesheet">
     
     <title>Vael Victus</title>
-
-    <? if (DEV_ENV == 'prod') { ?>
-        <link rel="stylesheet" href="dist/assets/index.css">
-        <script type="module" crossorigin src="dist/assets/index.js"></script>
-    <? } else { ?>
-        <script type="module" src="http://localhost:1337/main.js"></script>
-    <? } ?>
   </head>
 
   <body>
 
-    <main class="text-base overflow-auto bg-cover w-full h-full" style='background-image: url("https://vaelvict.us/img/bg-min.png")'>
+    <main class="text-base overflow-auto bg-cover w-full h-full">
     
         <? // ! It's me! ?>
         <div id='vv' class="w-full py-3 sm:w-9/12 max-w-4xl text-center mx-auto">
@@ -62,12 +66,12 @@
                 Vael Victus
             </h1>
 
-            <h2 id='vael_victus_subtitle' class='m-0 text-base sm:text-lg'>
+            <h2 id='vael_victus_subtitle' class='w-full sm:w-1/2 m-0 mx-auto text-base sm:text-lg'>
                 <span id='web_dev'>
                     <img src='img/dev_web.svg'> web dev
                 </span>
-                <span id='dev_game'>
-                    <img src='img/dev_game.svg'> game dev
+                <span id='game_dev'>
+                    <img src='img/game_dev.svg'> game dev
                 </span>
                 <span id='writer'>
                     <img src='img/writer.svg'> writer
@@ -80,8 +84,8 @@
 
             <div class='w-full'>
                 <div class='shadow'>
-                    <div class="w-full px-3 py-1 shadow-xs  text-white section_header" style="background-color: rgb(11 51 86);">
-                        <h2 class='m-0 text-xl'>About Me</h2>
+                    <div class="w-full px-3 py-2 shadow-xs  text-white section_header" id='about_header'>
+                        <h2 class='m-0'>About Me</h2>
                     </div>
                     
                     <div class='w-full bg-white p-3'>
@@ -96,8 +100,8 @@
                 </div>
                 
                 <div class='shadow mt-0 sm:mt-3'>
-                    <div class="w-full px-3 py-1 shadow-xs  text-white section_header" style="background-color: rgb(112 28 15);">
-                        <h2 class='m-0 text-xl'>My Work</h2>
+                    <div class="w-full px-3 py-2 shadow-xs  text-white section_header" id="work_header">
+                        <h2 class='m-0'>My Work</h2>
                     </div>
 
                     <div class='w-full bg-white p-3'>
@@ -134,8 +138,8 @@
 
             <div class='w-full pl-0 mt-0 sm:my-3 sm:mb-5'>
                 <div class='shadow'>
-                    <div class="w-full px-3 py-1 shadow-xs  text-white section_header" style="background-color: rgb(45 78 7);">
-                        <h2 class='m-0 text-xl'>Connect</h2>
+                    <div class="w-full px-3 py-2 shadow-xs  text-white section_header" id='connect_header'>
+                        <h2 class='m-0'>Connect</h2>
                         <!-- <div class='text-gray-800 pt-1'>Links open in new window</div> -->
                     </div>
 

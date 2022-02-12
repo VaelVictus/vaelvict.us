@@ -18,7 +18,15 @@ anime.timeline({loop: false})
 
 setTimeout(() => {
   document.getElementById("web_dev").classList.add('fadeIn');
-}, 0);
+}, 1000);
+
+setTimeout(() => {
+  document.getElementById("game_dev").classList.add('fadeIn');
+}, 2000);
+
+setTimeout(() => {
+  document.getElementById("writer").classList.add('fadeIn');
+}, 3000);
 
 
 // ! HELPERS
