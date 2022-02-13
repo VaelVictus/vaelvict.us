@@ -22,15 +22,15 @@ anime.timeline({loop: false})
 
 setTimeout(() => {
   document.getElementById("web_dev").classList.add('fadeIn');
-}, 1000);
+}, 750);
 
 setTimeout(() => {
   document.getElementById("game_dev").classList.add('fadeIn');
-}, 1500);
+}, 1000);
 
 setTimeout(() => {
   document.getElementById("writer").classList.add('fadeIn');
-}, 2000);
+}, 1250);
 
 
 // ! HELPERS
