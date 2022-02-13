@@ -16,9 +16,9 @@ anime.timeline({loop: false})
     delay: (el, i) => 150 + 30 * i
   });
   
-setTimeout(() => {
-  document.querySelectorAll("section").forEach(eh => eh.classList.add('fadeIn'));
-}, 2000);
+// setTimeout(() => {
+//   document.querySelectorAll("section").forEach(eh => eh.classList.add('fadeIn'));
+// }, 0);
 
 setTimeout(() => {
   document.getElementById("web_dev").classList.add('fadeIn');
