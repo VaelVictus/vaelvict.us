@@ -62,7 +62,7 @@
     
         <? // ! It's me! ?>
         <div id='vv' class="w-full py-3 sm:w-9/12 max-w-4xl text-center mx-auto">
-            <h1 id='vael_victus' class='p-2 m-0 text-black text-5xl' style='font-family: Charm;'>
+            <h1 id='vael_victus' class='p-2 pb-3 m-0 text-black text-5xl' style='font-family: Charm;'>
                 Vael Victus
             </h1>
 
@@ -84,11 +84,11 @@
 
             <div class='w-full'>
                 <section>
-                    <div class="w-full px-3 pt-2 shadow-xs section_header" id='about_header'>
+                    <div class="w-full px-2 sm:px-3 pt-3 shadow-xs section_header" id='about_header'>
                         <h2 class='m-0'>About Me</h2>
                     </div>
                     
-                    <div class='w-full  p-3'>
+                    <div class='w-full px-2 sm:px-3 p-3'>
                         <div class='text-base'>
                             My name is Spencer "Vael" Victus. I work in the financial tech industry and in my spare time I run <a href='https://tinydark.com'>tinydark</a>, an ethics-focused indie game microstudio.
                         </div>
@@ -100,11 +100,11 @@
                 </section>
                 
                 <section class='container_shadow mt-0 sm:mt-3'>
-                    <div class="w-full px-3 pt-2 shadow-xs section_header" id="work_header">
+                    <div class="w-full px-2 sm:px-3 pt-3 shadow-xs section_header" id="work_header">
                         <h2 class='m-0'>My Work</h2>
                     </div>
 
-                    <div class='w-full bg-white p-3'>
+                    <div class='w-full bg-white px-2 sm:px-3 p-3'>
                         <h3 class='m-0'>Games</h3>
 
                         <div class='mb-2'>
@@ -138,12 +138,12 @@
 
             <div class='w-full pl-0 mt-0 sm:my-3 sm:mb-5'>
                 <section>
-                    <div class="w-full px-3 pt-2 shadow-xs section_header" id='connect_header'>
+                    <div class="w-full px-2 sm:px-3 pt-3 shadow-xs section_header" id='connect_header'>
                         <h2 class='m-0'>Connect</h2>
                         <!-- <div class='text-gray-800 pt-1'>Links open in new window</div> -->
                     </div>
 
-                    <div class='w-full pt-0 sm:pt-3 p-3 grid grid-bubbles bg-white'>
+                    <div class='w-full pt-0 sm:pt-3 px-2 sm:px-3 p-3 grid grid-bubbles bg-white'>
                         
                         <? /* Email.  Mobile: most people have mailto: functionality */ ?>
                         <a class='flex align-items no-underline bg-white  text-black sm:hidden

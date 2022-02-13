@@ -15,6 +15,10 @@ anime.timeline({loop: false})
     duration: 4000,
     delay: (el, i) => 150 + 30 * i
   });
+  
+setTimeout(() => {
+  document.querySelectorAll("section").forEach(eh => eh.classList.add('fadeIn'));
+}, 0);
 
 setTimeout(() => {
   document.getElementById("web_dev").classList.add('fadeIn');
@@ -22,11 +26,11 @@ setTimeout(() => {
 
 setTimeout(() => {
   document.getElementById("game_dev").classList.add('fadeIn');
-}, 2000);
+}, 1500);
 
 setTimeout(() => {
   document.getElementById("writer").classList.add('fadeIn');
-}, 3000);
+}, 2000);
 
 
 // ! HELPERS
