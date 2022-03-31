@@ -123,7 +123,7 @@
 
                     <h3 class='mb-2'>Writing</h3>
                     <ul>
-                        <li>Two design analyses of browser games: <a href='https://vael.tumblr.com/post/187341440887/die2nite-teardown-a-teardown-is-a-document-that'>Die2Nite</a> and <a href='https://vael.tumblr.com/post/634149707769430016/marosia-teardown-2020-final'>Marosia</a></li>
+                        <li>Two design analyses of browser games: <b><a href='https://vael.tumblr.com/post/187341440887/die2nite-teardown-a-teardown-is-a-document-that'>Die2Nite</a></b> and <b><a href='https://vael.tumblr.com/post/634149707769430016/marosia-teardown-2020-final'>Marosia</a></b></li>
                         <? # <li>Blogging <a href='https://vael.tumblr.com/'>on Tumblr</a></li> ?>
                         <li>More soon...</li>
                     </ul>
