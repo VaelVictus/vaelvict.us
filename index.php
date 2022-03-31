@@ -107,7 +107,7 @@
                     </div>
 
                     <ul>
-                        <li><b><a href='https://www.theorbium.com/urpg'>URPG (alpha)</a></b> - Open-World Roleplaying MMORPG</li>
+                        <li><b><a href='https://www.theorbium.com/urpg'>URPG</a> (alpha)</b> - Open-World Roleplaying MMORPG</li>
                         <li><b>Black Crown: Exhumed (2022)</b> - Narrative horror; revival of the original game by Rob Sherman</li>
                         <li><b>Bean Grower (2018)</b> - Casual strategy game about growing beans</li>
                         <li><b><a href='https://monbre.com/'>MonBre</a> (2010)</b> - Monster MMORPG</li>
@@ -116,14 +116,14 @@
                     <h3 class='mb-2'>Software</h3>
                     <ul>
                         <li><b>GAM3</b> - tinydark's proprietary web game engine</li>
-                        <li><b><a href='http://hub.tinydark.com/'>Tinydark Hub</a></b> - Single sign-on for all tinydark games</li>
+                        <li><a href='http://hub.tinydark.com/'>Tinydark Hub</a> - Single sign-on for all tinydark games</li>
                         <li><b>Tinydark Lab</b> - Prototypes and demos of unfinished games</li>
                         <? # <li><b><a href='http://tinydark.com/lab'>Tinydark Lab</a></b> - Prototypes and demos of unfinished games</li> ?>
                     </ul>
 
                     <h3 class='mb-2'>Writing</h3>
                     <ul>
-                        <li>Two design analyses of browser games: <b><a href='https://vael.tumblr.com/post/187341440887/die2nite-teardown-a-teardown-is-a-document-that'>Die2Nite</a></b> and <b><a href='https://vael.tumblr.com/post/634149707769430016/marosia-teardown-2020-final'>Marosia</a></b></li>
+                        <li>Two design analyses of browser games: <a href='https://vael.tumblr.com/post/187341440887/die2nite-teardown-a-teardown-is-a-document-that'>Die2Nite</a> and <a href='https://vael.tumblr.com/post/634149707769430016/marosia-teardown-2020-final'>Marosia</a></li>
                         <? # <li>Blogging <a href='https://vael.tumblr.com/'>on Tumblr</a></li> ?>
                         <li>More soon...</li>
                     </ul>
