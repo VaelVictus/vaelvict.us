@@ -62,8 +62,8 @@ ul {
 }
 
 /* Sections */
-
 section {
+    width: 100%;
     background: white;
 }
 
