@@ -130,7 +130,7 @@
                 </div>
             </section>
 
-            <section class='pl-0 mt-0 sm:my-3 sm:mb-5'>
+            <section id='connect' class='pl-0 mt-0 sm:my-3 sm:mb-5'>
                 <div class="w-full px-2 sm:px-3 pt-3 shadow-xs section_header" id='connect_header'>
                     <h2 class='m-0'>Connect</h2>
                 </div>

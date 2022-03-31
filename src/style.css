@@ -104,6 +104,9 @@ section {
 }
 
 /* Connect */
+#connect a {
+    font-weight: normal;
+}
 .card {
     display: flex;
     flex-direction: column;
