@@ -28,6 +28,10 @@ ul {
 
 
 /* Subtitle, animations */
+#vael_victus {
+    display: none;
+}
+
 #vael_victus_subtitle {
     display: flex;
     justify-content: space-evenly;
