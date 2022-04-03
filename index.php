@@ -78,7 +78,7 @@
         </div>
 
         <div class="w-full max-w-3xl flex flex-wrap mx-auto">
-            <section>
+            <section style='opacity: 0;'>
                 <div class="w-full px-2 sm:px-3 pt-3 shadow-xs section_header" id='about_header'>
                     <h2 class='m-0'>About Me</h2>
                 </div>
@@ -94,7 +94,7 @@
                 </div>
             </section>
             
-            <section class='container_shadow mt-0 sm:mt-3'>
+            <section class='container_shadow mt-0 sm:mt-3' style='opacity: 0;'>
                 <div class="w-full px-2 sm:px-3 pt-3 shadow-xs section_header" id="work_header">
                     <h2 class='m-0'>My Work</h2>
                 </div>
@@ -130,7 +130,7 @@
                 </div>
             </section>
 
-            <section id='connect' class='pl-0 mt-0 sm:my-3 sm:mb-5'>
+            <section id='connect' class='pl-0 mt-0 sm:my-3 sm:mb-5' style='opacity: 0;'>
                 <div class="w-full px-2 sm:px-3 pt-3 shadow-xs section_header" id='connect_header'>
                     <h2 class='m-0'>Connect</h2>
                 </div>

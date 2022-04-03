@@ -2,37 +2,47 @@ import './css/style.css'
 
 import anime from 'animejs'
 
-var textWrapper = document.querySelector('#vael_victus');
-textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+document.addEventListener('DOMContentLoaded', function () {
+  let textWrapper = document.querySelector('#vael_victus');
+  textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
 
-document.getElementById('vael_victus').style.display = 'block';
+  document.getElementById('vael_victus').style.display = 'block';
 
-anime.timeline({loop: false})
-.add({
-  targets: '#vael_victus .letter',
-  translateX: [40, 0],
-  translateZ: 0,
-  opacity: [0, 1],
-  easing: "easeOutCubic",
-  duration: 4000,
-  delay: (el, i) => 150 + (30 * i)
+  let content_delay = 1350;
+
+  document.querySelectorAll('section').forEach((el, i) => {
+    setTimeout(() => {
+      el.style.opacity = 1;
+    }, content_delay + i*350)
+  });
+
+  anime.timeline({loop: false})
+  .add({
+    targets: '#vael_victus .letter',
+    translateX: [40, 0],
+    translateZ: 0,
+    opacity: [0, 1],
+    easing: "easeOutCubic",
+    duration: 2000,
+    delay: (el, i) => 150 + (60 * i)
+  });
+    
+  // setTimeout(() => {
+  //   document.querySelectorAll("section").forEach(eh => eh.classList.add('fadeIn'));
+  // }, 0);
+
+  setTimeout(() => {
+    document.getElementById("web_dev").classList.add('fadeIn');
+  }, 550);
+
+  setTimeout(() => {
+    document.getElementById("game_dev").classList.add('fadeIn');
+  }, 700);
+
+  setTimeout(() => {
+    document.getElementById("writer").classList.add('fadeIn');
+  }, 900);
 });
-  
-// setTimeout(() => {
-//   document.querySelectorAll("section").forEach(eh => eh.classList.add('fadeIn'));
-// }, 0);
-
-setTimeout(() => {
-  document.getElementById("web_dev").classList.add('fadeIn');
-}, 750);
-
-setTimeout(() => {
-  document.getElementById("game_dev").classList.add('fadeIn');
-}, 1000);
-
-setTimeout(() => {
-  document.getElementById("writer").classList.add('fadeIn');
-}, 1250);
 
 
 // ! HELPERS
