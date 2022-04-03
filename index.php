@@ -14,8 +14,8 @@
   <title>Vael Victus</title>
 
 <? if (DEV_ENV == 'prod') { ?>
-    <link rel="stylesheet" href="dist/assets/index.css">
-    <script type="module" crossorigin src="dist/assets/index.js"></script>
+    <link rel="stylesheet" href="dist/assets/index.css?mod=<?=date('Y-M')?>">
+    <script type="module" crossorigin src="dist/assets/index.js?mod=<?=date('Y-M')?>"></script>
 <? } else { ?>
     <script type="module" src="http://localhost:1337/main.js"></script>
 <? } ?>
