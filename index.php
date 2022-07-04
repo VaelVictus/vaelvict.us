@@ -5,8 +5,7 @@
     $violet = GetAge('2021-01-05');
 
     // TODO:
-    // Fade in content
-    // Read from site manifest, set up perpetual asset caching
+    // Read from site manifest for dev/prod, set up perpetual asset caching
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -14,8 +13,8 @@
   <title>Vael Victus</title>
 
 <? if (DEV_ENV == 'prod') { ?>
-    <link rel="stylesheet" href="dist/assets/index.css?mod=<?=date('Y-M')?>">
-    <script type="module" crossorigin src="dist/assets/index.js?mod=<?=date('Y-M')?>"></script>
+    <link rel="stylesheet" href="dist/assets/index.css?mod=<?=date('Y-m')?>">
+    <script type="module" crossorigin src="dist/assets/index.js?mod=<?=date('Y-m')?>"></script>
 <? } else { ?>
     <script type="module" src="http://localhost:1337/main.js"></script>
 <? } ?>
@@ -59,7 +58,7 @@
   <body>
 
     <main class="text-base overflow-auto bg-cover w-full h-full">
-        <div id='vv' class="w-full py-3 sm:w-9/12 max-w-4xl sm:pb-4 text-center mx-auto">
+        <div id='vv' class="w-full py-3 sm:w-9/12 max-w-4xl text-center mx-auto">
             <h1 id='vael_victus' class='p-2 pb-3 m-0 text-black text-5xl' style='font-family: Charm;'>
                 Vael Victus
             </h1>
@@ -78,13 +77,15 @@
         </div>
 
         <div class="w-full max-w-3xl flex flex-wrap mx-auto">
-            <section style='opacity: 0;'>
+            <section class='mt-0 sm:mt-2' style='opacity: 0; transform: translateY(-20px);'>
                 <div class="w-full px-2 sm:px-3 pt-3 shadow-xs section_header" id='about_header'>
                     <h2 class='m-0'>About Me</h2>
                 </div>
                 
                 <div class='w-full px-2 sm:px-3 p-3'>
                     <div class='text-base'>
+                        <img class='mb-1 mr-2' src='img/vael_2018.jpg' align='left' style='width: 160px; height: 200px; border: 1px solid #444; border-radius: 1px;'> 
+
                         My name is Spencer "Vael" Victus. I work in the financial tech industry and in my spare time I run <a href='https://tinydark.com'>tinydark</a>, an ethics-focused indie game microstudio.
                     </div>
                     
@@ -94,7 +95,7 @@
                 </div>
             </section>
             
-            <section class='container_shadow mt-0 sm:mt-3' style='opacity: 0;'>
+            <section class='container_shadow mt-0 sm:mt-4' style='opacity: 0; transform: translateY(-20px);'>
                 <div class="w-full px-2 sm:px-3 pt-3 shadow-xs section_header" id="work_header">
                     <h2 class='m-0'>My Work</h2>
                 </div>
@@ -130,7 +131,7 @@
                 </div>
             </section>
 
-            <section id='connect' class='pl-0 mt-0 sm:my-3 sm:mb-5' style='opacity: 0;'>
+            <section id='connect' class='pl-0 mt-0 sm:mt-4 sm:mb-5' style='opacity: 0; transform: translateY(-20px);'>
                 <div class="w-full px-2 sm:px-3 pt-3 shadow-xs section_header" id='connect_header'>
                     <h2 class='m-0'>Connect</h2>
                 </div>

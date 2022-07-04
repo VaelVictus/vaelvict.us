@@ -10,9 +10,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
   let content_delay = 1350;
 
+  // fade in each section
   document.querySelectorAll('section').forEach((el, i) => {
     setTimeout(() => {
       el.style.opacity = 1;
+      el.style.transform = 'translateY(0px)';
     }, content_delay + i*350)
   });
 
@@ -37,11 +39,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
   setTimeout(() => {
     document.getElementById("game_dev").classList.add('fadeIn');
-  }, 700);
+  }, 750);
 
   setTimeout(() => {
     document.getElementById("writer").classList.add('fadeIn');
-  }, 900);
+  }, 1000);
 });
 
 
