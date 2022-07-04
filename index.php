@@ -83,9 +83,9 @@
                 </div>
                 
                 <div class='w-full px-2 sm:px-3 p-3'>
-                    <div class='text-base'>
-                        <img class='mb-1 mr-2' src='img/vael_2018.jpg' align='left' style='width: 160px; height: 200px; border: 1px solid #444; border-radius: 1px;'> 
+                    <img id='about_pic' class='mb-1 mr-2' src='img/vael_2018.jpg' align='left'> 
 
+                    <div class='text-base'>
                         My name is Spencer "Vael" Victus. I work in the financial tech industry and in my spare time I run <a href='https://tinydark.com'>tinydark</a>, an ethics-focused indie game microstudio.
                     </div>
                     
