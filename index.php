@@ -82,15 +82,15 @@
                     <h2 class='m-0'>About Me</h2>
                 </div>
                 
-                <div class='w-full px-2 sm:px-3 p-3'>
-                    <img id='about_pic' class='mb-1 mr-2' src='img/vael_2018.jpg' align='left'> 
+                <div class='w-full px-2 sm:px-3 p-3 overflow-auto'>
+                    <div>
+                        <img id='about_pic' class='mb-1 mr-2' src='img/vael_2018.jpg' align='left'> 
 
-                    <div class='text-base'>
-                        My name is Spencer "Vael" Victus. I work in the financial tech industry and in my spare time I run <a href='https://tinydark.com'>tinydark</a>, an ethics-focused indie game microstudio.
+                        I am Spencer "Vael" Victus. I work in the financial tech industry and in my spare time I run <a href='https://tinydark.com'>Tinydark</a>, a player-first indie game microstudio.
                     </div>
                     
-                    <div class='text-base mt-2'>
-                        I live in upstate South Carolina with my wife, <a href='https://500px.com/p/evelynvictus?view=photos'>Evelyn Victus</a>, and our two kids: Abel (<?=$abel?> old) and Violet (<?=$violet?> old). I spend most of my time making games, playing games, and raising my kids.
+                    <div class='mt-2'>
+                        I live in upstate South Carolina with my wife, <a href='https://500px.com/p/evelynvictus?view=photos'>Evelyn Victus</a>, and our two kids: Abel (<?=$abel?> old) and Violet (<?=$violet?> old). I spend most of my time making games, playing games, and raising my kids. I'm a <a href='https://www.youtube.com/playlist?list=PLKQKi0BW3i8xEeDhUJkUnuQVLjMaNnzAE'>motivation junkie</a> and love staying productive, whether it's code, fitness, or research.
                     </div>
                 </div>
             </section>
@@ -104,12 +104,12 @@
                     <h3 class='m-0'>Games</h3>
 
                     <div class='mb-2'>
-                        I publish my games under <a href='https://tinydark.com'>tinydark</a>. I adhere to a <a href='https://tinydark.com/mission'>code of ethics</a> with my design, because I believe games should be doing more to directly benefit the player.
+                        I publish my games under <a href='https://tinydark.com'>Tinydark</a>. I adhere to a <a href='https://tinydark.com/mission'>code of ethics</a> with my design, because I believe games should be doing more to directly benefit the player.
                     </div>
 
                     <ul>
-                        <li><b><a href='https://www.theorbium.com/urpg'>URPG</a> (alpha)</b> - Open-World Roleplaying MMORPG</li>
-                        <li><b>Black Crown: Exhumed (2022)</b> - Narrative horror; revival of the original game by Rob Sherman</li>
+                        <li><b><a href='https://urpg.tinydark.com'>URPG</a> (alpha)</b> - Open-World Roleplaying MMORPG</li>
+                        <li><b><a href='https://blackcrownexhumed.com'>Black Crown: Exhumed (2023)</a></b> - Narrative horror; revival of the original game by Rob Sherman</li>
                         <li><b>Bean Grower (2018)</b> - Casual strategy game about growing beans</li>
                         <li><b><a href='https://monbre.com/'>MonBre</a> (2010)</b> - Monster MMORPG</li>
                     </ul>
@@ -125,7 +125,7 @@
                     <h3 class='mb-2'>Writing</h3>
                     <ul>
                         <li>Two design analyses of browser games: <a href='https://vael.tumblr.com/post/187341440887/die2nite-teardown-a-teardown-is-a-document-that'>Die2Nite</a> and <a href='https://vael.tumblr.com/post/634149707769430016/marosia-teardown-2020-final'>Marosia</a></li>
-                        <? # <li>Blogging <a href='https://vael.tumblr.com/'>on Tumblr</a></li> ?>
+                        <li>Tumbling <a href='https://vael.tumblr.com/'>on Tumblr</a></li>
                         <li>More soon...</li>
                     </ul>
                 </div>
