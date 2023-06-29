@@ -88,7 +88,7 @@
                 
                 <div class='w-full px-2 sm:px-3 p-3 overflow-auto'>
                     <div>
-                        <img id='about_pic' class='mb-1 mr-2' src='img/vael_2018.jpg' align='left' alt='Picture of Vael Victus'> 
+                        <img id='about_pic' class='mb-1 mr-2' src='img/vael_victus_2018.jpg' align='left' alt='Picture of Vael Victus'> 
 
                         I am Spencer "Vael" Victus. I work in the financial tech industry and in my spare time I run <a href='https://tinydark.com'>Tinydark</a>, a player-first indie game microstudio.
                     </div>
