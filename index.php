@@ -88,7 +88,7 @@
                 
                 <div class='w-full px-2 sm:px-3 p-3 overflow-auto'>
                     <div>
-                        <img id='about_pic' class='mb-1 mr-2' src='img/vael_2018.jpg' align='left'> 
+                        <img id='about_pic' class='mb-1 mr-2' src='img/vael_2018.jpg' align='left' alt='Picture of Vael Victus'> 
 
                         I am Spencer "Vael" Victus. I work in the financial tech industry and in my spare time I run <a href='https://tinydark.com'>Tinydark</a>, a player-first indie game microstudio.
                     </div>
@@ -166,7 +166,7 @@
                     <div class='flex align-items no-underline bg-white 
                                 connect_border' target='_blank' title="Previously: Vael Victus#0001">
                         <img class='w-1/6 sm:w-1/5 mx-1 my-3 px-1 md:px-0' src='img/brands/discord.svg' alt=''>
-                        <div class='w-4/5 card_txt text-base pl-1' style='color: #5865F2;'>
+                        <div class='w-4/5 card_txt text-base pl-1' style='color: #2e3dda;'> <? # slightly darker #5865F2 (discord blue) ?>
                             vaelvictus
                             <div class='text-xs mt-1'>Discord</div>
                         </div>
