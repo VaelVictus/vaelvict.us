@@ -4,14 +4,14 @@
     "src": "favicon.ico"
   },
   "index.css": {
-    "file": "assets/index.0e0a31d8.css",
+    "file": "assets/index.8a64375f.css",
     "src": "index.css"
   },
   "index.html": {
     "css": [
-      "assets/index.0e0a31d8.css"
+      "assets/index.8a64375f.css"
     ],
-    "file": "assets/index.54e4fa1d.js",
+    "file": "assets/index.f8383e29.js",
     "isEntry": true,
     "src": "index.html"
   }
