@@ -5,12 +5,18 @@ export default {
     },
     build: { 
         manifest: true,
-        // for later:
         rollupOptions: {
             output: {
-              entryFileNames: `assets/[name].js`,
-              chunkFileNames: `assets/[name].js`,
-              assetFileNames: `assets/[name].[ext]`
+              entryFileNames: `assets/[name].[hash].js`,
+              chunkFileNames: `assets/[name].[hash].js`,
+              assetFileNames: assetInfo => {
+                const type = assetInfo.name.substr(assetInfo.name.lastIndexOf('.') + 1);
+                if (type === 'js' || type === 'css') {
+                  return `assets/[name].[hash].[ext]`;
+                } else {
+                  return `assets/[name].[ext]`;
+                }
+              }
             }
         }
     }

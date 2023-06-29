@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   document.getElementById('vael_victus').style.display = 'block';
 
-  let content_delay = 1350;
+  let content_delay = 1100;
 
   // fade in each section
   document.querySelectorAll('section').forEach((el, i) => {
@@ -35,15 +35,15 @@ document.addEventListener('DOMContentLoaded', function () {
 
   setTimeout(() => {
     document.getElementById("web_dev").classList.add('fadeIn');
-  }, 550);
+  }, 450);
 
   setTimeout(() => {
     document.getElementById("game_dev").classList.add('fadeIn');
-  }, 750);
+  }, 600);
 
   setTimeout(() => {
     document.getElementById("writer").classList.add('fadeIn');
-  }, 1000);
+  }, 750);
 });
 
 

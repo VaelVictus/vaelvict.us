@@ -3,21 +3,25 @@
 
     $abel   = GetAge('2011-01-03');
     $violet = GetAge('2021-01-05');
+    $olivia = GetAge('2022-11-09');
 
-    // TODO:
-    // Read from site manifest for dev/prod, set up perpetual asset caching
+    $manifest = json_decode(file_get_contents('./dist/manifest.json'), true);
 ?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
-  <title>Vael Victus</title>
 
 <? if (DEV_ENV == 'prod') { ?>
-    <link rel="stylesheet" href="dist/assets/index.css?mod=<?=date('Y-m')?>">
-    <script type="module" crossorigin src="dist/assets/index.js?mod=<?=date('Y-m')?>"></script>
+    <? foreach ($manifest['index.html']['css'] as $path) { ?>
+        <link rel="stylesheet" href="dist/<?=$path?>">
+    <? } ?>
+
+    <script type="module" crossorigin src="dist/<?=$manifest['index.html']['file']?>"></script>
 <? } else { ?>
     <script type="module" src="http://localhost:1337/main.js"></script>
 <? } ?>
+
+    <title>Vael Victus</title>
 
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="favicon.ico" />
@@ -90,7 +94,7 @@
                     </div>
                     
                     <div class='mt-2'>
-                        I live in upstate South Carolina with my wife, <a href='https://500px.com/p/evelynvictus?view=photos'>Evelyn Victus</a>, and our two kids: Abel (<?=$abel?> old) and Violet (<?=$violet?> old). I spend most of my time making games, playing games, and raising my kids. I'm a <a href='https://www.youtube.com/playlist?list=PLKQKi0BW3i8xEeDhUJkUnuQVLjMaNnzAE'>motivation junkie</a> and love staying productive, whether it's code, fitness, or research.
+                        I live in upstate South Carolina with my wife, <a href='https://500px.com/p/evelynvictus?view=photos'>Evelyn Victus</a>, and our three kids: Abel (<?=$abel?> old), Violet (<?=$violet?> old), and Olivia (<?=$olivia?> old). I spend most of my time making games, playing games, and raising my kids. I'm a <a href='https://www.youtube.com/playlist?list=PLKQKi0BW3i8xEeDhUJkUnuQVLjMaNnzAE'>motivation junkie</a> and love staying productive, whether it's code, writing, fitness, or research.
                     </div>
                 </div>
             </section>
@@ -160,10 +164,10 @@
                     
                     <? /* Discord */ ?>
                     <div class='flex align-items no-underline bg-white 
-                                connect_border' target='_blank'>
+                                connect_border' target='_blank' title="Previously: Vael Victus#0001">
                         <img class='w-1/6 sm:w-1/5 mx-1 my-3 px-1 md:px-0' src='img/brands/discord.svg' alt=''>
                         <div class='w-4/5 card_txt text-base pl-1' style='color: #5865F2;'>
-                            Vael Victus#0001
+                            vaelvictus
                             <div class='text-xs mt-1'>Discord</div>
                         </div>
                     </div>

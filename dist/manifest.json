@@ -1,16 +1,18 @@
 {
-  "index.html": {
-    "file": "assets/index.js",
-    "src": "index.html",
-    "isEntry": true,
-    "imports": [
-      "_vendor.js"
-    ],
-    "css": [
-      "assets/index.css"
-    ]
+  "favicon.ico": {
+    "file": "assets/favicon.ico",
+    "src": "favicon.ico"
   },
-  "_vendor.js": {
-    "file": "assets/vendor.js"
+  "index.css": {
+    "file": "assets/index.0e0a31d8.css",
+    "src": "index.css"
+  },
+  "index.html": {
+    "css": [
+      "assets/index.0e0a31d8.css"
+    ],
+    "file": "assets/index.54e4fa1d.js",
+    "isEntry": true,
+    "src": "index.html"
   }
 }

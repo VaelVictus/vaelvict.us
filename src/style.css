@@ -69,11 +69,11 @@ section {
 }
 
 #about_header {
-    color: rgb(0, 56, 105);
+    color: rgb(0, 42, 105);
 }
 
 #about_header h2 {
-    border-bottom: 3px solid rgb(0, 56, 105);
+    border-bottom: 3px solid rgb(0, 42, 105);
 }
 
 #about_pic {
@@ -82,19 +82,19 @@ section {
 }
 
 #work_header {
-    color: rgb(116, 17, 2);
+    color: rgb(116, 2, 2);
 }
 
 #work_header h2 {
-    border-bottom: 3px solid rgb(116, 17, 2);
+    border-bottom: 3px solid rgb(116, 2, 2);
 }
 
 #connect_header {
-    color: rgb(44, 82, 0);
+    color: rgb(14, 82, 0);
 }
 
 #connect_header h2 {
-    border-bottom: 3px solid rgb(44, 82, 0);
+    border-bottom: 3px solid rgb(14, 82, 0);
 }
 
 /* Connect */
@@ -140,7 +140,7 @@ section {
     }
 
     #about_pic {
-        width: 160px; height: 200px; 
+        width: 150px; height: 180px; 
     }
 
     ul {
