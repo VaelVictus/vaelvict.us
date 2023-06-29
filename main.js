@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function () {
     opacity: [0, 1],
     easing: "easeOutCubic",
     duration: 2000,
-    delay: (el, i) => 150 + (60 * i)
+    delay: (el, i) => 100 + (70 * i)
   });
     
   // setTimeout(() => {
@@ -35,15 +35,15 @@ document.addEventListener('DOMContentLoaded', function () {
 
   setTimeout(() => {
     document.getElementById("web_dev").classList.add('fadeIn');
-  }, 450);
+  }, 500);
 
   setTimeout(() => {
     document.getElementById("game_dev").classList.add('fadeIn');
-  }, 600);
+  }, 650);
 
   setTimeout(() => {
     document.getElementById("writer").classList.add('fadeIn');
-  }, 750);
+  }, 800);
 });
 
 
