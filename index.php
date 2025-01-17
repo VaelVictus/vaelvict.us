@@ -88,13 +88,13 @@
                 
                 <div class='w-full px-2 sm:px-3 p-3 overflow-auto'>
                     <div>
-                        <img id='about_pic' class='mb-1 mr-2' src='img/vael_victus_2018.jpg' align='left' alt='Picture of Vael Victus'> 
+                        <img id='about_pic' class='mb-1 mr-2 float-left' src='img/vael_victus_2018.jpg' alt='Vael Victus'> 
 
-                        I am Spencer "Vael" Victus. I work in the financial tech industry and in my spare time I run <a href='https://tinydark.com'>Tinydark</a>, a player-first indie game microstudio.
+                        I am Spencer "Vael" Victus. I work in the financial tech industry and in my spare time I run <a href='https://tinydark.com'>Tinydark</a>, a player-first indie game studio.
                     </div>
                     
                     <div class='mt-2'>
-                        I live in upstate South Carolina with my wife, <a href='https://500px.com/p/evelynvictus?view=photos'>Evelyn Victus</a>, and our three kids: Abel (<?=$abel?> old), Violet (<?=$violet?> old), and Olivia (<?=$olivia?> old). I spend most of my time making games, playing games, and raising my kids. I'm a <a href='https://www.youtube.com/playlist?list=PLKQKi0BW3i8xEeDhUJkUnuQVLjMaNnzAE'>motivation junkie</a> and love staying productive, whether it's code, writing, fitness, or research.
+                        I live in upstate South Carolina with my wife, <a href='https://500px.com/p/evelynvictus?view=photos'>Evelyn Victus</a>, and our three kids: Abel (<?=$abel?> old), Violet (<?=$violet?> old), and Olivia (<?=$olivia?> old). I spend most of my time making games, playing games, and raising my kids. We also have six cats! [view] I'm a <a href='https://www.youtube.com/playlist?list=PLKQKi0BW3i8xEeDhUJkUnuQVLjMaNnzAE'>motivation junkie</a> and love staying productive, whether it's code, writing, fitness, or research.
                     </div>
                 </div>
             </section>
@@ -113,7 +113,7 @@
 
                     <ul>
                         <li><b><a href='https://urpg.tinydark.com'>URPG</a> (alpha)</b> - Open-World Roleplaying MMORPG</li>
-                        <li><b><a href='https://blackcrownexhumed.com'>Black Crown: Exhumed (2023)</a></b> - Narrative horror; revival of the original game by Rob Sherman</li>
+                        <li><b><a href='https://blackcrownexhumed.com'>Black Crown: Exhumed (2025)</a></b> - Narrative horror; revival of the original game by Rob Sherman</li>
                         <li><b>Bean Grower (2018)</b> - Casual strategy game about growing beans</li>
                         <li><b><a href='https://monbre.com/'>MonBre</a> (2010)</b> - Monster MMORPG</li>
                     </ul>
@@ -155,7 +155,7 @@
 
                     <? /* Email. Plaintext for desktop */ ?>
                     <div class='hidden align-items bg-white  text-black sm:flex cursor-pointer
-                                connect_border' onClick="copyToClipboard('vael@tinydark.com')" target='_blank'>
+                                connect_border' onClick="copyToClipboard('vael@tinydark.com')" target='_blank' role='button'>
                         <img class='w-1/6 sm:w-1/5 mx-1 my-3 px-1 md:px-0' src='img/brands/email.svg' alt='email'>
                         <div class='w-4/5 card_txt text-sm pl-1'>
                             vael@tinydark.com
