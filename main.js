@@ -40,18 +40,24 @@ const petsSection = document.getElementById('pets_section');
 
 document.getElementById('view_pets').addEventListener('click', function() {
     const viewPetsText = document.getElementById('view_pets');
-    const arrowSpan = viewPetsText.querySelector('.arrow');
 
     if (petsSection.classList.contains('vael-show')) {
-        // Hide the section
+        // Hide the section instantly
+        petsSection.style.transition = 'none'; // Disable transition
         petsSection.classList.remove('vael-show');
         viewPetsText.setAttribute('aria-expanded', 'false');
-        viewPetsText.innerHTML = 'show <span class="arrow">&#9662;</span>'; // Down arrow
+        viewPetsText.innerHTML = 'show<span class="arrow">&#9662;</span>'; // Down arrow
+
+        // Re-enable transition after hiding
+        setTimeout(() => {
+            petsSection.style.transition = 'max-height 0.4s ease, opacity 0.4s ease, transform 0.4s ease';
+        }, 0);
     } else {
-        // Show the section
+        // Show the section with transition
+        petsSection.style.transition = 'max-height 0.4s ease, opacity 0.4s ease, transform 0.4s ease';
         petsSection.classList.add('vael-show');
         viewPetsText.setAttribute('aria-expanded', 'true');
-        viewPetsText.innerHTML = 'hide <span class="arrow">&#9652;</span>'; // Up arrow
+        viewPetsText.innerHTML = 'hide<span class="arrow">&#9652;</span>'; // Up arrow
     }
 });
 

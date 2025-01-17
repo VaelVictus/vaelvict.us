@@ -204,7 +204,12 @@ section {
 
 #view_pets {
     font-family: monospace;
-    color: rgb(37 99 235/var(--tw-text-opacity));
+    color: rgb(37 99 235);
+    cursor: pointer; text-decoration: underline;
+
+    .arrow {
+        display: inline-block; margin-left: 3px;
+    }
 
     &:hover {
         text-decoration: underline;
@@ -212,7 +217,6 @@ section {
     }
 }
 
-/* Animation for pets section */
 #pets_section {
     max-height: 0;
     overflow: hidden;
@@ -222,7 +226,7 @@ section {
 }
 
 #pets_section.vael-show {
-    max-height: 1000px; /* Ensure this is large enough to fit the content */
+    max-height: 300px;
     opacity: 1;
     transform: translateY(0);
 }

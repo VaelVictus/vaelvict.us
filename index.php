@@ -94,7 +94,7 @@
                     </div>
                     
                     <div class='mt-2'>
-                        I live in upstate South Carolina with my wife, <a href='https://500px.com/p/evelynvictus?view=photos'>Evelyn Victus</a>, and our three kids: Abel (<?=$abel?> old), Violet (<?=$violet?> old), and Olivia (<?=$olivia?> old). I spend most of my time making games, playing games, and raising my kids. We also have six cats! <span id="view_pets" class="cursor-pointer underline text-blue-600" aria-expanded="false">show <span class="arrow">&#9662;</span></span> I'm a <a href='https://www.youtube.com/playlist?list=PLKQKi0BW3i8xEeDhUJkUnuQVLjMaNnzAE'>motivation junkie</a> and love staying productive, whether it's code, writing, fitness, or research.
+                        I live in upstate South Carolina with my wife, <a href='https://500px.com/p/evelynvictus?view=photos'>Evelyn Victus</a>, and our three kids: Abel (<?=$abel?> old), Violet (<?=$violet?> old), and Olivia (<?=$olivia?> old). I spend most of my time making games, playing games, and raising my kids. We also have six cats! <span id="view_pets" aria-expanded="false">show<span class="arrow">&#9662;</span></span> I'm a <a href='https://www.youtube.com/playlist?list=PLKQKi0BW3i8xEeDhUJkUnuQVLjMaNnzAE'>motivation junkie</a> and love staying productive, whether it's code, writing, fitness, or research.
                     </div>
                 </div>
             </section>
