@@ -8,14 +8,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
   document.getElementById('vael_victus').style.display = 'block';
 
-  let content_delay = 1000;
+  let content_delay = 900;
 
   // fade in each section
   document.querySelectorAll('section').forEach((el, i) => {
     setTimeout(() => {
       el.style.opacity = 1;
       el.style.transform = 'translateY(0px)';
-    }, content_delay + i*350)
+    }, content_delay + i*300)
   });
 
   anime.timeline({loop: false})
@@ -39,7 +39,20 @@ document.addEventListener('DOMContentLoaded', function () {
 const petsSection = document.getElementById('pets_section');
 
 document.getElementById('view_pets').addEventListener('click', function() {
-  petsSection.classList.toggle('vael-show');
+    const viewPetsText = document.getElementById('view_pets');
+    const arrowSpan = viewPetsText.querySelector('.arrow');
+
+    if (petsSection.classList.contains('vael-show')) {
+        // Hide the section
+        petsSection.classList.remove('vael-show');
+        viewPetsText.setAttribute('aria-expanded', 'false');
+        viewPetsText.innerHTML = 'show <span class="arrow">&#9662;</span>'; // Down arrow
+    } else {
+        // Show the section
+        petsSection.classList.add('vael-show');
+        viewPetsText.setAttribute('aria-expanded', 'true');
+        viewPetsText.innerHTML = 'hide <span class="arrow">&#9652;</span>'; // Up arrow
+    }
 });
 
 // ! HELPERS
