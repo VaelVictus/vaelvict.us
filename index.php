@@ -99,7 +99,7 @@
                 </div>
             </section>
 
-            <section id="pets_section" class="container_shadow mt-0 sm:mt-4" style='opacity: 0; transform: translateY(-20px);'>
+            <section id="pets_section" class="container_shadow mt-0 sm:mt-4">
                 <div class="w-full px-2 sm:px-3 pt-3 shadow-xs section_header" id="pets_header">
                     <h3 class="m-0">Our Cats</h3>
                 </div>

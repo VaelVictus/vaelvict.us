@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   document.getElementById('vael_victus').style.display = 'block';
 
-  let content_delay = 1100;
+  let content_delay = 1000;
 
   // fade in each section
   document.querySelectorAll('section').forEach((el, i) => {
@@ -26,49 +26,20 @@ document.addEventListener('DOMContentLoaded', function () {
     opacity: [0, 1],
     easing: "easeOutCubic",
     duration: 2000,
-    delay: (el, i) => 100 + (70 * i)
+    delay: (el, i) => 50 + (75 * i)
   });
     
-  // setTimeout(() => {
-  //   document.querySelectorAll("section").forEach(eh => eh.classList.add('fadeIn'));
-  // }, 0);
-
   setTimeout(() => {
     document.getElementById("web_dev").classList.add('fadeIn');
-  }, 500);
-
-  setTimeout(() => {
     document.getElementById("game_dev").classList.add('fadeIn');
-  }, 650);
-
-  setTimeout(() => {
     document.getElementById("writer").classList.add('fadeIn');
-  }, 800);
-
-  // Force initial state for pets section
-  const petsSection = document.getElementById('pets_section');
-  petsSection.style.opacity = 0;
-  petsSection.style.transform = 'translateY(-20px)';
-  petsSection.style.display = 'none';
+  }, 750);
 });
 
+const petsSection = document.getElementById('pets_section');
+
 document.getElementById('view_pets').addEventListener('click', function() {
-    const petsSection = document.getElementById('pets_section');
-    
-    if (petsSection.style.display === 'none' || petsSection.style.display === '') {
-        petsSection.style.display = 'block';
-        
-        // Ensure the styles are applied before the transition
-        requestAnimationFrame(() => {
-            petsSection.style.opacity = 1;
-            petsSection.style.transform = 'translateY(0px)';
-        });
-    } else {
-        // Instantly hide the section
-        petsSection.style.opacity = 0;
-        petsSection.style.transform = 'translateY(-20px)';
-        petsSection.style.display = 'none';
-    }
+  petsSection.classList.toggle('vael-show');
 });
 
 // ! HELPERS

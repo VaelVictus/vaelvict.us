@@ -208,16 +208,20 @@ section {
 
 /* Animation for pets section */
 #pets_section {
+    max-height: 0;
+    overflow: hidden;
     opacity: 0;
     transform: translateY(-20px);
-    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
-    display: none;
-}
+    transition:
+    max-height 0.4s ease,
+    opacity 0.4s ease,
+    transform 0.4s ease;
 
-#pets_section.fade-in {
-    opacity: 1;
-    transform: translateY(0);
-    display: block;
+    &.vael-show {
+        max-height: 1000px;
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* Mobile adjustments */
