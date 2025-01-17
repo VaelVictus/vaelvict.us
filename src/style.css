@@ -177,14 +177,14 @@ section {
     background: #fff;
     border-radius: 8px;
     overflow: hidden;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    transition: transform 0.2s;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.15);
+    transition: box-shadow 0.2s;
     width: 85px;
     margin: 0 auto;
 }
 
 .pet-card:hover {
-    transform: translateY(-2px);
+    box-shadow: 0 1px 4px rgba(0,0,0,0.35);
 }
 
 .pet-card img {
@@ -208,18 +208,16 @@ section {
 
 /* Animation for pets section */
 #pets_section {
-    transition: opacity 0.3s, transform 0.3s;
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+    display: none;
 }
 
 #pets_section.fade-in {
     opacity: 1;
     transform: translateY(0);
-}
-
-#pets_section.hidden {
-    display: none;
-    opacity: 0;
-    transform: translateY(-10px);
+    display: block;
 }
 
 /* Mobile adjustments */

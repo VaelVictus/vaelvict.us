@@ -44,17 +44,30 @@ document.addEventListener('DOMContentLoaded', function () {
   setTimeout(() => {
     document.getElementById("writer").classList.add('fadeIn');
   }, 800);
+
+  // Force initial state for pets section
+  const petsSection = document.getElementById('pets_section');
+  petsSection.style.opacity = 0;
+  petsSection.style.transform = 'translateY(-20px)';
+  petsSection.style.display = 'none';
 });
 
 document.getElementById('view_pets').addEventListener('click', function() {
     const petsSection = document.getElementById('pets_section');
     
-    if (petsSection.classList.contains('hidden')) {
-        petsSection.classList.remove('hidden');
-        petsSection.classList.add('fade-in');
+    if (petsSection.style.display === 'none' || petsSection.style.display === '') {
+        petsSection.style.display = 'block';
+        
+        // Ensure the styles are applied before the transition
+        requestAnimationFrame(() => {
+            petsSection.style.opacity = 1;
+            petsSection.style.transform = 'translateY(0px)';
+        });
     } else {
-        petsSection.classList.remove('fade-in');
-        petsSection.classList.add('hidden');
+        // Instantly hide the section
+        petsSection.style.opacity = 0;
+        petsSection.style.transform = 'translateY(-20px)';
+        petsSection.style.display = 'none';
     }
 });
 
