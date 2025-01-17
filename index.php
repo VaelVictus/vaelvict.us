@@ -94,7 +94,41 @@
                     </div>
                     
                     <div class='mt-2'>
-                        I live in upstate South Carolina with my wife, <a href='https://500px.com/p/evelynvictus?view=photos'>Evelyn Victus</a>, and our three kids: Abel (<?=$abel?> old), Violet (<?=$violet?> old), and Olivia (<?=$olivia?> old). I spend most of my time making games, playing games, and raising my kids. We also have six cats! [view] I'm a <a href='https://www.youtube.com/playlist?list=PLKQKi0BW3i8xEeDhUJkUnuQVLjMaNnzAE'>motivation junkie</a> and love staying productive, whether it's code, writing, fitness, or research.
+                        I live in upstate South Carolina with my wife, <a href='https://500px.com/p/evelynvictus?view=photos'>Evelyn Victus</a>, and our three kids: Abel (<?=$abel?> old), Violet (<?=$violet?> old), and Olivia (<?=$olivia?> old). I spend most of my time making games, playing games, and raising my kids. We also have six cats! <span id="view_pets" class="cursor-pointer underline text-blue-600">view</span> I'm a <a href='https://www.youtube.com/playlist?list=PLKQKi0BW3i8xEeDhUJkUnuQVLjMaNnzAE'>motivation junkie</a> and love staying productive, whether it's code, writing, fitness, or research.
+                    </div>
+                </div>
+            </section>
+
+            <section id="pets_section" class="hidden container_shadow mt-0 sm:mt-4" style='opacity: 0; transform: translateY(-20px);'>
+                <div class="w-full px-2 sm:px-3 pt-3 shadow-xs section_header" id="pets_header">
+                    <h3 class="m-0">Our Cats</h3>
+                </div>
+                <div class='w-full bg-white px-2 sm:px-3 p-3'>
+                    <div class="pets-grid" title='The cats are ordered by age!'>
+                        <div class="pet-card">
+                            <img src="img/pets/arya.png" alt="Arya">
+                            <div class="pet-name">Arya</div>
+                        </div>
+                        <div class="pet-card">
+                            <img src="img/pets/osiris.png" alt="Osiris">
+                            <div class="pet-name">Osiris</div>
+                        </div>
+                        <div class="pet-card">
+                            <img src="img/pets/primordus.png" alt="Primordus">
+                            <div class="pet-name">Primordus</div>
+                        </div>
+                        <div class="pet-card">
+                            <img src="img/pets/fennec.png" alt="Fennec">
+                            <div class="pet-name">Fennec</div>
+                        </div>
+                        <div class="pet-card">
+                            <img src="img/pets/fox.png" alt="Fox">
+                            <div class="pet-name">Fox</div>
+                        </div>
+                        <div class="pet-card">
+                            <img src="img/pets/willow.png" alt="Willow">
+                            <div class="pet-name">Willow</div>
+                        </div>
                     </div>
                 </div>
             </section>

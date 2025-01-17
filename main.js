@@ -46,6 +46,17 @@ document.addEventListener('DOMContentLoaded', function () {
   }, 800);
 });
 
+document.getElementById('view_pets').addEventListener('click', function() {
+    const petsSection = document.getElementById('pets_section');
+    
+    if (petsSection.classList.contains('hidden')) {
+        petsSection.classList.remove('hidden');
+        petsSection.classList.add('fade-in');
+    } else {
+        petsSection.classList.remove('fade-in');
+        petsSection.classList.add('hidden');
+    }
+});
 
 // ! HELPERS
 window.copyToClipboard = function(message) {
