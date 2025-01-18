@@ -31,12 +31,14 @@ a {
 }
 
 #vael_victus_subtitle {
-    display: flex;
-    justify-content: space-evenly;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center; /* Center content vertically */
+    gap: 10px; /* Adjust gap as needed */
 }
 
 #vael_victus_subtitle img {
-    width: 24px; height: 24px; margin-right: 2px;
+    width: 24px; height: 24px;
     vertical-align: middle;
 }
 

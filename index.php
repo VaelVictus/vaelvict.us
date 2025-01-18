@@ -82,7 +82,7 @@
 
         <div class="w-full max-w-3xl flex flex-wrap mx-auto">
             <section class='mt-0 sm:mt-2' style='opacity: 0; transform: translateY(-20px);'>
-                <div class="w-full px-2 sm:px-3 pt-3 shadow-xs section_header" id='about_header'>
+                <div class="w-full px-2 sm:px-3 pt-1 sm:pt-3 shadow-xs section_header" id='about_header'>
                     <h2 class='m-0'>About Me</h2>
                 </div>
                 
@@ -94,7 +94,7 @@
                     </div>
                     
                     <div class='mt-2'>
-                        I live in upstate South Carolina with my wife, <a href='https://500px.com/p/evelynvictus?view=photos'>Evelyn Victus</a>, and our three kids: Abel (<?=$abel?> old), Violet (<?=$violet?> old), and Olivia (<?=$olivia?> old). I spend most of my time making games, playing games, and raising my kids. We also have six cats! <span id="view_pets" aria-expanded="false">show<span class="arrow">&#9662;</span></span> I'm a <a href='https://www.youtube.com/playlist?list=PLKQKi0BW3i8xEeDhUJkUnuQVLjMaNnzAE'>motivation junkie</a> and love staying productive, whether it's code, writing, fitness, or research.
+                        I live in upstate South Carolina with my wife, <a href='https://500px.com/p/evelynvictus?view=photos'>Evelyn Victus</a>, and our three kids: Abel (<?=$abel?> old), Violet (<?=$violet?> old), and Olivia (<?=$olivia?> old). I spend most of my time making games, playing games, and raising my kids. I also have six cats! <span id="view_pets" aria-expanded="false">show<span class="arrow">&#9662;</span></span> I'm a <a href='https://www.youtube.com/playlist?list=PLKQKi0BW3i8xEeDhUJkUnuQVLjMaNnzAE'>motivation junkie</a> and love staying productive, whether it's code, writing, fitness, or research.
                     </div>
                 </div>
             </section>
@@ -226,7 +226,7 @@
                         <img class='w-1/6 sm:w-1/5 mx-1 my-3 px-1 md:px-0' src='img/brands/twitter.svg' alt=''>
                         <div class='w-4/5 card_txt text-base pl-1'>
                             <span class='underline'>@VaelVictus</span>
-                            <div class='text-xs mt-1'>Twitter</div>
+                            <div class='text-xs mt-1'>X/Twitter</div>
                         </div>
                     </a>
 

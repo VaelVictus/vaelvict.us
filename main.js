@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function () {
     opacity: [0, 1],
     easing: "easeOutCubic",
     duration: 2000,
-    delay: (el, i) => 50 + (75 * i)
+    delay: (el, i) => 0 + (75 * i)
   });
     
   setTimeout(() => {
