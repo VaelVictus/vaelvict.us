@@ -39,26 +39,29 @@ document.addEventListener('DOMContentLoaded', function () {
 const petsSection = document.getElementById('pets_section');
 
 document.getElementById('view_pets').addEventListener('click', function() {
-    const viewPetsText = document.getElementById('view_pets');
+  const viewPetsText = document.getElementById('view_pets');
 
-    if (petsSection.classList.contains('vael-show')) {
-        // Hide the section instantly
-        petsSection.style.transition = 'none'; // Disable transition
-        petsSection.classList.remove('vael-show');
-        viewPetsText.setAttribute('aria-expanded', 'false');
-        viewPetsText.innerHTML = 'show<span class="arrow">&#9662;</span>'; // Down arrow
+  if (petsSection.classList.contains('vael-show')) {
+      // Hide the section
+      petsSection.classList.remove('vael-show');
+      viewPetsText.setAttribute('aria-expanded', 'false');
+      viewPetsText.innerHTML = 'show<span class="arrow">&#9662;</span>';
 
-        // Re-enable transition after hiding
-        setTimeout(() => {
-            petsSection.style.transition = 'max-height 0.4s ease, opacity 0.4s ease, transform 0.4s ease';
-        }, 0);
-    } else {
-        // Show the section with transition
-        petsSection.style.transition = 'max-height 0.4s ease, opacity 0.4s ease, transform 0.4s ease';
-        petsSection.classList.add('vael-show');
-        viewPetsText.setAttribute('aria-expanded', 'true');
-        viewPetsText.innerHTML = 'hide<span class="arrow">&#9652;</span>'; // Up arrow
-    }
+      // Wait for transition to complete before hiding
+      setTimeout(() => {
+          petsSection.style.display = 'none';
+      }, 450);
+  } else {
+      // Show the section
+      petsSection.style.display = 'block';
+      
+      // Force a reflow and then start transition
+      requestAnimationFrame(() => {
+          petsSection.classList.add('vael-show');
+          viewPetsText.setAttribute('aria-expanded', 'true');
+          viewPetsText.innerHTML = 'hide<span class="arrow">&#9652;</span>';
+      });
+  }
 });
 
 // ! HELPERS
