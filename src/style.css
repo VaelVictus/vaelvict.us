@@ -165,11 +165,10 @@ section {
 }
 
 .pets-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, 85px);
-    gap: 25px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
     padding: 0;
-    justify-content: start;
 }
 
 .pet-card {
@@ -179,13 +178,12 @@ section {
     box-shadow: 0 1px 4px rgba(0,0,0,0.15);
     transition: box-shadow 0.2s;
     width: 85px;
-    margin: 0 auto;
-
-    &:hover {
-        box-shadow: 0 1px 4px rgba(0,0,0,0.35);
-    }
+    margin-bottom: 10px;
 }
 
+.pet-card:hover {
+    box-shadow: 0 1px 4px rgba(0,0,0,0.35);
+}
 
 .pet-card img {
     width: 100%;
@@ -202,9 +200,8 @@ section {
 }
 
 #credits {
-    grid-column: 1 / -1;
-    font-size: 11px; font-style: italic;
-    text-align: right;
+    width: 100%; grid-column: 1 / -1;
+    text-align: right; font-size: 11px; font-style: italic;
 }
 
 #view_pets {
@@ -240,6 +237,8 @@ section {
 /* Mobile adjustments */
 @media only screen and (max-width: 767px) {
     .pets-grid {
-        justify-content: space-between;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px; /* Adjust gap as needed */
     }
 }

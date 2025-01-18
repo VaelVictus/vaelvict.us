@@ -69,13 +69,13 @@
 
             <h2 id='vael_victus_subtitle' class='w-full sm:w-1/2 m-0 mx-auto text-base sm:text-lg'>
                 <span id='web_dev'>
-                    <img src='img/dev_web.svg' alt=''> web dev
+                    <img src='img/laptop.svg' alt=''> web dev
                 </span>
                 <span id='game_dev'>
-                    <img src='img/game_dev.svg' alt=''> game dev
+                    <img src='img/sword.svg' alt=''> game dev
                 </span>
                 <span id='writer'>
-                    <img src='img/writer.svg' alt=''> writer
+                    <img src='img/square-pen.svg' alt=''> writer
                 </span>
             </h2>
         </div>
@@ -157,7 +157,7 @@
 
                     <h3 class='mb-2'>Software</h3>
                     <ul>
-                        <li><b>GAM3</b> - tinydark's proprietary web game engine</li>
+                        <li><b><a href='https://tinydark.com/engine'>GAM3</a></b> - tinydark's proprietary web game engine</li>
                         <li><a href='http://hub.tinydark.com/'>Tinydark Hub</a> - Single sign-on for all tinydark games</li>
                         <li><b>Tinydark Lab</b> - Prototypes and demos of unfinished games</li>
                         <? # <li><b><a href='http://tinydark.com/lab'>Tinydark Lab</a></b> - Prototypes and demos of unfinished games</li> ?>
