@@ -104,7 +104,7 @@
                     <h3 class="m-0">Our Cats</h3>
                 </div>
                 <div class='w-full bg-white px-2 sm:px-3 p-3'>
-                    <div class="pets-grid" title='The cats are ordered by age!'>
+                    <div class="pets-grid">
                         <div class="pet-card">
                             <img src="img/pets/arya.png" alt="Arya">
                             <div class="pet-name">Arya</div>
@@ -128,6 +128,9 @@
                         <div class="pet-card">
                             <img src="img/pets/willow.png" alt="Willow">
                             <div class="pet-name">Willow</div>
+                        </div>
+                        <div id='credits'>
+                            Thanks to <a href='https://pixelcatsend.com'>Pixel Cat's End</a> for the art
                         </div>
                     </div>
                 </div>

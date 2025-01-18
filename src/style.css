@@ -201,9 +201,15 @@ section {
     margin-top: -10px;
 }
 
+#credits {
+    grid-column: 1 / -1;
+    font-size: 11px; font-style: italic;
+    text-align: right;
+}
 
 #view_pets {
-    font-family: monospace;
+    font-family: monospace; font-weight: bold;
+    user-select: none;
     color: rgb(37 99 235);
     cursor: pointer; text-decoration: underline;
 
@@ -226,7 +232,7 @@ section {
 }
 
 #pets_section.vael-show {
-    max-height: 300px;
+    max-height: 450px;
     opacity: 1;
     transform: translateY(0);
 }
