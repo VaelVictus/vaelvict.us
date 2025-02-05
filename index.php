@@ -166,7 +166,7 @@
                     <h3 class='mb-2'>Writing</h3>
                     <ul>
                         <li>Two design analyses of browser games: <a href='https://vael.tumblr.com/post/187341440887/die2nite-teardown-a-teardown-is-a-document-that'>Die2Nite</a> and <a href='https://vael.tumblr.com/post/634149707769430016/marosia-teardown-2020-final'>Marosia</a></li>
-                        <li><a href='https://medium.com/@vaelvictus/calling-all-heroes-blizzards-pernicious-diversity-initiative-cbca4f0ab0ca'>Calling All Heroes: Blizzard’s Pernicious Diversity Initiative</a></li>
+                        <li><a href='https://medium.com/@vaelvictus/calling-all-heroes-blizzards-pernicious-diversity-initiative-cbca4f0ab0ca'>Calling All Heroes: Blizzard's Pernicious Diversity Initiative</a></li>
                         <li>Tumbling <a href='https://vael.tumblr.com/'>on Tumblr</a></li>
                         <li>More soon...</li>
                     </ul>
@@ -191,8 +191,9 @@
                     </a>
 
                     <? /* Email. Plaintext for desktop */ ?>
-                    <div class='hidden align-items bg-white  text-black sm:flex cursor-pointer
-                                connect_border' onClick="copyToClipboard('vael@tinydark.com')" target='_blank' role='button'>
+                    <div class='hidden align-items bg-white text-black sm:flex cursor-pointer
+                                connect_border' onClick="copyToClipboard('vael@tinydark.com')" 
+                                role='button' tabindex="0">
                         <img class='w-1/6 sm:w-1/5 mx-1 my-3 px-1 md:px-0' src='img/brands/email.svg' alt='email'>
                         <div class='w-4/5 card_txt text-sm pl-1'>
                             vael@tinydark.com
@@ -201,14 +202,14 @@
                     </div>
                     
                     <? /* Discord */ ?>
-                    <div class='flex align-items no-underline bg-white 
-                                connect_border' target='_blank' title="Previously: Vael Victus#0001">
+                    <a href="https://discord.com/users/71398206692401152" class='flex align-items no-underline bg-white 
+                    connect_border' target='_blank' title="Previously: Vael Victus#0001" title="Note: link only works if we share a server (Discord limitation)">
                         <img class='w-1/6 sm:w-1/5 mx-1 my-3 px-1 md:px-0' src='img/brands/discord.svg' alt=''>
                         <div class='w-4/5 card_txt text-base pl-1' style='color: #2e3dda;'> <? # slightly darker #5865F2 (discord blue) ?>
                             vaelvictus
                             <div class='text-xs mt-1'>Discord</div>
                         </div>
-                    </div>
+                    </a>
                     
                     <? /* Twitch */ ?>
                     <a class='flex align-items no-underline bg-white 
