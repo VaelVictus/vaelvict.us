@@ -203,7 +203,7 @@
                     
                     <? /* Discord */ ?>
                     <a href="https://discord.com/users/71398206692401152" class='flex align-items no-underline bg-white 
-                    connect_border' target='_blank' title="Previously: Vael Victus#0001" title="Note: link only works if we share a server (Discord limitation)">
+                    connect_border' target='_blank' title="Note: link only works if we share a server (Discord limitation)">
                         <img class='w-1/6 sm:w-1/5 mx-1 my-3 px-1 md:px-0' src='img/brands/discord.svg' alt=''>
                         <div class='w-4/5 card_txt text-base pl-1' style='color: #2e3dda;'> <? # slightly darker #5865F2 (discord blue) ?>
                             vaelvictus
