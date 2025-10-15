@@ -5,7 +5,7 @@
         define('DEV_ENV', 'prod');
     }
 
-    function GetAge($birthdate) {
+    function get_age($birthdate) {
         // explode the date into meaningful variables
         list($birth_year, $birth_month) = explode("-", $birthdate);
         
@@ -21,7 +21,7 @@
         if ($years_old === 0) {
             $months_old = months($birthdate);
             $label = ($months_old > 1 ? 'months' : 'month');
-            return $months_old . " $label";
+            return "<b>$months_old</b> $label";
         }
 
         // while the kids are age 2 or younger, display 1/2 ages
@@ -30,10 +30,10 @@
             $half = ($mos - ($years_old * 12) > 6) ? '&#189;' : '';
             $label = ($years_old > 1 ? 'years' : 'year');
 
-            return "$years_old $half $label";
+            return "<b>$years_old</b> $half $label";
         }
             
-        return "$years_old years";
+        return "<b>$years_old</b> years";
     }
 
     function months($date)

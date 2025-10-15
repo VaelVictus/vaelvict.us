@@ -1,9 +1,10 @@
 <? 
     require_once('inc/helpers.php');
 
-    $abel   = GetAge('2011-01-03');
-    $violet = GetAge('2021-01-05');
-    $olivia = GetAge('2022-11-09');
+    $abel   = get_age('2011-01-03');
+    $violet = get_age('2021-01-05');
+    $olivia = get_age('2022-11-09');
+    $everett = get_age('2025-05-14');
 
     $manifest = json_decode(file_get_contents('./dist/manifest.json'), true);
 ?>
@@ -94,7 +95,7 @@
                     </div>
                     
                     <div class='mt-2'>
-                        I live in upstate South Carolina with my wife, <a href='https://500px.com/p/evelynvictus?view=photos'>Evelyn Victus</a>, and our three kids: Abel (<?=$abel?> old), Violet (<?=$violet?> old), and Olivia (<?=$olivia?> old). I also have six cats! <span id="view_pets" aria-expanded="false">show<span class="arrow">&#9662;</span></span> I spend most of my time making games, playing games, and raising my kids. I'm a <a href='https://www.youtube.com/playlist?list=PLKQKi0BW3i8xEeDhUJkUnuQVLjMaNnzAE'>motivation junkie</a> and love staying productive, whether it's code, writing, fitness, or research.
+                        I live in upstate South Carolina with my wife, <a href='https://500px.com/p/evelynvictus?view=photos'>Evelyn Victus</a>, and our four kids: Abel (<?=$abel?> old), Violet (<?=$violet?> old), Olivia (<?=$olivia?> old), and Everett (<?=$everett?> old). I also have five cats! <span id="view_pets" aria-expanded="false">show<span class="arrow">&#9662;</span></span> I spend most of my time making games, playing games, and raising my kids. I'm a <a href='https://www.youtube.com/playlist?list=PLKQKi0BW3i8xEeDhUJkUnuQVLjMaNnzAE'>motivation junkie</a> and love staying productive, whether it's code, writing, fitness, or research.
                     </div>
                 </div>
             </section>
