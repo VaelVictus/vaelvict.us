@@ -2,13 +2,14 @@ import './css/style.css'
 
 import anime from 'animejs'
 
-document.addEventListener('DOMContentLoaded', function () {
-  let textWrapper = document.querySelector('#vael_victus');
-  textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+document.addEventListener('DOMContentLoaded', () => {
+  const text_wrapper = document.querySelector('#vael_victus');
+  if (text_wrapper) {
+    text_wrapper.innerHTML = text_wrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+    document.getElementById('vael_victus').style.display = 'block';
+  }
 
-  document.getElementById('vael_victus').style.display = 'block';
-
-  let content_delay = 900;
+  const content_delay = 900;
 
   // fade in each section
   document.querySelectorAll('section').forEach((el, i) => {
@@ -26,7 +27,7 @@ document.addEventListener('DOMContentLoaded', function () {
     opacity: [0, 1],
     easing: "easeOutCubic",
     duration: 2000,
-    delay: (el, i) => 0 + (75 * i)
+    delay: (_el, i) => 0 + (75 * i)
   });
     
   setTimeout(() => {
@@ -36,55 +37,78 @@ document.addEventListener('DOMContentLoaded', function () {
   }, 750);
 });
 
-const petsSection = document.getElementById('pets_section');
+const pets_section = document.getElementById('pets_section');
 
-document.getElementById('view_pets').addEventListener('click', function() {
-  const viewPetsText = document.getElementById('view_pets');
+document.getElementById('view_pets').addEventListener('click', () => {
+  const view_pets_text = document.getElementById('view_pets');
 
-  if (petsSection.classList.contains('vael-show')) {
-      // Hide the section
-      petsSection.classList.remove('vael-show');
-      viewPetsText.setAttribute('aria-expanded', 'false');
-      viewPetsText.innerHTML = 'show<span class="arrow">&#9662;</span>';
+  if (pets_section.classList.contains('vael-show')) {
+      // hide the section
+      pets_section.classList.remove('vael-show');
+      view_pets_text.setAttribute('aria-expanded', 'false');
+      view_pets_text.innerHTML = 'show<span class="arrow">&#9662;</span>';
 
-      // Wait for transition to complete before hiding
+      // wait for transition to complete before hiding
       setTimeout(() => {
-          petsSection.style.display = 'none';
+          pets_section.style.display = 'none';
       }, 450);
   } else {
-      // Show the section
-      petsSection.style.display = 'block';
+      // show the section
+      pets_section.style.display = 'block';
       
-      // Force a reflow and then start transition
+      // force a reflow and then start transition
       requestAnimationFrame(() => {
-          petsSection.classList.add('vael-show');
-          viewPetsText.setAttribute('aria-expanded', 'true');
-          viewPetsText.innerHTML = 'hide<span class="arrow">&#9652;</span>';
+          pets_section.classList.add('vael-show');
+          view_pets_text.setAttribute('aria-expanded', 'true');
+          view_pets_text.innerHTML = 'hide<span class="arrow">&#9652;</span>';
       });
   }
 });
 
-// ! HELPERS
-window.copyToClipboard = function(message) {
-  var textArea = document.createElement("textarea");
-  textArea.value = message;
-  textArea.style.opacity = "0"; 
-  document.body.appendChild(textArea);
-  textArea.focus();
-  textArea.select();
+// helpers
+window.copyToClipboard = (message) => {
+  const update_status = (html) => {
+    const el = document.getElementById('click2copy');
+    if (!el) return;
+    el.innerHTML = html;
+    setTimeout(() => {
+      el.innerHTML = 'click to copy';
+    }, 3000);
+  };
 
-  try {
+  if (navigator.clipboard?.writeText) {
+    navigator.clipboard.writeText(message)
+      .then(() => update_status('<b style="color: #228C22">✔ copied</b>'))
+      .catch((err) => {
+        console.log('clipboard api failed, falling back: ' + err.message);
+        const text_area = document.createElement('textarea');
+        text_area.value = message;
+        text_area.style.opacity = '0';
+        document.body.appendChild(text_area);
+        text_area.focus();
+        text_area.select();
+        try {
+          document.execCommand('copy');
+          update_status('<b style=\"color: #228C22\">✔ copied</b>');
+        } catch (e) {
+          console.log('unable to copy value , error : ' + e.message);
+        }
+        document.body.removeChild(text_area);
+      });
+  } else {
+    const text_area = document.createElement('textarea');
+    text_area.value = message;
+    text_area.style.opacity = '0';
+    document.body.appendChild(text_area);
+    text_area.focus();
+    text_area.select();
+    try {
       document.execCommand('copy');
-
-      // *yawn*
-      document.getElementById('click2copy').innerHTML = '<b style="color: #228C22">✔ copied</b>';
-      setTimeout(() => {
-        document.getElementById('click2copy').innerHTML = 'click to copy';
-      }, 3000);
-  } catch (err) {
-      console.log('Unable to copy value , error : ' + err.message);
+      update_status('<b style="color: #228C22">✔ copied</b>');
+    } catch (e) {
+      console.log('unable to copy value , error : ' + e.message);
+    }
+    document.body.removeChild(text_area);
   }
-
-  document.body.removeChild(textArea);
 }
   

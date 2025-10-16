@@ -104,37 +104,54 @@
                 <div class="w-full px-2 sm:px-3 pt-3 shadow-xs section_header" id="pets_header">
                     <h3 class="m-0">Our Cats</h3>
                 </div>
-                <div class='w-full bg-white px-2 sm:px-3 p-3'>
-                    <div class="pets-grid">
-                        <div class="pet-card">
-                            <img src="img/pets/arya.png" alt="Arya">
-                            <div class="pet-name">Arya</div>
-                        </div>
-                        <div class="pet-card">
-                            <img src="img/pets/osiris.png" alt="Osiris">
-                            <div class="pet-name">Osiris</div>
-                        </div>
-                        <div class="pet-card">
-                            <img src="img/pets/primordus.png" alt="Primordus">
-                            <div class="pet-name">Primordus</div>
-                        </div>
-                        <div class="pet-card">
-                            <img src="img/pets/fennec.png" alt="Fennec">
-                            <div class="pet-name">Fennec</div>
-                        </div>
-                        <div class="pet-card">
-                            <img src="img/pets/fox.png" alt="Fox">
-                            <div class="pet-name">Fox</div>
-                        </div>
-                        <div class="pet-card">
-                            <img src="img/pets/willow.png" alt="Willow">
-                            <div class="pet-name">Willow</div>
-                        </div>
-                        <div id='credits'>
-                            Thanks to <a href='https://pixelcatsend.com'>Pixel Cat's End</a> for the art
-                        </div>
-                    </div>
-                </div>
+				<div class='w-full bg-white px-2 sm:px-3 p-3'>
+					<div class="w-full mb-4 flex border-b" role="tablist" aria-label="cats tabs">
+						<input type="radio" name="cats_tabs" id="tab_living" class="tab_radio" checked>
+						<label for="tab_living" class="tab_btn mr-2 px-3 py-1 text-sm rounded-t-md border border-b-0">🐱</label>
+						<input type="radio" name="cats_tabs" id="tab_dead" class="tab_radio">
+						<label for="tab_dead" class="tab_btn px-3 py-1 text-sm rounded-t-md border border-b-0" title="kitty graveyard :(">😿</label>
+					</div>
+
+					<div id="cats_dead" class="pets-grid">
+						<div class="pet-card">
+							<img src="img/pets/arya.png" alt="Arya">
+							<div class="pet-name">Arya</div>
+							<div class='memento_mori'>Oct 15th, 2025</div>
+						</div>
+						<div class="pet-card">
+							<img src="img/pets/raja.png" alt="Raja">
+							<div class="pet-name">Raja</div>
+							<div class='memento_mori'>Oct 2nd, 2022</div>
+						</div>
+					</div>
+
+					<div id="cats_living" class="pets-grid">
+						<div class="pet-card">
+							<img src="img/pets/osiris.png" alt="Osiris">
+							<div class="pet-name">Osiris</div>
+						</div>
+						<div class="pet-card">
+							<img src="img/pets/primordus.png" alt="Primordus">
+							<div class="pet-name">Primordus</div>
+						</div>
+						<div class="pet-card">
+							<img src="img/pets/fennec.png" alt="Fennec">
+							<div class="pet-name">Fennec</div>
+						</div>
+						<div class="pet-card">
+							<img src="img/pets/fox.png" alt="Fox">
+							<div class="pet-name">Fox</div>
+						</div>
+						<div class="pet-card">
+							<img src="img/pets/willow.png" alt="Willow">
+							<div class="pet-name">Willow</div>
+						</div>
+					</div>
+
+					<div id='credits'>
+						Thanks to <a href='https://pixelcatsend.com'>Pixel Cat's End</a> for the art
+					</div>
+				</div>
             </section>
             
             <section class='container_shadow mt-0 sm:mt-4' style='opacity: 0; transform: translateY(-20px);'>
