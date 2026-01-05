@@ -233,25 +233,134 @@ function load_meta(string $base_dir): array {
  * generate excerpt from html body
  */
 function generate_excerpt(string $html, int $max_length = 200): string {
-    // strip html tags
-    $text = strip_tags($html);
+    $max_length = max(1, $max_length);
     
-    // normalize whitespace
-    $text = preg_replace('/\s+/', ' ', $text);
-    $text = trim($text);
+    // allow only basic inline emphasis tags in previews
+    $allowed_tags = '<i><em><b><strong>';
     
-    // truncate if needed
-    if (mb_strlen($text) > $max_length) {
-        $text = mb_substr($text, 0, $max_length);
-        // try to break at word boundary
-        $last_space = mb_strrpos($text, ' ');
-        if ($last_space !== false && $last_space > $max_length * 0.7) {
-            $text = mb_substr($text, 0, $last_space);
-        }
-        $text .= '...';
+    $normalized = normalize_excerpt_html($html, $allowed_tags);
+    if ($normalized === '') {
+        return '';
     }
     
-    return $text;
+    return truncate_allowed_html($normalized, $max_length, '...');
+}
+
+/**
+ * normalize html for excerpt rendering
+ */
+function normalize_excerpt_html(string $html, string $allowed_tags): string {
+    // add explicit breaks between block elements so text does not concatenate
+    $html = str_replace(["\r\n", "\r"], "\n", $html);
+    
+    // convert common block boundaries into newlines
+    $html = preg_replace('/<br\s*\/?>/i', "\n", $html);
+    $html = preg_replace('/<\/\s*(p|div|h1|h2|h3|h4|h5|h6|li|ul|ol|blockquote|pre)\s*>/i', "\n", $html);
+    
+    // strip disallowed tags but keep allowed inline tags
+    $html = strip_tags($html, $allowed_tags);
+    
+    // replace newlines with literal spaces (requested behavior)
+    $html = str_replace("\n", ' ', $html);
+    
+    // normalize whitespace without removing allowed tags
+    $html = preg_replace('/\s+/', ' ', $html);
+    $html = trim($html);
+    
+    return $html;
+}
+
+/**
+ * truncate html while preserving allowed tags
+ */
+function truncate_allowed_html(string $html, int $max_length, string $suffix): string {
+    $plain = strip_tags($html);
+    if (mb_strlen($plain) <= $max_length) {
+        return $html;
+    }
+    
+    $doc = new DOMDocument('1.0', 'UTF-8');
+    $prev = libxml_use_internal_errors(true);
+    $doc->loadHTML('<div>' . $html . '</div>', LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
+    libxml_clear_errors();
+    libxml_use_internal_errors($prev);
+    
+    $root = $doc->documentElement;
+    if ($root === null) {
+        $cut = mb_substr($plain, 0, $max_length) . $suffix;
+        return $cut;
+    }
+    
+    $out_doc = new DOMDocument('1.0', 'UTF-8');
+    $out_root = $out_doc->createElement('div');
+    $out_doc->appendChild($out_root);
+    
+    $remaining = $max_length;
+    foreach (iterator_to_array($root->childNodes) as $child) {
+        if ($remaining <= 0) {
+            break;
+        }
+        $cloned = truncate_node($out_doc, $child, $remaining);
+        if ($cloned !== null) {
+            $out_root->appendChild($cloned);
+        }
+    }
+    
+    $out_root->appendChild($out_doc->createTextNode($suffix));
+    
+    $result = '';
+    foreach ($out_root->childNodes as $child) {
+        $result .= $out_doc->saveHTML($child);
+    }
+    
+    return $result;
+}
+
+/**
+ * truncate a DOM node to remaining visible characters
+ */
+function truncate_node(DOMDocument $doc, DOMNode $node, int &$remaining): ?DOMNode {
+    if ($remaining <= 0) {
+        return null;
+    }
+    
+    if ($node->nodeType === XML_TEXT_NODE) {
+        $text = (string) $node->nodeValue;
+        $len = mb_strlen($text);
+        if ($len <= $remaining) {
+            $remaining -= $len;
+            return $doc->createTextNode($text);
+        }
+        
+        $slice = mb_substr($text, 0, $remaining);
+        $remaining = 0;
+        return $doc->createTextNode($slice);
+    }
+    
+    if ($node->nodeType !== XML_ELEMENT_NODE) {
+        return null;
+    }
+    
+    $el = $doc->createElement($node->nodeName);
+    
+    // preserve attributes on allowed tags only if present
+    if ($node->attributes !== null) {
+        foreach ($node->attributes as $attr) {
+            $el->setAttribute($attr->nodeName, $attr->nodeValue);
+        }
+    }
+    
+    foreach ($node->childNodes as $child) {
+        if ($remaining <= 0) {
+            break;
+        }
+        $child_clone = truncate_node($doc, $child, $remaining);
+        if ($child_clone !== null) {
+            $el->appendChild($child_clone);
+        }
+    }
+    
+    return $el;
 }
 
 /**

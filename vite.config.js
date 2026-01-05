@@ -5,6 +5,10 @@ export default {
     },
     build: { 
         manifest: true,
+        cssTarget: 'chrome112',
+        esbuild: {
+            target: 'es2022'
+        },
         rollupOptions: {
             output: {
               entryFileNames: `assets/[name].[hash].js`,

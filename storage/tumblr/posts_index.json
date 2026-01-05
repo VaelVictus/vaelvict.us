@@ -1,77 +1,109 @@
 [
     {
-        "id": "111222333444",
-        "timestamp": 1715000000,
-        "date_iso": "2024-05-06T11:33:20Z",
-        "title": "Player-First Game Design",
-        "excerpt": "At Tinydark, we believe games should benefit players, not exploit them. This philosophy shapes every design decision we make.Too many modern games are designed to extract maximum value from players...",
-        "permalink": "https://vael.tumblr.com/post/111222333444/player-first-design",
+        "id": "773044608416563201",
+        "timestamp": 1737232788,
+        "date_iso": "2025-01-18T15:39:48-05:00",
+        "title": "Takeaways From Capybara GO",
+        "excerpt": "Capybara GO is a cute but evil, dark pattern-filled system-bloated dopamine-carousel mobile game. Here are some of the most valuable takeaways from my two weeks spent playing. Central Progression Focu...",
+        "permalink": "https://vael.tumblr.com/post/773044608416563201/things-i-learned-from-capybara-go",
         "tags": [
-            "vaelvict.us",
-            "game-design",
-            "ethics",
-            "tinydark"
+            "capybara go",
+            "game design",
+            "user interface",
+            "vaelvict.us"
         ],
         "type": "text",
         "has_body": true
     },
     {
-        "id": "987654321098",
-        "timestamp": 1710000000,
-        "date_iso": "2024-03-09T16:00:00Z",
-        "title": "",
-        "excerpt": "",
-        "permalink": "https://vael.tumblr.com/post/987654321098/photo-post",
+        "id": "772227692666961920",
+        "timestamp": 1736453716,
+        "date_iso": "2025-01-09T15:15:16-05:00",
+        "title": "2024 Annual Review",
+        "excerpt": "My 36th year on Earth, as always, did not go as expected. I learned in September that<b> we are</b> <b>with child</b>. My son is due mid-May. He was a <i>surprise</i> for us. :} I lived the same lifestyle that I did in 20...",
+        "permalink": "https://vael.tumblr.com/post/772227692666961920/2024-annual-review",
         "tags": [
-            "vaelvict.us",
-            "art",
-            "game-dev"
-        ],
-        "type": "photo",
-        "has_body": false
-    },
-    {
-        "id": "123456789012",
-        "timestamp": 1700000000,
-        "date_iso": "2023-11-14T22:13:20Z",
-        "title": "Thoughts on Browser Game Design",
-        "excerpt": "Browser games have a unique set of constraints and opportunities that shape their design. Unlike traditional games, they must work within the limitations of web technologies while also leveraging the...",
-        "permalink": "https://vael.tumblr.com/post/123456789012/browser-game-design",
-        "tags": [
-            "vaelvict.us",
-            "game-design",
-            "browser-games"
+            "annual review"
         ],
         "type": "text",
         "has_body": true
     },
     {
-        "id": "634149707769430016",
-        "timestamp": 1605000000,
-        "date_iso": "2020-11-10T12:00:00Z",
-        "title": "Marosia Teardown 2020",
-        "excerpt": "Marosia is a persistent browser game that combines elements of life simulation with medieval politics. Players control characters who are born, live, and die within the game world.This teardown...",
-        "permalink": "https://vael.tumblr.com/post/634149707769430016/marosia-teardown-2020-final",
+        "id": "739007983985557504",
+        "timestamp": 1704772933,
+        "date_iso": "2024-01-08T23:02:13-05:00",
+        "title": "2023 Annual Review",
+        "excerpt": "<i>“I might as well copy-paste last year’s Annual Review…”</i> Of course, even last year I thought the same thing. “A tiger doesn’t change its stripes,” and now in my 35th year, it’s apparent I won’t be chan...",
+        "permalink": "https://vael.tumblr.com/post/739007983985557504/2023-review",
         "tags": [
-            "vaelvict.us",
-            "game-design",
-            "teardown",
-            "marosia"
+            "Annual Review"
         ],
         "type": "text",
         "has_body": true
     },
     {
-        "id": "187341440887",
-        "timestamp": 1567123456,
-        "date_iso": "2019-08-30T12:30:56Z",
-        "title": "Die2Nite Teardown",
-        "excerpt": "A teardown is a document that examines a game's design decisions and mechanics in depth. This teardown covers Die2Nite, a browser-based zombie survival game that emphasizes cooperation and resource...",
-        "permalink": "https://vael.tumblr.com/post/187341440887/die2nite-teardown",
+        "id": "705299379630833664",
+        "timestamp": 1672625903,
+        "date_iso": "2023-01-01T21:18:23-05:00",
+        "title": "2022 Annual Review",
+        "excerpt": "(shuffling papers) Pandemic, war, Musk buys Twitter, artificial intelligence… Humanity has certainly had an eventful year. Now age 34, hereâs how 2022 was for me. What went well this year? <b>Olivia wa</b>...",
+        "permalink": "https://vael.tumblr.com/post/705299379630833664/2022-annual-review",
         "tags": [
-            "vaelvict.us",
-            "game-design",
-            "teardown"
+            "Annual Review"
+        ],
+        "type": "text",
+        "has_body": true
+    },
+    {
+        "id": "672230468252565504",
+        "timestamp": 1641088932,
+        "date_iso": "2022-01-01T21:02:12-05:00",
+        "title": "2021 Annual Review",
+        "excerpt": "<i> 33, you’re on your way, every day’s a new day. - 100 Years</i> Well, hereâs how my thirty-third year on Earth went. 2020 annual review here. What went well this year? <b>Violet.</b>Â Our little girl was born ...",
+        "permalink": "https://vael.tumblr.com/post/672230468252565504/2021-annual-review",
+        "tags": [
+            "annual review",
+            "2021"
+        ],
+        "type": "text",
+        "has_body": true
+    },
+    {
+        "id": "640415184960274433",
+        "timestamp": 1610747513,
+        "date_iso": "2021-01-15T16:51:53-05:00",
+        "title": "2020 Annual Review",
+        "excerpt": "I began writing this late December but opted to wait until our baby was born to finish it. This is being posted on <b>January 15th, 2021</b>.Â 2019 review here. â2020â²s here, itâs a brand new decade!â...",
+        "permalink": "https://vael.tumblr.com/post/640415184960274433/2020-annual-review",
+        "tags": [
+            "annual review",
+            "2020"
+        ],
+        "type": "text",
+        "has_body": true
+    },
+    {
+        "id": "190004979392",
+        "timestamp": 1577924430,
+        "date_iso": "2020-01-01T19:20:30-05:00",
+        "title": "2019 Annual Review",
+        "excerpt": "Each year, I look back at the previous yearâs annual review and note that things didnât go as planned. For some reason I am always surprised, but this time itâs a little painful, too. FromÂ 2018...",
+        "permalink": "https://vael.tumblr.com/post/190004979392/2019-annual-review",
+        "tags": [
+            "annual review"
+        ],
+        "type": "text",
+        "has_body": true
+    },
+    {
+        "id": "181590750932",
+        "timestamp": 1546287114,
+        "date_iso": "2018-12-31T15:11:54-05:00",
+        "title": "2018 Annual Review",
+        "excerpt": "Another year in the books and I’ll be using James Clear’s review format as inspiration for my own Annual Reviews. This year was a busy one for me, but unfortunately not my best. What went well this ye...",
+        "permalink": "https://vael.tumblr.com/post/181590750932/2018-annual-review",
+        "tags": [
+            "annual review"
         ],
         "type": "text",
         "has_body": true

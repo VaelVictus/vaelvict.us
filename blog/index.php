@@ -94,92 +94,86 @@ function format_date(string $iso_date): string {
 
                 <div class='w-full px-2 sm:px-3 p-3 overflow-auto bg-white'>
 
-                    <?php if (empty($pagination['items'])) { ?>
-                        <div class="blog_empty">
-                            <p>No blog posts yet. Run the sync script to fetch posts from Tumblr.</p>
+                    <div class="blog_controls">
+                        <div>
+                            Showing <?= count($pagination['items']) ?> of <?= $pagination['total_items'] ?> posts
                         </div>
-                    <?php } else { ?>
-                        <div class="blog_controls">
-                            <div>
-                                Showing <?= count($pagination['items']) ?> of <?= $pagination['total_items'] ?> posts
-                            </div>
-                            <div class="blog_sort_controls">
-                                Sort:
-                                <a href="<?= build_url(1, $per_page, 'newest') ?>" class="<?= $order === 'newest' ? 'active_sort' : '' ?>">Newest</a>
-                                <a href="<?= build_url(1, $per_page, 'oldest') ?>" class="<?= $order === 'oldest' ? 'active_sort' : '' ?>">Oldest</a>
-                            </div>
+                        <div class="blog_sort_controls">
+                            Sort:
+                            <a href="<?= build_url(1, $per_page, 'newest') ?>" class="<?= $order === 'newest' ? 'active_sort' : '' ?>">Newest</a>
+                            <a href="<?= build_url(1, $per_page, 'oldest') ?>" class="<?= $order === 'oldest' ? 'active_sort' : '' ?>">Oldest</a>
                         </div>
+                    </div>
 
-                        <?php foreach ($pagination['items'] as $post) { ?>
-                            <article class="blog_post_item">
-                                <div class="blog_post_title">
-                                    <?php if (!empty($post['title'])) { ?>
-                                        <a href="/blog/post.php?id=<?= $post['id'] ?>"><?= $post['title'] ?></a>
-                                    <?php } else { ?>
-                                        <a href="/blog/post.php?id=<?= $post['id'] ?>">
-                                            <?php if ($post['type'] === 'photo') { ?>
-                                                <span class="blog_photo_indicator">[Photo post]</span>
-                                            <?php } else { ?>
-                                                <span class="blog_photo_indicator">[Untitled]</span>
-                                            <?php } ?>
-                                        </a>
-                                    <?php } ?>
-                                </div>
-                                <div class="blog_post_meta">
-                                    <?= format_date($post['date_iso']) ?>
-                                    <?php if ($post['type'] !== 'text') { ?>
-                                        &middot; <?= ucfirst($post['type']) ?>
-                                    <?php } ?>
-                                </div>
-                                <?php if (!empty($post['excerpt'])) { ?>
-                                    <div class="blog_post_excerpt"><?= $post['excerpt'] ?></div>
-                                <?php } ?>
-                            </article>
-                        <?php } ?>
-
-                        <?php if ($pagination['total_pages'] > 1) { ?>
-                            <nav class="blog_pagination">
-                                <?php if ($pagination['has_prev']) { ?>
-                                    <a href="<?= build_url($pagination['prev_page'], $per_page, $order) ?>">&larr; Prev</a>
+                    <?php foreach ($pagination['items'] as $post) { ?>
+                        <article class="blog_post_item">
+                            <div class="blog_post_title">
+                                <?php if (!empty($post['title'])) { ?>
+                                    <a href="/blog/post.php?id=<?= $post['id'] ?>"><?= $post['title'] ?></a>
                                 <?php } else { ?>
-                                    <span class="disabled">&larr; Prev</span>
+                                    <a href="/blog/post.php?id=<?= $post['id'] ?>">
+                                        <?php if ($post['type'] === 'photo') { ?>
+                                            <span class="blog_photo_indicator">[Photo post]</span>
+                                        <?php } else { ?>
+                                            <span class="blog_photo_indicator">[Untitled]</span>
+                                        <?php } ?>
+                                    </a>
                                 <?php } ?>
-
-                                <?php
-                                // show page numbers
-                                $start_page = max(1, $pagination['page'] - 2);
-                                $end_page = min($pagination['total_pages'], $pagination['page'] + 2);
-                                
-                                if ($start_page > 1) {
-                                    echo '<a href="' . build_url(1, $per_page, $order) . '">1</a>';
-                                    if ($start_page > 2) {
-                                        echo '<span>...</span>';
-                                    }
-                                }
-                                
-                                for ($i = $start_page; $i <= $end_page; $i++) {
-                                    if ($i === $pagination['page']) {
-                                        echo '<span class="current_page">' . $i . '</span>';
-                                    } else {
-                                        echo '<a href="' . build_url($i, $per_page, $order) . '">' . $i . '</a>';
-                                    }
-                                }
-                                
-                                if ($end_page < $pagination['total_pages']) {
-                                    if ($end_page < $pagination['total_pages'] - 1) {
-                                        echo '<span>...</span>';
-                                    }
-                                    echo '<a href="' . build_url($pagination['total_pages'], $per_page, $order) . '">' . $pagination['total_pages'] . '</a>';
-                                }
-                                ?>
-
-                                <?php if ($pagination['has_next']) { ?>
-                                    <a href="<?= build_url($pagination['next_page'], $per_page, $order) ?>">Next &rarr;</a>
-                                <?php } else { ?>
-                                    <span class="disabled">Next &rarr;</span>
+                            </div>
+                            <div class="blog_post_meta">
+                                <?= format_date($post['date_iso']) ?>
+                                <?php if ($post['type'] !== 'text') { ?>
+                                    &middot; <?= ucfirst($post['type']) ?>
                                 <?php } ?>
-                            </nav>
-                        <?php } ?>
+                            </div>
+                            <?php if (!empty($post['excerpt'])) { ?>
+                                <div class="blog_post_excerpt"><?= $post['excerpt'] ?></div>
+                            <?php } ?>
+                        </article>
+                    <?php } ?>
+
+                    <?php if ($pagination['total_pages'] > 1) { ?>
+                        <nav class="blog_pagination">
+                            <?php if ($pagination['has_prev']) { ?>
+                                <a href="<?= build_url($pagination['prev_page'], $per_page, $order) ?>">&larr; Prev</a>
+                            <?php } else { ?>
+                                <span class="disabled">&larr; Prev</span>
+                            <?php } ?>
+
+                            <?php
+                            // show page numbers
+                            $start_page = max(1, $pagination['page'] - 2);
+                            $end_page = min($pagination['total_pages'], $pagination['page'] + 2);
+                            
+                            if ($start_page > 1) {
+                                echo '<a href="' . build_url(1, $per_page, $order) . '">1</a>';
+                                if ($start_page > 2) {
+                                    echo '<span>...</span>';
+                                }
+                            }
+                            
+                            for ($i = $start_page; $i <= $end_page; $i++) {
+                                if ($i === $pagination['page']) {
+                                    echo '<span class="current_page">' . $i . '</span>';
+                                } else {
+                                    echo '<a href="' . build_url($i, $per_page, $order) . '">' . $i . '</a>';
+                                }
+                            }
+                            
+                            if ($end_page < $pagination['total_pages']) {
+                                if ($end_page < $pagination['total_pages'] - 1) {
+                                    echo '<span>...</span>';
+                                }
+                                echo '<a href="' . build_url($pagination['total_pages'], $per_page, $order) . '">' . $pagination['total_pages'] . '</a>';
+                            }
+                            ?>
+
+                            <?php if ($pagination['has_next']) { ?>
+                                <a href="<?= build_url($pagination['next_page'], $per_page, $order) ?>">Next &rarr;</a>
+                            <?php } else { ?>
+                                <span class="disabled">Next &rarr;</span>
+                            <?php } ?>
+                        </nav>
                     <?php } ?>
                 </div>
             </section>

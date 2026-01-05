@@ -126,13 +126,13 @@ section {
 /* Pets */
 #pets_header {
     color: rgb(128, 0, 128);
+}
 
-    h3 {
-        border-bottom: 3px solid rgb(128, 0, 128);
-        font-size: 22px;
-        padding-bottom: 5px;
-        margin: 0;
-    }
+#pets_header h3 {
+    border-bottom: 3px solid rgb(128, 0, 128);
+    font-size: 22px;
+    padding-bottom: 5px;
+    margin: 0;
 }
 
 .pets-grid {
