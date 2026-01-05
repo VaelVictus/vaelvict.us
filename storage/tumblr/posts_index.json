@@ -1,0 +1,79 @@
+[
+    {
+        "id": "111222333444",
+        "timestamp": 1715000000,
+        "date_iso": "2024-05-06T11:33:20Z",
+        "title": "Player-First Game Design",
+        "excerpt": "At Tinydark, we believe games should benefit players, not exploit them. This philosophy shapes every design decision we make.Too many modern games are designed to extract maximum value from players...",
+        "permalink": "https://vael.tumblr.com/post/111222333444/player-first-design",
+        "tags": [
+            "vaelvict.us",
+            "game-design",
+            "ethics",
+            "tinydark"
+        ],
+        "type": "text",
+        "has_body": true
+    },
+    {
+        "id": "987654321098",
+        "timestamp": 1710000000,
+        "date_iso": "2024-03-09T16:00:00Z",
+        "title": "",
+        "excerpt": "",
+        "permalink": "https://vael.tumblr.com/post/987654321098/photo-post",
+        "tags": [
+            "vaelvict.us",
+            "art",
+            "game-dev"
+        ],
+        "type": "photo",
+        "has_body": false
+    },
+    {
+        "id": "123456789012",
+        "timestamp": 1700000000,
+        "date_iso": "2023-11-14T22:13:20Z",
+        "title": "Thoughts on Browser Game Design",
+        "excerpt": "Browser games have a unique set of constraints and opportunities that shape their design. Unlike traditional games, they must work within the limitations of web technologies while also leveraging the...",
+        "permalink": "https://vael.tumblr.com/post/123456789012/browser-game-design",
+        "tags": [
+            "vaelvict.us",
+            "game-design",
+            "browser-games"
+        ],
+        "type": "text",
+        "has_body": true
+    },
+    {
+        "id": "634149707769430016",
+        "timestamp": 1605000000,
+        "date_iso": "2020-11-10T12:00:00Z",
+        "title": "Marosia Teardown 2020",
+        "excerpt": "Marosia is a persistent browser game that combines elements of life simulation with medieval politics. Players control characters who are born, live, and die within the game world.This teardown...",
+        "permalink": "https://vael.tumblr.com/post/634149707769430016/marosia-teardown-2020-final",
+        "tags": [
+            "vaelvict.us",
+            "game-design",
+            "teardown",
+            "marosia"
+        ],
+        "type": "text",
+        "has_body": true
+    },
+    {
+        "id": "187341440887",
+        "timestamp": 1567123456,
+        "date_iso": "2019-08-30T12:30:56Z",
+        "title": "Die2Nite Teardown",
+        "excerpt": "A teardown is a document that examines a game's design decisions and mechanics in depth. This teardown covers Die2Nite, a browser-based zombie survival game that emphasizes cooperation and resource...",
+        "permalink": "https://vael.tumblr.com/post/187341440887/die2nite-teardown",
+        "tags": [
+            "vaelvict.us",
+            "game-design",
+            "teardown"
+        ],
+        "type": "text",
+        "has_body": true
+    }
+]

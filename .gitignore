@@ -1,3 +1,6 @@
 node_modules
 .DS_Store
 *.local
+
+# secrets file with API keys
+secrets.php

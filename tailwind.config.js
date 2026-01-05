@@ -1,5 +1,9 @@
 module.exports = {
-  content: ['./*.php'],
+  content: [
+    './*.php',
+    './blog/*.php',
+    './inc/*.php',
+  ],
   safelist: ['vael-show'],
   theme: {
     extend: {},

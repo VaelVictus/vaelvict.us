@@ -1,3 +1,14 @@
+# block HTTP access to secrets.php
+<Files "secrets.php">
+    Require all denied
+</Files>
+
+# block HTTP access to storage directory
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteRule ^storage/ - [F,L]
+</IfModule>
+
 # BROWSER CACHING USING CACHE-CONTROL HEADERS
 <IfModule mod_headers.c> 
     # One year for image and video files
