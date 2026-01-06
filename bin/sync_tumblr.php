@@ -66,7 +66,7 @@ foreach ($posts as $post) {
         'timestamp' => $post['timestamp'],
         'date_iso' => $post['date_iso'],
         'title' => $post['title'] ?? '',
-        'excerpt' => generate_excerpt($post['body_html'] ?? '', 200),
+        'excerpt' => generate_excerpt($post['body_html'] ?? '', 180),
         'permalink' => $post['permalink'],
         'tags' => $post['tags'] ?? [],
         'type' => $post['type'],

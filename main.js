@@ -1,4 +1,4 @@
-import './css/style.css'
+import './src/style.css'
 
 import anime from 'animejs'
 

@@ -2,10 +2,9 @@
 declare(strict_types=1);
 
 $project_root = dirname(__DIR__);
-require_once($project_root . '/inc/helpers.php');
-require_once($project_root . '/src/TumblrStore.php');
+require_once $project_root . '/inc/helpers.php';
+require_once $project_root . '/src/TumblrStore.php';
 
-$manifest = json_decode(file_get_contents($project_root . '/dist/manifest.json'), true);
 $storage_dir = $project_root . '/storage/tumblr';
 
 // get query parameters
@@ -46,15 +45,15 @@ function format_date(string $iso_date): string {
 <html lang="en">
 <head>
 <?php if (DEV_ENV == 'prod') { ?>
+    <?php $manifest = json_decode(file_get_contents($project_root . '/dist/manifest.json'), true); ?>
     <?php foreach ($manifest['index.html']['css'] as $path) { ?>
         <link rel="stylesheet" href="/dist/<?=$path?>">
     <?php } ?>
 <?php } else { ?>
-    <link rel="stylesheet" href="/css/style.css">
-    <script type="module" src="http://localhost:1337/blog.js"></script>
+    <script type="module" src="<?= VITE_ORIGIN ?>/blog.js"></script>
 <?php } ?>
 
-    <title>Blog - Vael Victus</title>
+    <title>Vael Victus - Blog</title>
 
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
@@ -106,18 +105,17 @@ function format_date(string $iso_date): string {
                     </div>
 
                     <?php foreach ($pagination['items'] as $post) { ?>
-                        <article class="blog_post_item">
+                        <?php $post_url = "/blog/post.php?id={$post['id']}"; ?>
+                        <a class="blog_post_item blog_post_link" href="<?= $post_url ?>">
                             <div class="blog_post_title">
                                 <?php if (!empty($post['title'])) { ?>
-                                    <a href="/blog/post.php?id=<?= $post['id'] ?>"><?= $post['title'] ?></a>
+                                    <?= $post['title'] ?>
                                 <?php } else { ?>
-                                    <a href="/blog/post.php?id=<?= $post['id'] ?>">
-                                        <?php if ($post['type'] === 'photo') { ?>
-                                            <span class="blog_photo_indicator">[Photo post]</span>
-                                        <?php } else { ?>
-                                            <span class="blog_photo_indicator">[Untitled]</span>
-                                        <?php } ?>
-                                    </a>
+                                    <?php if ($post['type'] === 'photo') { ?>
+                                        <span class="blog_photo_indicator">[Photo post]</span>
+                                    <?php } else { ?>
+                                        <span class="blog_photo_indicator">[Untitled]</span>
+                                    <?php } ?>
                                 <?php } ?>
                             </div>
                             <div class="blog_post_meta">
@@ -129,7 +127,7 @@ function format_date(string $iso_date): string {
                             <?php if (!empty($post['excerpt'])) { ?>
                                 <div class="blog_post_excerpt"><?= $post['excerpt'] ?></div>
                             <?php } ?>
-                        </article>
+                        </a>
                     <?php } ?>
 
                     <?php if ($pagination['total_pages'] > 1) { ?>

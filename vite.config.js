@@ -1,7 +1,13 @@
+import basicSsl from '@vitejs/plugin-basic-ssl';
+
 export default {
+    plugins: [basicSsl()],
     // config options
     server: {
-        port: 1337
+        port: 1337,
+        strictPort: true,
+        https: true,
+        cors: true,
     },
     build: { 
         manifest: true,

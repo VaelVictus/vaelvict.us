@@ -5,21 +5,20 @@
     $violet = get_age('2021-01-05');
     $olivia = get_age('2022-11-09');
     $everett = get_age('2025-05-14');
-
-    $manifest = json_decode(file_get_contents('./dist/manifest.json'), true);
 ?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
 
 <? if (DEV_ENV == 'prod') { ?>
+    <? $manifest = json_decode(file_get_contents('./dist/manifest.json'), true); ?>
     <? foreach ($manifest['index.html']['css'] as $path) { ?>
         <link rel="stylesheet" href="dist/<?=$path?>">
     <? } ?>
 
     <script type="module" crossorigin src="dist/<?=$manifest['index.html']['file']?>"></script>
 <? } else { ?>
-    <script type="module" src="http://localhost:1337/main.js"></script>
+    <script type="module" src="<?= VITE_ORIGIN ?>/main.js"></script>
 <? } ?>
 
     <title>Vael Victus</title>

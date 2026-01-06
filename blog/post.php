@@ -5,7 +5,6 @@ $project_root = dirname(__DIR__);
 require_once $project_root . '/inc/helpers.php';
 require_once $project_root . '/src/TumblrStore.php';
 
-$manifest = json_decode(file_get_contents($project_root . '/dist/manifest.json'), true);
 $storage_dir = $project_root . '/storage/tumblr';
 
 // get post id from query
@@ -38,12 +37,12 @@ $page_description = $post !== null && !empty($post['summary_html'])
 <html lang="en">
 <head>
 <?php if (DEV_ENV == 'prod') { ?>
+    <?php $manifest = json_decode(file_get_contents($project_root . '/dist/manifest.json'), true); ?>
     <?php foreach ($manifest['index.html']['css'] as $path) { ?>
         <link rel="stylesheet" href="/dist/<?=$path?>">
     <?php } ?>
 <?php } else { ?>
-    <link rel="stylesheet" href="/css/style.css">
-    <script type="module" src="http://localhost:1337/blog.js"></script>
+    <script type="module" src="<?= VITE_ORIGIN ?>/blog.js"></script>
 <?php } ?>
 
     <title><?= $page_title ?></title>

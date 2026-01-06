@@ -262,12 +262,111 @@ function normalize_excerpt_html(string $html, string $allowed_tags): string {
     
     // replace newlines with literal spaces (requested behavior)
     $html = str_replace("\n", ' ', $html);
+
+    // normalize “fancy” characters + common mojibake into plain ascii
+    $html = normalize_excerpt_chars($html);
     
     // normalize whitespace without removing allowed tags
     $html = preg_replace('/\s+/', ' ', $html);
     $html = trim($html);
     
     return $html;
+}
+
+/**
+ * normalize fancy unicode + common mojibake to plain ascii
+ */
+function normalize_excerpt_chars(string $text): string {
+    // normalize common html entities first (DOMDocument will otherwise decode them later)
+    $text = str_ireplace(
+        [
+            '&nbsp;', '&rsquo;', '&lsquo;', '&ldquo;', '&rdquo;', '&ndash;', '&mdash;', '&hellip;', '&prime;',
+        ],
+        [
+            ' ', "'", "'", '"', '"', '-', '--', '...', "'",
+        ],
+        $text
+    );
+
+    // normalize common numeric entities
+    $text = preg_replace('/&#0*160;?/i', ' ', $text); // nbsp
+    $text = preg_replace('/&#0*8217;?/i', "'", $text); // ’
+    $text = preg_replace('/&#0*8216;?/i', "'", $text); // ‘
+    $text = preg_replace('/&#0*8220;?/i', '"', $text); // “
+    $text = preg_replace('/&#0*8221;?/i', '"', $text); // ”
+    $text = preg_replace('/&#0*8211;?/i', '-', $text); // –
+    $text = preg_replace('/&#0*8212;?/i', '--', $text); // —
+    $text = preg_replace('/&#0*8230;?/i', '...', $text); // …
+    $text = preg_replace('/&#0*8242;?/i', "'", $text); // ′
+    $text = preg_replace_callback('/&#x0*([0-9a-f]+);?/i', function ($m) {
+        $hex = strtolower($m[1]);
+        return match ($hex) {
+            'a0' => ' ',
+            '2019', '2018' => "'",
+            '201c', '201d' => '"',
+            '2013' => '-',
+            '2014' => '--',
+            '2026' => '...',
+            '2032' => "'",
+            default => $m[0],
+        };
+    }, $text);
+
+    // common mojibake sequences seen when utf-8 bytes are misread as cp1252
+    $text = str_replace(
+        [
+            'â', 'â', 'â', 'â', 'â', 'â', 'â¦', 'â²',
+            'Â ', 'Â ', 'Â',
+        ],
+        [
+            "'", "'", '"', '"', '-', '--', '...', "'",
+            ' ', ' ', '',
+        ],
+        $text
+    );
+
+    // normalize real unicode punctuation to ascii
+    $text = str_replace(
+        [
+            "\u{00A0}", // nbsp
+            "\u{2019}", "\u{2018}", // ’ ‘
+            "\u{201C}", "\u{201D}", // “ ”
+            "\u{2013}", "\u{2014}", // – —
+            "\u{2026}", // …
+            "\u{2032}", // ′ prime
+            "\u{200B}", // zero width space
+        ],
+        [
+            ' ',
+            "'", "'",
+            '"', '"',
+            '-', '--',
+            '...',
+            "'",
+            '',
+        ],
+        $text
+    );
+
+    // fallback literal replacements (in case unicode escapes aren't interpreted in runtime)
+    $text = str_replace(
+        ["\xc2\xa0", '’', '‘', '“', '”', '–', '—', '…', '′'],
+        [' ', "'", "'", '"', '"', '-', '--', '...', "'"],
+        $text
+    );
+
+    // remove other control characters (but keep spaces)
+    $text = preg_replace('/[^\P{C}\t\n\r ]+/u', '', $text);
+
+    // final pass: transliterate any remaining non-ascii punctuation
+    if (function_exists('iconv')) {
+        $transliterated = @iconv('UTF-8', 'ASCII//TRANSLIT//IGNORE', $text);
+        if (is_string($transliterated) && $transliterated !== '') {
+            $text = $transliterated;
+        }
+    }
+
+    return $text;
 }
 
 /**
@@ -281,7 +380,11 @@ function truncate_allowed_html(string $html, int $max_length, string $suffix): s
     
     $doc = new DOMDocument('1.0', 'UTF-8');
     $prev = libxml_use_internal_errors(true);
-    $doc->loadHTML('<div>' . $html . '</div>', LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
+    
+    // ensure DOMDocument treats input as utf-8, otherwise characters like ’ become â
+    $html_for_dom = '<?xml encoding="UTF-8">' . $html;
+    
+    $doc->loadHTML('<div>' . $html_for_dom . '</div>', LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
     libxml_clear_errors();
     libxml_use_internal_errors($prev);
     
