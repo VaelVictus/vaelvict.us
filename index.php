@@ -67,21 +67,21 @@
                 Vael Victus
             </h1>
 
-            <h2 id='vael_victus_subtitle' class='w-full sm:w-1/2 m-0 mx-auto text-base sm:text-lg'>
-                <span id='web_dev'>
-                    <img src='img/laptop.svg' alt=''> web dev
+            <h2 id='vael_victus_subtitle' class='w-full sm:w-1/2 m-0 mx-auto text-base sm:text-lg flex flex-wrap justify-center items-center gap-x-6 gap-y-2'>
+                <span id='web_dev' class="flex items-center justify-center">
+                    <img src='img/laptop.svg' alt=''> Web Dev
                 </span>
-                <span id='game_dev'>
-                    <img src='img/sword.svg' alt=''> game dev
+                <span id='game_dev' class="flex items-center justify-center">
+                    <img src='img/sword.svg' alt=''> Game Dev
                 </span>
-                <span id='writer'>
-                    <img src='img/square-pen.svg' alt=''> writer
+                <span id='writer' class="flex items-center justify-center">
+                    <img src='img/square-pen.svg' alt=''> Writer
                 </span>
             </h2>
         </div>
 
         <div class="w-full max-w-3xl flex flex-wrap mx-auto">
-            <section class='mt-0 sm:mt-2' style='opacity: 0; transform: translateY(-20px);'>
+            <section class='mt-0 sm:mt-1' style='opacity: 0; transform: translateY(-20px);'>
                 <div class="w-full px-2 sm:px-3 pt-1 sm:pt-3 shadow-xs section_header" id='about_header'>
                     <h2 class='m-0'>About Me</h2>
                 </div>

@@ -29,6 +29,19 @@
         "has_body": true
     },
     {
+        "id": "760524572602810369",
+        "timestamp": 1725292751,
+        "date_iso": "2024-09-02T11:59:11-04:00",
+        "title": "Remembering My Grandparents",
+        "excerpt": "<b>Remembering</b> In early August, my grandfather (95) and grandmother (87) died on the same day: he, cancer, and she, cerebrovascular disease. I called him Nonno (Non for short, Italian...",
+        "permalink": "https://vael.tumblr.com/post/760524572602810369/my-grandparents-and-legacy",
+        "tags": [
+            "vaelvict.us"
+        ],
+        "type": "text",
+        "has_body": true
+    },
+    {
         "id": "739007983985557504",
         "timestamp": 1704772933,
         "date_iso": "2024-01-08T23:02:13-05:00",
@@ -42,6 +55,22 @@
         "has_body": true
     },
     {
+        "id": "738349009223221248",
+        "timestamp": 1704144486,
+        "date_iso": "2024-01-01T16:28:06-05:00",
+        "title": "Worklust",
+        "excerpt": "I like to work. I like to produce results, to progress wherever possible, to optimize and be efficient. If I'm driving solo in the car, I'm listening to web dev podcasts. If I'm wo...",
+        "permalink": "https://vael.tumblr.com/post/738349009223221248/worklust",
+        "tags": [
+            "jocko willink",
+            "work life balance",
+            "work",
+            "vaelvict.us"
+        ],
+        "type": "text",
+        "has_body": true
+    },
+    {
         "id": "705299379630833664",
         "timestamp": 1672625903,
         "date_iso": "2023-01-01T21:18:23-05:00",
@@ -50,6 +79,20 @@
         "permalink": "https://vael.tumblr.com/post/705299379630833664/2022-annual-review",
         "tags": [
             "Annual Review"
+        ],
+        "type": "text",
+        "has_body": true
+    },
+    {
+        "id": "675133492210925568",
+        "timestamp": 1643857471,
+        "date_iso": "2022-02-02T22:04:31-05:00",
+        "title": "Noita Review",
+        "excerpt": "Every good game starts the player off with the basics and gradually introduces new systems through gameplay. I liken this to a baby learning how to sit up, then crawl, then stand, ...",
+        "permalink": "https://vael.tumblr.com/post/675133492210925568/noita-review",
+        "tags": [
+            "noita",
+            "vaelvict.us"
         ],
         "type": "text",
         "has_body": true
@@ -83,6 +126,22 @@
         "has_body": true
     },
     {
+        "id": "634149707769430016",
+        "timestamp": 1604772289,
+        "date_iso": "2020-11-07T13:04:49-05:00",
+        "title": "Marosia Design Analysis (2020)",
+        "excerpt": "<i>Estimated reading time: 14 minutes.</i> Today I'll be analyzing the game <i>Marosia.</i> I'm developing a game like Marosia. (see here) This is an update on the original \"teardown\". The game ...",
+        "permalink": "https://vael.tumblr.com/post/634149707769430016/marosia-design-analysis-2020",
+        "tags": [
+            "marosia",
+            "pbbg",
+            "roleplaying",
+            "vaelvict.us"
+        ],
+        "type": "text",
+        "has_body": true
+    },
+    {
         "id": "190004979392",
         "timestamp": 1577924430,
         "date_iso": "2020-01-01T19:20:30-05:00",
@@ -91,6 +150,20 @@
         "permalink": "https://vael.tumblr.com/post/190004979392/2019-annual-review",
         "tags": [
             "annual review"
+        ],
+        "type": "text",
+        "has_body": true
+    },
+    {
+        "id": "187341440887",
+        "timestamp": 1567044074,
+        "date_iso": "2019-08-28T22:01:14-04:00",
+        "title": "Die2nite Teardown",
+        "excerpt": "<i> Estimated reading time: <b>15 minutes, 3 seconds</b>. Experienced players should skip to the Ethics section. From there, estimated time: <b>9 minutes, 4 seconds</b>.</i> A teardown is a document th...",
+        "permalink": "https://vael.tumblr.com/post/187341440887/die2nite-teardown",
+        "tags": [
+            "die2nite",
+            "vaelvict.us"
         ],
         "type": "text",
         "has_body": true
