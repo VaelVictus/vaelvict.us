@@ -93,7 +93,7 @@ function format_date(string $iso_date): string {
 
                 <div class='w-full px-2 sm:px-3 p-3 overflow-auto bg-white'>
 
-                    <div class="blog_controls">
+                    <div class="blog_controls pb-2">
                         <div>
                             Showing <?= count($pagination['items']) ?> of <?= $pagination['total_items'] ?> posts
                         </div>
@@ -104,9 +104,13 @@ function format_date(string $iso_date): string {
                         </div>
                     </div>
 
-                    <?php foreach ($pagination['items'] as $post) { ?>
-                        <?php $post_url = "/blog/post.php?id={$post['id']}"; ?>
-                        <a class="blog_post_item blog_post_link" href="<?= $post_url ?>">
+                    <?php 
+                    $items = $pagination['items'];
+                    $total_items = count($items);
+                    foreach ($items as $index => $post) { 
+                        $post_url = "/blog/post.php?id={$post['id']}";
+                    ?>
+                        <a class="blog_post_item blog_post_link mb-2" href="<?= $post_url ?>">
                             <div class="blog_post_title">
                                 <?php if (!empty($post['title'])) { ?>
                                     <?= $post['title'] ?>
@@ -118,7 +122,7 @@ function format_date(string $iso_date): string {
                                     <?php } ?>
                                 <?php } ?>
                             </div>
-                            <div class="blog_post_meta">
+                            <div class="blog_post_meta mb-1">
                                 <?= format_date($post['date_iso']) ?>
                                 <?php if ($post['type'] !== 'text') { ?>
                                     &middot; <?= ucfirst($post['type']) ?>
@@ -128,6 +132,9 @@ function format_date(string $iso_date): string {
                                 <div class="blog_post_excerpt"><?= $post['excerpt'] ?></div>
                             <?php } ?>
                         </a>
+                        <?php if ($index < $total_items - 1) { ?>
+                            <hr class="blog_post_hr">
+                        <?php } ?>
                     <?php } ?>
 
                     <?php if ($pagination['total_pages'] > 1) { ?>
