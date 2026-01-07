@@ -11,20 +11,41 @@ $storage_dir = $project_root . '/storage/tumblr';
 $page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
 $per_page = isset($_GET['per_page']) ? (int)$_GET['per_page'] : 10;
 $order = isset($_GET['order']) && $_GET['order'] === 'oldest' ? 'oldest' : 'newest';
+$show_all = isset($_GET['show_all']) && ((string)$_GET['show_all'] === '1' || (string)$_GET['show_all'] === 'true');
 
 // load and process posts
 $posts_index = load_posts_index($storage_dir);
 $sorted_posts = sort_posts_index($posts_index, $order);
-$pagination = paginate($sorted_posts, $page, $per_page);
+$pagination = [];
+if ($show_all) {
+    $total_items = count($sorted_posts);
+    $pagination = [
+        'page' => 1,
+        'per_page' => $total_items,
+        'total_items' => $total_items,
+        'total_pages' => 1,
+        'items' => $sorted_posts,
+        'has_prev' => false,
+        'has_next' => false,
+        'prev_page' => null,
+        'next_page' => null,
+    ];
+} else {
+    $pagination = paginate($sorted_posts, $page, $per_page);
+}
 
 // helper to build pagination urls
-function build_url(int $page, int $per_page, string $order): string {
+function build_url(int $page, int $per_page, string $order, bool $show_all): string {
     $params = [];
+    if ($show_all) {
+        $params['show_all'] = 1;
+    } else {
     if ($page > 1) {
         $params['page'] = $page;
     }
     if ($per_page !== 10) {
         $params['per_page'] = $per_page;
+    }
     }
     if ($order !== 'newest') {
         $params['order'] = $order;
@@ -50,6 +71,7 @@ function format_date(string $iso_date): string {
         <link rel="stylesheet" href="/dist/<?=$path?>">
     <?php } ?>
 <?php } else { ?>
+    <link rel="stylesheet" href="<?= VITE_ORIGIN ?>/src/style.css">
     <script type="module" src="<?= VITE_ORIGIN ?>/blog.js"></script>
 <?php } ?>
 
@@ -96,11 +118,14 @@ function format_date(string $iso_date): string {
                     <div class="blog_controls pb-2">
                         <div>
                             Showing <?= count($pagination['items']) ?> of <?= $pagination['total_items'] ?> posts
+                            <?php if (!$show_all && count($pagination['items']) < $pagination['total_items']) { ?>
+                                <a href="<?= build_url(1, $per_page, $order, true) ?>">Show all.</a>
+                            <?php } ?>
                         </div>
                         <div class="blog_sort_controls">
                             Sort:
-                            <a href="<?= build_url(1, $per_page, 'newest') ?>" class="<?= $order === 'newest' ? 'active_sort' : '' ?>">Newest</a>
-                            <a href="<?= build_url(1, $per_page, 'oldest') ?>" class="<?= $order === 'oldest' ? 'active_sort' : '' ?>">Oldest</a>
+                            <a href="<?= build_url(1, $per_page, 'newest', $show_all) ?>" class="<?= $order === 'newest' ? 'active_sort' : '' ?>">Newest</a>
+                            <a href="<?= build_url(1, $per_page, 'oldest', $show_all) ?>" class="<?= $order === 'oldest' ? 'active_sort' : '' ?>">Oldest</a>
                         </div>
                     </div>
 
@@ -140,7 +165,7 @@ function format_date(string $iso_date): string {
                     <?php if ($pagination['total_pages'] > 1) { ?>
                         <nav class="blog_pagination">
                             <?php if ($pagination['has_prev']) { ?>
-                                <a href="<?= build_url($pagination['prev_page'], $per_page, $order) ?>">&larr; Prev</a>
+                                <a href="<?= build_url($pagination['prev_page'], $per_page, $order, $show_all) ?>">&larr; Prev</a>
                             <?php } else { ?>
                                 <span class="disabled">&larr; Prev</span>
                             <?php } ?>
@@ -151,7 +176,7 @@ function format_date(string $iso_date): string {
                             $end_page = min($pagination['total_pages'], $pagination['page'] + 2);
                             
                             if ($start_page > 1) {
-                                echo '<a href="' . build_url(1, $per_page, $order) . '">1</a>';
+                                echo '<a href="' . build_url(1, $per_page, $order, $show_all) . '">1</a>';
                                 if ($start_page > 2) {
                                     echo '<span>...</span>';
                                 }
@@ -161,7 +186,7 @@ function format_date(string $iso_date): string {
                                 if ($i === $pagination['page']) {
                                     echo '<span class="current_page">' . $i . '</span>';
                                 } else {
-                                    echo '<a href="' . build_url($i, $per_page, $order) . '">' . $i . '</a>';
+                                    echo '<a href="' . build_url($i, $per_page, $order, $show_all) . '">' . $i . '</a>';
                                 }
                             }
                             
@@ -169,12 +194,12 @@ function format_date(string $iso_date): string {
                                 if ($end_page < $pagination['total_pages'] - 1) {
                                     echo '<span>...</span>';
                                 }
-                                echo '<a href="' . build_url($pagination['total_pages'], $per_page, $order) . '">' . $pagination['total_pages'] . '</a>';
+                                echo '<a href="' . build_url($pagination['total_pages'], $per_page, $order, $show_all) . '">' . $pagination['total_pages'] . '</a>';
                             }
                             ?>
 
                             <?php if ($pagination['has_next']) { ?>
-                                <a href="<?= build_url($pagination['next_page'], $per_page, $order) ?>">Next &rarr;</a>
+                                <a href="<?= build_url($pagination['next_page'], $per_page, $order, $show_all) ?>">Next &rarr;</a>
                             <?php } else { ?>
                                 <span class="disabled">Next &rarr;</span>
                             <?php } ?>

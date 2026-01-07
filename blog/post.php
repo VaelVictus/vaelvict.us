@@ -42,6 +42,7 @@ $page_description = $post !== null && !empty($post['summary_html'])
         <link rel="stylesheet" href="/dist/<?=$path?>">
     <?php } ?>
 <?php } else { ?>
+    <link rel="stylesheet" href="<?= VITE_ORIGIN ?>/src/style.css">
     <script type="module" src="<?= VITE_ORIGIN ?>/blog.js"></script>
 <?php } ?>
 

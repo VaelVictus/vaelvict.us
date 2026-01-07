@@ -181,15 +181,15 @@ section {
     user-select: none;
     color: rgb(37 99 235);
     cursor: pointer; text-decoration: underline;
+}
 
-    .arrow {
-        display: inline-block; margin-left: 3px;
-    }
+#view_pets .arrow {
+    display: inline-block; margin-left: 3px;
+}
 
-    &:hover {
-        text-decoration: underline;
-        cursor: pointer;
-    }
+#view_pets:hover {
+    text-decoration: underline;
+    cursor: pointer;
 }
 
 #pets_section {
@@ -338,8 +338,11 @@ section {
 }
 .blog_post_link,
 .blog_post_link:visited {
-    color: #111;
+    color: rgb(37 99 235);
     text-decoration: none;
+}
+.blog_post_link:visited {
+    color: rgb(128, 0, 128);
 }
 .blog_post_link * {
     text-decoration: none;
@@ -348,23 +351,24 @@ section {
     background: rgba(100, 50, 0, 0.06);
 }
 .blog_post_hr {
-    background: linear-gradient(to right, transparent 0%, #bbb 1%, #bbb 99%, transparent 100%);
+    background: linear-gradient(to right, transparent 0%, #ccc 1%, #ccc 99%, transparent 100%);
     width: 100%;
     height: 1px;
     border: none;
     margin: 0.75rem 0;
 }
 .blog_post_item .blog_post_title {
-    font-size: 1.25rem;
+    font-size: 20px;
     font-weight: bold;
-    color: rgb(100, 50, 0);
+    color: inherit;
 }
 .blog_post_item .blog_post_meta {
-    font-size: 0.85rem;
+    font-size: 14px;
     color: #666;
 }
 .blog_post_excerpt {
     color: #333;
+    font-size: 14px;
 }
 .blog_pagination {
     display: flex;
@@ -380,8 +384,11 @@ section {
     text-decoration: none;
     color: #333;
 }
+.blog_pagination a {
+    color: rgb(37 99 235);
+}
 .blog_pagination a:visited {
-    color: #333;
+    color: rgb(128, 0, 128);
 }
 .blog_pagination a:hover {
     background: #f5f5f5;
@@ -407,11 +414,11 @@ section {
 .blog_sort_controls a {
     font-weight: normal;
     margin-left: 0.5rem;
-    color: rgb(100, 50, 0);
+    color: rgb(37 99 235);
     text-decoration: none;
 }
 .blog_sort_controls a:visited {
-    color: rgb(100, 50, 0);
+    color: rgb(128, 0, 128);
 }
 .blog_sort_controls a:hover {
     text-decoration: none;
@@ -455,7 +462,10 @@ article > header .blog_post_meta {
     margin: 1rem 0;
 }
 .blog_post_content a {
-    color: rgb(100, 50, 0);
+    color: rgb(37 99 235);
+}
+.blog_post_content a:visited {
+    color: rgb(128, 0, 128);
 }
 .blog_post_photos {
     display: flex;
