@@ -81,7 +81,9 @@
         </div>
 
         <div class="w-full max-w-3xl flex flex-wrap mx-auto">
-            <a href="/blog">blog</a>
+            <a href="/blog">
+                <button class="button_primary" type="button">blog</button>
+            </a>
             <section class='mt-0 sm:mt-1' style='opacity: 0; transform: translateY(-20px);'>
                 <div class="w-full px-2 sm:px-3 pt-1 sm:pt-3 shadow-xs section_header" id='about_header'>
                     <h2 class='m-0'>About Me</h2>

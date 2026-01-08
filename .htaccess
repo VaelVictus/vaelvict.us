@@ -6,6 +6,7 @@
 # block HTTP access to storage directory
 <IfModule mod_rewrite.c>
     RewriteEngine On
+    RewriteRule ^blog/post/([^/]+)/?$ /blog/post.php?slug=$1 [L,QSA]
     RewriteRule ^storage/ - [F,L]
 </IfModule>
 

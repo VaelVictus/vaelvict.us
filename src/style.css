@@ -573,6 +573,9 @@ article > header .blog_post_meta {
     align-items: center;
 }
 .post_nav_center a {
+    text-decoration: none;
+}
+.button_primary {
     color: white;
     text-decoration: none;
     font-weight: bold; font-size: 15px;
@@ -581,8 +584,10 @@ article > header .blog_post_meta {
     border: 1px solid rgb(100, 50, 0);
     border-radius: 4px;
     transition: background-color 0.2s;
+    cursor: pointer;
 }
-.post_nav_center a:hover {
+.button_primary:hover,
+.button_primary:focus-visible {
     background-color: rgb(130, 65, 0);
     border-color: rgb(130, 65, 0);
 }
