@@ -108,7 +108,11 @@ function format_date(string $iso_date): string {
 <body>
     <main class="text-base overflow-auto bg-cover w-full h-full">
         <div class="w-full max-w-3xl flex flex-wrap mx-auto">
-            <section class='mt-0 sm:mt-2' style='opacity: 1; transform: none;'>
+            <nav class="blog_back_nav">
+                <a href="/">&larr; Back to Home</a>
+            </nav>
+
+            <section style='opacity: 1; transform: none;'>
                 <div class="w-full px-2 sm:px-3 pt-1 sm:pt-3 shadow-xs section_header blog_header">
                     <h2 class='m-0'>Blog</h2>
                 </div>
@@ -117,9 +121,13 @@ function format_date(string $iso_date): string {
 
                     <div class="blog_controls pb-2">
                         <div>
-                            Showing <?= count($pagination['items']) ?> of <?= $pagination['total_items'] ?> posts
-                            <?php if (!$show_all && count($pagination['items']) < $pagination['total_items']) { ?>
-                                <a href="<?= build_url(1, $per_page, $order, true) ?>">Show all.</a>
+                            <?php if ($show_all) { ?>
+                                Showing all posts.
+                            <?php } else { ?>
+                                Showing <?= count($pagination['items']) ?> of <?= $pagination['total_items'] ?> posts. 
+                                <?php if (count($pagination['items']) < $pagination['total_items']) { ?>
+                                    <a href="<?= build_url(1, $per_page, $order, true) ?>">Show all.</a>
+                                <?php } ?>
                             <?php } ?>
                         </div>
                         <div class="blog_sort_controls">

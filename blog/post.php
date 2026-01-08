@@ -22,6 +22,33 @@ if (empty($post_id)) {
     }
 }
 
+// find prev/next posts
+$prev_post = null;
+$next_post = null;
+if ($post !== null) {
+    $posts_index = load_posts_index($storage_dir);
+    $sorted_posts = sort_posts_index($posts_index, 'newest');
+    
+    // find current post position
+    $current_idx = null;
+    foreach ($sorted_posts as $idx => $p) {
+        if ($p['id'] === $post_id) {
+            $current_idx = $idx;
+            break;
+        }
+    }
+    
+    if ($current_idx !== null) {
+        // prev is newer (lower index), next is older (higher index)
+        if ($current_idx > 0) {
+            $prev_post = $sorted_posts[$current_idx - 1];
+        }
+        if ($current_idx < count($sorted_posts) - 1) {
+            $next_post = $sorted_posts[$current_idx + 1];
+        }
+    }
+}
+
 // helper to format date
 function format_post_date(string $iso_date): string {
     $date = new DateTime($iso_date);
@@ -46,7 +73,7 @@ $page_description = $post !== null && !empty($post['summary_html'])
     <script type="module" src="<?= VITE_ORIGIN ?>/blog.js"></script>
 <?php } ?>
 
-    <title><?= $page_title ?></title>
+    <title>Vael Victus - <?= $page_title ?></title>
 
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
@@ -78,8 +105,12 @@ $page_description = $post !== null && !empty($post['summary_html'])
 
 <body>
     <main class="text-base overflow-auto bg-cover w-full h-full">
-        <div class="w-full max-w-3xl flex flex-wrap mx-auto">
-            <section class='mt-0 sm:mt-2' style='opacity: 1; transform: none;'>
+        <div class="w-full max-w-3xl flex flex-wrap mx-auto mb-3">
+            <nav class="blog_back_nav">
+                <a href="/">&larr; Back to Home</a>
+            </nav>
+
+            <section style='opacity: 1; transform: none;'>
                 <div class='w-full px-2 sm:px-3 p-3 overflow-auto bg-white'>
                     <?php if ($post === null) { ?>
                         <div class="blog_error">
@@ -88,6 +119,28 @@ $page_description = $post !== null && !empty($post['summary_html'])
                             <p><a href="/blog/">Return to blog list</a></p>
                         </div>
                     <?php } else { ?>
+                        <nav class="post_nav">
+                            <div class="post_nav_prev">
+                                <?php if ($prev_post !== null) { ?>
+                                    <a href="/blog/post.php?id=<?= $prev_post['id'] ?>">
+                                        <span class="post_nav_arrow">&larr;</span>
+                                        <span class="post_nav_title"><?= !empty($prev_post['title']) ? $prev_post['title'] : '[Untitled]' ?></span>
+                                    </a>
+                                <?php } ?>
+                            </div>
+                            <div class="post_nav_center">
+                                <a href="/blog/">Archive</a>
+                            </div>
+                            <div class="post_nav_next">
+                                <?php if ($next_post !== null) { ?>
+                                    <a href="/blog/post.php?id=<?= $next_post['id'] ?>">
+                                        <span class="post_nav_title"><?= !empty($next_post['title']) ? $next_post['title'] : '[Untitled]' ?></span>
+                                        <span class="post_nav_arrow">&rarr;</span>
+                                    </a>
+                                <?php } ?>
+                            </div>
+                        </nav>
+
                         <article>
                             <header class="blog_post_header">
                                 <?php if (!empty($post['title'])) { ?>
@@ -123,6 +176,28 @@ $page_description = $post !== null && !empty($post['summary_html'])
                                 <?php } ?>
                             </div>
                         </article>
+
+                        <nav class="post_nav post_nav_bottom">
+                            <div class="post_nav_prev">
+                                <?php if ($prev_post !== null) { ?>
+                                    <a href="/blog/post.php?id=<?= $prev_post['id'] ?>">
+                                        <span class="post_nav_arrow">&larr;</span>
+                                        <span class="post_nav_title"><?= !empty($prev_post['title']) ? $prev_post['title'] : '[Untitled]' ?></span>
+                                    </a>
+                                <?php } ?>
+                            </div>
+                            <div class="post_nav_center">
+                                <a href="/blog/">Archive</a>
+                            </div>
+                            <div class="post_nav_next">
+                                <?php if ($next_post !== null) { ?>
+                                    <a href="/blog/post.php?id=<?= $next_post['id'] ?>">
+                                        <span class="post_nav_title"><?= !empty($next_post['title']) ? $next_post['title'] : '[Untitled]' ?></span>
+                                        <span class="post_nav_arrow">&rarr;</span>
+                                    </a>
+                                <?php } ?>
+                            </div>
+                        </nav>
                     <?php } ?>
                 </div>
             </section>
