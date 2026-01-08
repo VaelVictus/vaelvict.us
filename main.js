@@ -1,6 +1,6 @@
 import './css/style.css'
 
-import anime from 'animejs'
+import { timeline } from 'animejs'
 
 document.addEventListener('DOMContentLoaded', () => {
   const text_wrapper = document.querySelector('#vael_victus');
@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }, content_delay + i*300)
   });
 
-  anime.timeline({loop: false})
+  timeline({loop: false})
   .add({
     targets: '#vael_victus .letter',
     translateX: [40, 0],
