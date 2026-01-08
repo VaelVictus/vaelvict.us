@@ -96,6 +96,79 @@ function get_post_by_id(string $base_dir, string $id): ?array {
 }
 
 /**
+ * extract slug from a tumblr permalink
+ */
+function extract_post_slug(string $permalink): string {
+    if ($permalink === '') {
+        return '';
+    }
+    
+    $path = (string) parse_url($permalink, PHP_URL_PATH);
+    $path = trim($path, '/');
+    if ($path === '') {
+        return '';
+    }
+    
+    $parts = explode('/', $path);
+    $slug = end($parts);
+    if ($slug === false || $slug === '') {
+        return '';
+    }
+    
+    $safe_slug = preg_replace('/[^a-zA-Z0-9-]/', '', $slug);
+    return strtolower((string) $safe_slug);
+}
+
+/**
+ * extract slug from a post record
+ */
+function get_post_slug(array $post): string {
+    $permalink = $post['permalink'] ?? '';
+    if ($permalink === '') {
+        return '';
+    }
+    
+    return extract_post_slug($permalink);
+}
+
+/**
+ * find a post id by slug in the posts index
+ */
+function find_post_id_by_slug(array $index, string $slug): ?string {
+    $safe_slug = preg_replace('/[^a-zA-Z0-9-]/', '', $slug);
+    $safe_slug = strtolower((string) $safe_slug);
+    if ($safe_slug === '') {
+        return null;
+    }
+    
+    foreach ($index as $post) {
+        $post_slug = get_post_slug($post);
+        if ($post_slug === $safe_slug && !empty($post['id'])) {
+            return (string) $post['id'];
+        }
+    }
+    
+    return null;
+}
+
+/**
+ * build a blog post url using the slug when available
+ */
+function build_post_url(array $post): string {
+    $slug = get_post_slug($post);
+    if ($slug !== '') {
+        return '/blog/post/' . $slug;
+    }
+    
+    $post_id = $post['id'] ?? '';
+    if ($post_id === '') {
+        return '/blog/';
+    }
+    
+    return '/blog/post.php?id=' . $post_id;
+}
+
+/**
  * sort posts index by timestamp
  * @param string $order 'newest' or 'oldest'
  */

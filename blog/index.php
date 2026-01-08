@@ -141,7 +141,7 @@ function format_date(string $iso_date): string {
                     $items = $pagination['items'];
                     $total_items = count($items);
                     foreach ($items as $index => $post) { 
-                        $post_url = "/blog/post.php?id={$post['id']}";
+                        $post_url = build_post_url($post);
                     ?>
                         <a class="blog_post_item blog_post_link mb-2" href="<?= $post_url ?>">
                             <div class="blog_post_title">

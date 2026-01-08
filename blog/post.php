@@ -7,13 +7,24 @@ require_once $project_root . '/src/TumblrStore.php';
 
 $storage_dir = $project_root . '/storage/tumblr';
 
-// get post id from query
+// get post id or slug from query
 $post_id = isset($_GET['id']) ? $_GET['id'] : '';
+$post_slug = isset($_GET['slug']) ? $_GET['slug'] : '';
+$posts_index = null;
+
+if (!empty($post_slug)) {
+    $post_slug = preg_replace('/[^a-zA-Z0-9-]/', '', $post_slug);
+    $post_slug = strtolower((string) $post_slug);
+    if ($post_slug !== '') {
+        $posts_index = load_posts_index($storage_dir);
+        $post_id = find_post_id_by_slug($posts_index, $post_slug) ?? '';
+    }
+}
 
 if (empty($post_id)) {
     http_response_code(404);
     $post = null;
-    $error = 'No post ID provided.';
+    $error = $post_slug !== '' ? 'Post not found.' : 'No post ID or slug provided.';
 } else {
     $post = get_post_by_id($storage_dir, $post_id);
     if ($post === null) {
@@ -22,11 +33,23 @@ if (empty($post_id)) {
     }
 }
 
+if ($post !== null) {
+    $canonical_slug = get_post_slug($post);
+    if ($canonical_slug !== '') {
+        if (empty($post_slug) || $post_slug !== $canonical_slug) {
+            header('Location: /blog/post/' . $canonical_slug, true, 301);
+            exit;
+        }
+    }
+}
+
 // find prev/next posts
 $prev_post = null;
 $next_post = null;
 if ($post !== null) {
-    $posts_index = load_posts_index($storage_dir);
+    if ($posts_index === null) {
+        $posts_index = load_posts_index($storage_dir);
+    }
     $sorted_posts = sort_posts_index($posts_index, 'newest');
     
     // find current post position
@@ -59,6 +82,8 @@ $page_title = $post !== null && !empty($post['title']) ? $post['title'] . ' - Va
 $page_description = $post !== null && !empty($post['summary_html']) 
     ? strip_tags($post['summary_html']) 
     : 'Blog post from Vael Victus';
+$post_url = $post !== null ? build_post_url($post) : '/blog/';
+$canonical_url = $post !== null ? 'https://vaelvict.us' . $post_url : 'https://vaelvict.us/blog/';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -89,7 +114,7 @@ $page_description = $post !== null && !empty($post['summary_html'])
     <meta property="og:type" content="article" />
     <meta property="og:title" content="<?= $page_title ?>" />
     <meta property="og:description" content="<?= $page_description ?>" />
-    <meta property="og:url" content="https://vaelvict.us/blog/post.php?id=<?= $post_id ?>" />
+    <meta property="og:url" content="<?= $canonical_url ?>" />
     <meta property="og:site_name" content="Vael Victus" />
 
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -122,18 +147,20 @@ $page_description = $post !== null && !empty($post['summary_html'])
                         <nav class="post_nav">
                             <div class="post_nav_prev">
                                 <?php if ($prev_post !== null) { ?>
-                                    <a href="/blog/post.php?id=<?= $prev_post['id'] ?>">
+                                    <a href="<?= build_post_url($prev_post) ?>">
                                         <span class="post_nav_arrow">&larr;</span>
                                         <span class="post_nav_title"><?= !empty($prev_post['title']) ? $prev_post['title'] : '[Untitled]' ?></span>
                                     </a>
                                 <?php } ?>
                             </div>
                             <div class="post_nav_center">
-                                <a href="/blog/">Archive</a>
+                                <a href="/blog/">
+                                    <button class="button_primary" type="button">Archive</button>
+                                </a>
                             </div>
                             <div class="post_nav_next">
                                 <?php if ($next_post !== null) { ?>
-                                    <a href="/blog/post.php?id=<?= $next_post['id'] ?>">
+                                    <a href="<?= build_post_url($next_post) ?>">
                                         <span class="post_nav_title"><?= !empty($next_post['title']) ? $next_post['title'] : '[Untitled]' ?></span>
                                         <span class="post_nav_arrow">&rarr;</span>
                                     </a>
@@ -180,18 +207,20 @@ $page_description = $post !== null && !empty($post['summary_html'])
                         <nav class="post_nav post_nav_bottom">
                             <div class="post_nav_prev">
                                 <?php if ($prev_post !== null) { ?>
-                                    <a href="/blog/post.php?id=<?= $prev_post['id'] ?>">
+                                    <a href="<?= build_post_url($prev_post) ?>">
                                         <span class="post_nav_arrow">&larr;</span>
                                         <span class="post_nav_title"><?= !empty($prev_post['title']) ? $prev_post['title'] : '[Untitled]' ?></span>
                                     </a>
                                 <?php } ?>
                             </div>
                             <div class="post_nav_center">
-                                <a href="/blog/">Archive</a>
+                                <a href="/blog/">
+                                    <button class="button_primary" type="button">Archive</button>
+                                </a>
                             </div>
                             <div class="post_nav_next">
                                 <?php if ($next_post !== null) { ?>
-                                    <a href="/blog/post.php?id=<?= $next_post['id'] ?>">
+                                    <a href="<?= build_post_url($next_post) ?>">
                                         <span class="post_nav_title"><?= !empty($next_post['title']) ? $next_post['title'] : '[Untitled]' ?></span>
                                         <span class="post_nav_arrow">&rarr;</span>
                                     </a>
