@@ -18,6 +18,7 @@
 
     <script type="module" crossorigin src="dist/<?=$manifest['index.html']['file']?>"></script>
 <? } else { ?>
+    <link rel="stylesheet" href="<?= VITE_ORIGIN ?>/src/style.css">
     <script type="module" src="<?= VITE_ORIGIN ?>/main.js"></script>
 <? } ?>
 
