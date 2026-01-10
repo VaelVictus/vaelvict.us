@@ -534,6 +534,9 @@ article > header .blog_post_meta {
 .blog_post_content a:visited {
     color: rgb(128, 0, 128);
 }
+.age {
+    font-size: 15px;
+}
 .blog_post_photos {
     display: flex;
     flex-direction: column;

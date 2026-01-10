@@ -123,7 +123,7 @@
                     </div>
                     
                     <div class='mt-2'>
-                        I live in upstate South Carolina with my wife, <a href='https://500px.com/p/evelynvictus?view=photos'>Evelyn Victus</a>, and our four kids: Abel (<?=$abel?> old), Violet (<?=$violet?> old), Olivia (<?=$olivia?> old), and Everett (<?=$everett?> old). I also have five cats! <span id="view_pets" aria-expanded="false">show<span class="arrow">&#9662;</span></span> I spend most of my time making games, playing games, and raising my kids. I'm a <a href='https://www.youtube.com/playlist?list=PLKQKi0BW3i8xEeDhUJkUnuQVLjMaNnzAE'>motivation junkie</a> and love staying productive, whether it's code, writing, fitness, or research.
+                        I live in upstate South Carolina with my wife, <a href='https://500px.com/p/evelynvictus?view=photos'>Evelyn Victus</a>, and our four kids: Abel <span class='age'>(<?=$abel?> old)</span>, Violet <span class='age'>(<?=$violet?> old)</span>, Olivia <span class='age'>(<?=$olivia?> old)</span>, and Everett <span class='age'>(<?=$everett?> old)</span>. I also have five cats! <span id="view_pets" aria-expanded="false">show<span class="arrow">&#9662;</span></span> I spend most of my time making games, playing games, and raising my kids. I'm a <a href='https://www.youtube.com/playlist?list=PLKQKi0BW3i8xEeDhUJkUnuQVLjMaNnzAE'>motivation junkie</a> and love staying productive, whether it's code, writing, fitness, or research.
                     </div>
                 </div>
             </section>

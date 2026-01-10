@@ -48,38 +48,40 @@ if (($is_local_host && $dev_server_running) || $force_dev) {
 }
 
 function get_age($birthdate) {
-    // explode the date into meaningful variables
-    list($birth_year, $birth_month) = explode("-", $birthdate);
-    
-    // find the difference between current value for the date, and input date
-    $years_old = intval(date("Y") - $birth_year);
-    $months_diff = intval(date("n") - $birth_month);
-    
-    // it will be negative if the date has not occured this year
-    if ($months_diff < 0) {
-        $years_old--;
-    }
+    // compute an accurate age difference (includes day-of-month)
+    $birth_date = new DateTimeImmutable($birthdate);
+    $now = new DateTimeImmutable('now');
+    $age = ($birth_date > $now) ? new DateInterval('P0D') : $birth_date->diff($now);
+    $years_old = $age->y;
     
     // just give months for our cute little babies!
     if ($years_old === 0) {
-        $months_old = months($birthdate);
-        $label = ($months_old > 1 ? 'months' : 'month');
+        $months_old = ($age->y * 12) + $age->m;
+        $label = ($months_old === 1 ? 'month' : 'months');
         return "<b>$months_old</b> $label";
     }
 
     // while the kids are age 2 or younger, display 1/2 ages
     if ($years_old <= 2) {
-        $mos = months($birthdate);
-        $half = ($mos - ($years_old * 12) > 6) ? '&#189;' : '';
+        $months_into_year = $age->m;
+        $half = ($months_into_year >= 6) ? '&#189;' : '';
         $label = ($years_old > 1 ? 'years' : 'year');
 
-        return "<b>$years_old</b> $half $label";
+        $half_part = ($half !== '') ? " $half" : '';
+        return "<b>$years_old</b>$half_part $label";
     }
         
     return "<b>$years_old</b> years";
 }
 
 function months($date) {
-    $tmp = explode('-', $date);
-    return (date('Y') - $tmp[0]) * 12 + (( 12 - $tmp[1]) - (12 - date( 'n' )));
+    $start_date = new DateTimeImmutable($date);
+    $now = new DateTimeImmutable('now');
+
+    if ($start_date > $now) {
+        return 0;
+    }
+
+    $diff = $start_date->diff($now);
+    return ($diff->y * 12) + $diff->m;
 }
