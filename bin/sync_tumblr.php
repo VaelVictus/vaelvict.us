@@ -330,6 +330,20 @@ function normalize_tumblr_post(array $raw): ?array {
             $body_html = $derived['body_html'];
         }
     }
+
+    // if tumblr didn't provide a summary, use the first 60 characters
+    if ($summary_html === '') {
+        $plain_summary = '';
+        if ($body_html !== '') {
+            $plain_summary = normalize_excerpt_html($body_html, '');
+        }
+        if ($plain_summary === '' && $title !== '') {
+            $plain_summary = $title;
+        }
+        if ($plain_summary !== '') {
+            $summary_html = mb_substr($plain_summary, 0, 60);
+        }
+    }
     
     return [
         'id' => $id,
