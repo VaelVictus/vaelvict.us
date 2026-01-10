@@ -189,7 +189,7 @@
                         <li><b><a href='https://urpg.tinydark.com'>URPG</a> (alpha)</b> - Open-World Roleplaying MMORPG</li>
                         <li><b><a href='https://blackcrownexhumed.com'>Black Crown: Exhumed (2026)</a></b> - Narrative horror; revival of the original game by Rob Sherman</li>
                         <li><b>Bean Grower (2018)</b> - Casual strategy game about growing beans</li>
-                        <li><b><a href='https://monbre.com/'>MonBre</a> (2010)</b> - Monster MMORPG</li>
+                        <li><b><a href='https://monbre.com/'>MonBre</a> (2010)</b> - Monster taming MMORPG</li>
                     </ul>
 
                     <h3 class='mb-2'>Software</h3>
