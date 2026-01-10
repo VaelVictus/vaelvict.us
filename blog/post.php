@@ -1,4 +1,4 @@
-<?php
+<?
 declare(strict_types=1);
 
 $project_root = dirname(__DIR__);
@@ -88,15 +88,15 @@ $canonical_url = $post !== null ? 'https://vaelvict.us' . $post_url : 'https://v
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<?php if (DEV_ENV == 'prod') { ?>
-    <?php $manifest = json_decode(file_get_contents($project_root . '/dist/manifest.json'), true); ?>
-    <?php foreach ($manifest['index.html']['css'] as $path) { ?>
+<? if (DEV_ENV == 'prod') { ?>
+    <? $manifest = json_decode(file_get_contents($project_root . '/dist/manifest.json'), true); ?>
+    <? foreach ($manifest['index.html']['css'] as $path) { ?>
         <link rel="stylesheet" href="/dist/<?=$path?>">
-    <?php } ?>
-<?php } else { ?>
+    <? } ?>
+<? } else { ?>
     <link rel="stylesheet" href="<?= VITE_ORIGIN ?>/src/style.css">
     <script type="module" src="<?= VITE_ORIGIN ?>/blog.js"></script>
-<?php } ?>
+<? } ?>
 
     <title>Vael Victus - <?= $page_title ?></title>
 
@@ -134,27 +134,27 @@ $canonical_url = $post !== null ? 'https://vaelvict.us' . $post_url : 'https://v
             <nav class="blog_back_nav">
                 <a href="/">
                     <span class="post_nav_arrow">&larrhk;</span>
-                    <span>Back to Home</span>
+                    <span>Back to Home Page</span>
                 </a>
             </nav>
 
             <section style='opacity: 1; transform: none;'>
                 <div class='w-full px-2 sm:px-3 p-3 overflow-auto bg-white'>
-                    <?php if ($post === null) { ?>
+                    <? if ($post === null) { ?>
                         <div class="blog_error">
                             <h3>404 - Not Found</h3>
                             <p><?= $error ?></p>
                             <p><a href="/blog/">Return to blog list</a></p>
                         </div>
-                    <?php } else { ?>
+                    <? } else { ?>
                         <nav class="post_nav">
                             <div class="post_nav_prev">
-                                <?php if ($prev_post !== null) { ?>
+                                <? if ($prev_post !== null) { ?>
                                     <a href="<?= build_post_url($prev_post) ?>">
                                         <span class="post_nav_arrow">&larr;</span>
                                         <span class="post_nav_title"><?= !empty($prev_post['title']) ? $prev_post['title'] : '[Untitled]' ?></span>
                                     </a>
-                                <?php } ?>
+                                <? } ?>
                             </div>
                             <div class="post_nav_center">
                                 <a href="/blog/">
@@ -162,59 +162,59 @@ $canonical_url = $post !== null ? 'https://vaelvict.us' . $post_url : 'https://v
                                 </a>
                             </div>
                             <div class="post_nav_next">
-                                <?php if ($next_post !== null) { ?>
+                                <? if ($next_post !== null) { ?>
                                     <a href="<?= build_post_url($next_post) ?>">
                                         <span class="post_nav_title"><?= !empty($next_post['title']) ? $next_post['title'] : '[Untitled]' ?></span>
                                         <span class="post_nav_arrow">&rarr;</span>
                                     </a>
-                                <?php } ?>
+                                <? } ?>
                             </div>
                         </nav>
 
                         <article>
                             <header class="blog_post_header">
-                                <?php if (!empty($post['title'])) { ?>
+                                <? if (!empty($post['title'])) { ?>
                                     <h1 class="blog_post_title"><?= $post['title'] ?></h1>
-                                <?php } ?>
+                                <? } ?>
                                 <div class="blog_post_meta">
                                     <?= format_post_date($post['date_iso']) ?>
-                                    <?php if ($post['type'] !== 'text') { ?>
+                                    <? if ($post['type'] !== 'text') { ?>
                                         &middot; <?= ucfirst($post['type']) ?> post
-                                    <?php } ?>
+                                    <? } ?>
                                 </div>
                             </header>
 
                             <div class="blog_post_content">
-                                <?php if (!empty($post['body_html'])) { ?>
+                                <? if (!empty($post['body_html'])) { ?>
                                     <?= $post['body_html'] ?>
-                                <?php } ?>
+                                <? } ?>
 
-                                <?php if (!empty($post['photos'])) { ?>
+                                <? if (!empty($post['photos'])) { ?>
                                     <div class="blog_post_photos">
-                                        <?php foreach ($post['photos'] as $img) { ?>
+                                        <? foreach ($post['photos'] as $img) { ?>
                                             <figure class="blog_photo">
                                                 <img src="<?= $img['url'] ?>" 
                                                      alt="<?= !empty($img['alt']) ? $img['alt'] : '' ?>"
-                                                     <?php if (!empty($img['width'])) { ?>width="<?= $img['width'] ?>"<?php } ?>
-                                                     <?php if (!empty($img['height'])) { ?>height="<?= $img['height'] ?>"<?php } ?>>
-                                                <?php if (!empty($img['alt'])) { ?>
+                                                     <? if (!empty($img['width'])) { ?>width="<?= $img['width'] ?>"<? } ?>
+                                                     <? if (!empty($img['height'])) { ?>height="<?= $img['height'] ?>"<? } ?>>
+                                                <? if (!empty($img['alt'])) { ?>
                                                     <figcaption class="blog_photo_caption"><?= $img['alt'] ?></figcaption>
-                                                <?php } ?>
+                                                <? } ?>
                                             </figure>
-                                        <?php } ?>
+                                        <? } ?>
                                     </div>
-                                <?php } ?>
+                                <? } ?>
                             </div>
                         </article>
 
                         <nav class="post_nav post_nav_bottom">
                             <div class="post_nav_prev">
-                                <?php if ($prev_post !== null) { ?>
+                                <? if ($prev_post !== null) { ?>
                                     <a href="<?= build_post_url($prev_post) ?>">
                                         <span class="post_nav_arrow">&larr;</span>
                                         <span class="post_nav_title"><?= !empty($prev_post['title']) ? $prev_post['title'] : '[Untitled]' ?></span>
                                     </a>
-                                <?php } ?>
+                                <? } ?>
                             </div>
                             <div class="post_nav_center">
                                 <a href="/blog/">
@@ -222,15 +222,15 @@ $canonical_url = $post !== null ? 'https://vaelvict.us' . $post_url : 'https://v
                                 </a>
                             </div>
                             <div class="post_nav_next">
-                                <?php if ($next_post !== null) { ?>
+                                <? if ($next_post !== null) { ?>
                                     <a href="<?= build_post_url($next_post) ?>">
                                         <span class="post_nav_title"><?= !empty($next_post['title']) ? $next_post['title'] : '[Untitled]' ?></span>
                                         <span class="post_nav_arrow">&rarr;</span>
                                     </a>
-                                <?php } ?>
+                                <? } ?>
                             </div>
                         </nav>
-                    <?php } ?>
+                    <? } ?>
                 </div>
             </section>
         </div>

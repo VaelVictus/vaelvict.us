@@ -15,7 +15,7 @@ body {
 /* Custom transition animations - smoother fade */
 /* view transition snapshots - avoid mobile compositor glitches */
 ::view-transition-group(page-content) {
-    animation-duration: 0.6s;
+    animation-duration: 0.5s;
     animation-timing-function: ease-in-out;
 }
 
@@ -24,7 +24,7 @@ body {
 }
 
 ::view-transition-old(page-content) {
-    animation: fade-out 0.6s ease-in-out both;
+    animation: fade-out 0.5s ease-in-out both;
     z-index: 1;
     backface-visibility: hidden;
     transform: translateZ(0);
@@ -32,7 +32,7 @@ body {
 }
 
 ::view-transition-new(page-content) {
-    animation: fade-in 0.6s ease-in-out both;
+    animation: fade-in 0.5s ease-in-out both;
     z-index: 2;
     backface-visibility: hidden;
     transform: translateZ(0);
@@ -585,8 +585,7 @@ article > header .blog_post_meta {
     display: grid;
     grid-template-columns: 1fr auto 1fr;
     gap: 1rem;
-    margin-bottom: 1.5rem;
-    padding-bottom: 1rem;
+    margin-bottom: 1rem;
     border-bottom: 1px solid #e5e5e5;
 }
 .post_nav_bottom {
@@ -610,7 +609,7 @@ article > header .blog_post_meta {
 .post_nav_center {
     text-align: center;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
 }
 .post_nav_center a {
     text-decoration: none;

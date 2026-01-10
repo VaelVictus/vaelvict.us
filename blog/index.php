@@ -1,4 +1,4 @@
-<?php
+<?
 declare(strict_types=1);
 
 $project_root = dirname(__DIR__);
@@ -65,15 +65,15 @@ function format_date(string $iso_date): string {
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<?php if (DEV_ENV == 'prod') { ?>
-    <?php $manifest = json_decode(file_get_contents($project_root . '/dist/manifest.json'), true); ?>
-    <?php foreach ($manifest['index.html']['css'] as $path) { ?>
+<? if (DEV_ENV == 'prod') { ?>
+    <? $manifest = json_decode(file_get_contents($project_root . '/dist/manifest.json'), true); ?>
+    <? foreach ($manifest['index.html']['css'] as $path) { ?>
         <link rel="stylesheet" href="/dist/<?=$path?>">
-    <?php } ?>
-<?php } else { ?>
+    <? } ?>
+<? } else { ?>
     <link rel="stylesheet" href="<?= VITE_ORIGIN ?>/src/style.css">
     <script type="module" src="<?= VITE_ORIGIN ?>/blog.js"></script>
-<?php } ?>
+<? } ?>
 
     <title>Vael Victus - Blog</title>
 
@@ -111,27 +111,27 @@ function format_date(string $iso_date): string {
             <nav class="blog_back_nav">
                 <a href="/">
                     <span class="post_nav_arrow">&larrhk;</span>
-                    <span>Back to Home</span>
+                    <span>Back to Home Page</span>
                 </a>
             </nav>
 
             <section style='opacity: 1; transform: none;'>
                 <div class="w-full px-2 sm:px-3 pt-1 sm:pt-3 shadow-xs section_header blog_header">
-                    <h2 class='m-0'>Vael's Blog</h2>
+                    <h2 class='m-0'>Blog</h2>
                 </div>
 
                 <div class='w-full px-2 sm:px-3 p-3 overflow-auto bg-white'>
 
-                    <div class="blog_controls pb-2">
+                    <div class="blog_controls">
                         <div>
-                            <?php if ($show_all) { ?>
+                            <? if ($show_all) { ?>
                                 Showing all posts.
-                            <?php } else { ?>
+                            <? } else { ?>
                                 Showing <?= count($pagination['items']) ?> of <?= $pagination['total_items'] ?> posts. 
-                                <?php if (count($pagination['items']) < $pagination['total_items']) { ?>
+                                <? if (count($pagination['items']) < $pagination['total_items']) { ?>
                                     <a href="<?= build_url(1, $per_page, $order, true) ?>">Show all.</a>
-                                <?php } ?>
-                            <?php } ?>
+                                <? } ?>
+                            <? } ?>
                         </div>
                         <div class="blog_sort_controls">
                             Sort:
@@ -140,7 +140,7 @@ function format_date(string $iso_date): string {
                         </div>
                     </div>
 
-                    <?php 
+                    <? 
                     $items = $pagination['items'];
                     $total_items = count($items);
                     foreach ($items as $index => $post) { 
@@ -148,40 +148,40 @@ function format_date(string $iso_date): string {
                     ?>
                         <a class="blog_post_item blog_post_link py-2" href="<?= $post_url ?>">
                             <div class="blog_post_title">
-                                <?php if (!empty($post['title'])) { ?>
+                                <? if (!empty($post['title'])) { ?>
                                     <?= $post['title'] ?>
-                                <?php } else { ?>
-                                    <?php if ($post['type'] === 'photo') { ?>
+                                <? } else { ?>
+                                    <? if ($post['type'] === 'photo') { ?>
                                         <span class="blog_photo_indicator">[Photo post]</span>
-                                    <?php } else { ?>
+                                    <? } else { ?>
                                         <span class="blog_photo_indicator">[Untitled]</span>
-                                    <?php } ?>
-                                <?php } ?>
+                                    <? } ?>
+                                <? } ?>
                             </div>
                             <div class="blog_post_meta mb-1">
                                 <?= format_date($post['date_iso']) ?>
-                                <?php if ($post['type'] !== 'text') { ?>
+                                <? if ($post['type'] !== 'text') { ?>
                                     &middot; <?= ucfirst($post['type']) ?>
-                                <?php } ?>
+                                <? } ?>
                             </div>
-                            <?php if (!empty($post['excerpt'])) { ?>
+                            <? if (!empty($post['excerpt'])) { ?>
                                 <div class="blog_post_excerpt"><?= $post['excerpt'] ?></div>
-                            <?php } ?>
+                            <? } ?>
                         </a>
-                        <?php if ($index < $total_items - 1) { ?>
+                        <? if ($index < $total_items - 1) { ?>
                             <hr class="blog_post_hr">
-                        <?php } ?>
-                    <?php } ?>
+                        <? } ?>
+                    <? } ?>
 
-                    <?php if ($pagination['total_pages'] > 1) { ?>
+                    <? if ($pagination['total_pages'] > 1) { ?>
                         <nav class="blog_pagination">
-                            <?php if ($pagination['has_prev']) { ?>
+                            <? if ($pagination['has_prev']) { ?>
                                 <a href="<?= build_url($pagination['prev_page'], $per_page, $order, $show_all) ?>">&larr; Prev</a>
-                            <?php } else { ?>
+                            <? } else { ?>
                                 <span class="disabled">&larr; Prev</span>
-                            <?php } ?>
+                            <? } ?>
 
-                            <?php
+                            <?
                             // show page numbers
                             $start_page = max(1, $pagination['page'] - 2);
                             $end_page = min($pagination['total_pages'], $pagination['page'] + 2);
@@ -209,13 +209,13 @@ function format_date(string $iso_date): string {
                             }
                             ?>
 
-                            <?php if ($pagination['has_next']) { ?>
+                            <? if ($pagination['has_next']) { ?>
                                 <a href="<?= build_url($pagination['next_page'], $per_page, $order, $show_all) ?>">Next &rarr;</a>
-                            <?php } else { ?>
+                            <? } else { ?>
                                 <span class="disabled">Next &rarr;</span>
-                            <?php } ?>
+                            <? } ?>
                         </nav>
-                    <?php } ?>
+                    <? } ?>
                 </div>
             </section>
         </div>
