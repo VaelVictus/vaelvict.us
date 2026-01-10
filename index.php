@@ -22,18 +22,13 @@
     <script type="module" src="<?= VITE_ORIGIN ?>/main.js"></script>
 <? } ?>
 
+    <? require_once __DIR__ . '/inc/head_static.php'; ?>
+
     <title>Vael Victus</title>
 
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="title" content="Vael Victus">
     <meta name="description" content="Vael Victus is a web-based game designer and application developer.">
     <meta name="keywords" content="vael victus, tinydark, victus, bean grower, monbre, black crown exhumed">
-    <meta name="robots" content="index, follow">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <meta name="language" content="English">
-    <meta name="author" content="Vael Victus">
 
     <meta property="og:locale" content="en_US" />
 	<meta property="og:type" content="website" />
@@ -47,17 +42,9 @@
 	<meta name="twitter:domain" content="Vael Victus"/>
 	<meta name="twitter:creator" content="@vaelvictus"/>
 
-	<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-	<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-	<link rel="manifest" href="site.webmanifest">
 	<link rel="mask-icon" href="safari-pinned-tab.svg" color="#000000">
 	<meta name="msapplication-TileColor" content="#000000">
-	<meta name="theme-color" content="#000000">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
   </head>
 
   <body>

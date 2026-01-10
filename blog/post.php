@@ -98,17 +98,12 @@ $canonical_url = $post !== null ? 'https://vaelvict.us' . $post_url : 'https://v
     <script type="module" src="<?= VITE_ORIGIN ?>/blog.js"></script>
 <? } ?>
 
+    <? require_once $project_root . '/inc/head_static.php'; ?>
+
     <title>Vael Victus - <?= $page_title ?></title>
 
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="title" content="<?= $page_title ?>">
     <meta name="description" content="<?= $page_description ?>">
-    <meta name="robots" content="index, follow">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <meta name="language" content="English">
-    <meta name="author" content="Vael Victus">
 
     <meta property="og:locale" content="en_US" />
     <meta property="og:type" content="article" />
@@ -116,16 +111,6 @@ $canonical_url = $post !== null ? 'https://vaelvict.us' . $post_url : 'https://v
     <meta property="og:description" content="<?= $page_description ?>" />
     <meta property="og:url" content="<?= $canonical_url ?>" />
     <meta property="og:site_name" content="Vael Victus" />
-
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
-    <meta name="theme-color" content="#000000">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Charm:wght@400;700&family=Inter:wght@400;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
