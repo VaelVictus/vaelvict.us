@@ -1,14 +1,6 @@
 import './src/style.css'
 
-import { createTimeline } from 'animejs'
-
 document.addEventListener('DOMContentLoaded', () => {
-  const text_wrapper = document.querySelector('#vael_victus');
-  if (text_wrapper) {
-    text_wrapper.innerHTML = text_wrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
-    document.getElementById('vael_victus').style.display = 'block';
-  }
-
   const content_delay = 900;
 
   // fade in each section
@@ -17,16 +9,6 @@ document.addEventListener('DOMContentLoaded', () => {
       el.style.opacity = 1;
       el.style.transform = 'translateY(0px)';
     }, content_delay + i*300)
-  });
-
-  createTimeline({loop: false})
-  .add('#vael_victus .letter', {
-    translateX: [40, 0],
-    translateZ: 0,
-    opacity: [0, 1],
-    easing: "easeOutCubic",
-    duration: 2000,
-    delay: (_el, i) => 0 + (75 * i)
   });
     
   setTimeout(() => {

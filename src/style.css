@@ -55,14 +55,6 @@ a {
 }
 
 /* Subtitle, animations */
-#vael_victus {
-    display: none;
-}
-
-#vael_victus .letter {
-    opacity: 0;
-    transform: translateX(40px);
-}
 
 #vael_victus_subtitle {
     display: grid;
