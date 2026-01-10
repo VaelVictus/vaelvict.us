@@ -78,7 +78,7 @@ function format_post_date(string $iso_date): string {
     return $date->format('F j, Y \a\t g:i A');
 }
 
-$page_title = $post !== null && !empty($post['title']) ? $post['title'] . ' - Vael Victus' : 'Blog Post - Vael Victus';
+$page_title = $post !== null && !empty($post['title']) ? $post['title'] : 'Vael Victus';
 $page_description = $post !== null && !empty($post['summary_html']) 
     ? strip_tags($post['summary_html']) 
     : 'Blog post from Vael Victus';

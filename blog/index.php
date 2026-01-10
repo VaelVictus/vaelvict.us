@@ -94,12 +94,12 @@ function format_date(string $iso_date): string {
     <title>Vael Victus - Blog</title>
 
     <meta name="title" content="Blog - Vael Victus">
-    <meta name="description" content="Blog posts from Vael Victus - game designer and web developer.">
+    <meta name="description" content="Personal blog for Vael Victus, web game developer.">
 
     <meta property="og:locale" content="en_US" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Blog - Vael Victus" />
-    <meta property="og:description" content="Blog posts from Vael Victus - game designer and web developer." />
+    <meta property="og:description" content="Personal blog for Vael Victus, web game developer." />
     <meta property="og:url" content="https://vaelvict.us/blog/" />
     <meta property="og:site_name" content="Vael Victus" />
 
