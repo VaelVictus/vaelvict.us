@@ -464,7 +464,7 @@ section {
     border-color: rgb(100, 50, 0);
 }
 .blog_pagination .disabled {
-    color: #ccc;
+    color: #666;
     cursor: not-allowed;
 }
 .blog_controls {

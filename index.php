@@ -92,13 +92,13 @@
 
             <h2 id='vael_victus_subtitle' class='w-full sm:w-1/2 m-0 mt-1 mx-auto text-base sm:text-lg flex flex-wrap justify-center items-center gap-x-6 gap-y-2'>
                 <span id='web_dev' class="flex items-center justify-center">
-                    <img src='img/laptop.svg' alt=''> Web Dev
+                    <img src='img/laptop.svg' aria-hidden> Web Dev
                 </span>
                 <span id='game_dev' class="flex items-center justify-center">
-                    <img src='img/sword.svg' alt=''> Game Dev
+                    <img src='img/sword.svg' aria-hidden> Game Dev
                 </span>
                 <span id='writer' class="flex items-center justify-center">
-                    <img src='img/square-pen.svg' alt=''> Writer
+                    <img src='img/square-pen.svg' aria-hidden> Writer
                 </span>
             </h2>
         </div>
@@ -249,7 +249,7 @@
                     <? /* Discord */ ?>
                     <a href="https://discord.com/users/71398206692401152" class='flex align-items no-underline bg-white 
                     connect_border' target='_blank' title="Note: link only works if we share a server (Discord limitation)">
-                        <img class='w-1/6 sm:w-1/5 mx-1 my-3 px-1 md:px-0' src='img/brands/discord.svg' alt=''>
+                        <img class='w-1/6 sm:w-1/5 mx-1 my-3 px-1 md:px-0' src='img/brands/discord.svg' alt='Discord logo'>
                         <div class='w-4/5 card_txt text-base pl-1' style='color: #2e3dda;'> <? # slightly darker #5865F2 (discord blue) ?>
                             vaelvictus
                             <div class='text-xs mt-1'>Discord</div>
@@ -259,7 +259,7 @@
                     <? /* Twitch */ ?>
                     <a class='flex align-items no-underline bg-white 
                                 connect_border' href='https://www.twitch.tv/vaelvictus' target='_blank' style='color: #6441a4;'>
-                        <img class='w-1/6 sm:w-1/5 mx-1 my-3 px-1 md:px-0' src='img/brands/twitch.svg' alt=''>
+                        <img class='w-1/6 sm:w-1/5 mx-1 my-3 px-1 md:px-0' src='img/brands/twitch.svg' alt='Twitch logo'>
                         <div class='w-4/5 card_txt text-base pl-1'>
                             <span class='underline'>Vael Victus</span>
                             <div class='text-xs mt-1'>Twitch</div>
@@ -269,7 +269,7 @@
                     <? /* Twitter */ ?>
                     <a class='flex align-items no-underline text-white
                                 connect_border' href='https://twitter.com/VaelVictus' target='_blank' style='background: #1DA1F2;'>
-                        <img class='w-1/6 sm:w-1/5 mx-1 my-3 px-1 md:px-0' src='img/brands/twitter.svg' alt=''>
+                        <img class='w-1/6 sm:w-1/5 mx-1 my-3 px-1 md:px-0' src='img/brands/twitter.svg' alt='Twitter logo'>
                         <div class='w-4/5 card_txt text-base pl-1'>
                             <span class='underline'>@VaelVictus</span>
                             <div class='text-xs mt-1'>X/Twitter</div>
@@ -279,7 +279,7 @@
                     <? /* Steam */ ?>
                     <a class='flex align-items no-underline  text-white
                                 connect_border' href='https://steamcommunity.com/id/vaelvictus/' target='_blank' style='background: #231f20;'>
-                        <img class='w-1/6 sm:w-1/5 mx-1 my-3 px-1 md:px-0' src='img/brands/steam.svg' alt=''>
+                        <img class='w-1/6 sm:w-1/5 mx-1 my-3 px-1 md:px-0' src='img/brands/steam.svg' alt='Steam logo'>
                         <div class='w-4/5 card_txt text-base pl-1'>
                             <span class='underline'>Vael Victus</span>
                             <div class='text-xs mt-1'>Steam</div>
@@ -289,7 +289,7 @@
                     <? /* Github */ ?>
                     <a class='flex align-items no-underline text-white
                                 connect_border' href='https://github.com/VaelVictus' target='_blank' style='background: #111;'>
-                        <img class='w-1/6 sm:w-1/5 mx-1 my-3 px-1 md:px-0' src='img/brands/github.svg' alt=''>
+                        <img class='w-1/6 sm:w-1/5 mx-1 my-3 px-1 md:px-0' src='img/brands/github.svg' alt='GitHub logo'>
                         <div class='w-4/5 card_txt text-base pl-1'>
                             <span class='underline'>Vael Victus</span>
                             <div class='text-xs mt-1'>GitHub</div>
@@ -299,7 +299,7 @@
                     <? /* Stack Exchange */ ?>
                     <a class='flex align-items no-underline bg-white  text-black
                                 connect_border' href='https://stackexchange.com/users/262546/vael-victus' target='_blank'>
-                        <img class='w-1/6 sm:w-1/5 mx-1 my-3 px-1 md:px-0' src='img/brands/stackexchange.svg' alt=''>
+                        <img class='w-1/6 sm:w-1/5 mx-1 my-3 px-1 md:px-0' src='img/brands/stackexchange.svg' alt='Stack Exchange logo'>
                         <div class='w-4/5 card_txt text-base pl-1'>
                             <span class='underline'>Vael Victus</span>
                             <div class='text-xs mt-1'>Stack Exchange</div>
