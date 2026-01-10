@@ -132,7 +132,10 @@ $canonical_url = $post !== null ? 'https://vaelvict.us' . $post_url : 'https://v
     <main class="text-base overflow-auto bg-cover w-full h-full">
         <div class="w-full max-w-3xl flex flex-wrap mx-auto mb-3">
             <nav class="blog_back_nav">
-                <a href="/">&larr; Back to Home</a>
+                <a href="/">
+                    <span class="post_nav_arrow">&larrhk;</span>
+                    <span>Back to Home</span>
+                </a>
             </nav>
 
             <section style='opacity: 1; transform: none;'>

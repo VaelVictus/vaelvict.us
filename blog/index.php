@@ -109,7 +109,10 @@ function format_date(string $iso_date): string {
     <main class="text-base overflow-auto bg-cover w-full h-full">
         <div class="w-full max-w-3xl flex flex-wrap mx-auto">
             <nav class="blog_back_nav">
-                <a href="/">&larr; Back to Home</a>
+                <a href="/">
+                    <span class="post_nav_arrow">&larrhk;</span>
+                    <span>Back to Home</span>
+                </a>
             </nav>
 
             <section style='opacity: 1; transform: none;'>
@@ -143,7 +146,7 @@ function format_date(string $iso_date): string {
                     foreach ($items as $index => $post) { 
                         $post_url = build_post_url($post);
                     ?>
-                        <a class="blog_post_item blog_post_link mb-2" href="<?= $post_url ?>">
+                        <a class="blog_post_item blog_post_link py-2" href="<?= $post_url ?>">
                             <div class="blog_post_title">
                                 <?php if (!empty($post['title'])) { ?>
                                     <?= $post['title'] ?>
