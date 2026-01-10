@@ -61,7 +61,7 @@
                     </mask>
                 </defs>
                 <g mask="url(#signature_reveal_mask)">
-                    <g aria-label="Vael Victus" style="font-size:38.1px;line-height:1.25;stroke-width:0.264583;fill:currentColor;" transform="translate(-12.700002,1.5875)">
+                    <g style="font-size:38.1px;line-height:1.25;stroke-width:0.264583;fill:currentColor;" transform="translate(-12.700002,1.5875)">
                         <path d="m 30.469115,37.422668 q -0.2667,0 -0.381,-0.1905 -0.0762,-0.1905 -0.1524,-0.8382 -0.381,-7.1247 -0.9525,-12.3825 -0.5715,-5.295899 -1.6383,-8.648699 -0.2667,-0.9906 -0.6096,-1.4478 -0.3429,-0.4572 -0.9906,-0.4572 -1.6764,0 -2.7813,3.2766 -0.2667,0.8001 -0.5715,0.8001 -0.2667,0 -0.2667,-0.6477 0,-1.4859 0.6858,-3.048 0.7239,-1.5621 1.905,-2.5908 1.1811,-1.0287 2.5527,-1.0287 0.8382,0 1.6002,0.7239 0.762,0.6858 1.4097,2.8575 0.8001,2.667 1.4859,8.1534 0.7239,5.448299 0.9906,10.972799 7.200899,-11.391899 7.200899,-16.954499 0,-0.9525 -0.2286,-1.4478 -0.1905,-0.4953 -0.6858,-1.0668 -0.1143,-0.1143 0.4191,-0.9525 0.5334,-0.8382 1.2192,-1.5621 0.7239,-0.7239 1.143,-0.7239 0.4572,0 0.9144,0.9525 0.4572,0.9525 0.4572,2.2479 0,1.7907 -0.9144,4.8387 -0.9144,3.0099 -2.7813,6.210299 l -5.562599,9.6393 q -0.0381,0.1143 -0.4953,0.8763 -0.4191,0.762 -0.762,1.2192 -0.381,0.4572 -1.0287,0.8382 -0.6477,0.381 -1.1811,0.381 z" />
                         <path d="m 44.794651,37.422668 q -1.9431,0 -1.9431,-3.6957 0,-3.5433 1.524,-6.9723 1.5621,-3.4671 4.191,-5.638799 2.6289,-2.2098 5.6769,-2.2098 1.5621,0 2.7051,0.4953 -0.4953,1.9431 -0.6858,2.8575 l -0.8001,4.114799 q -1.0668,4.8768 -1.2954,6.7437 -0.0381,0.2667 -0.0381,0.6477 0,0.8382 0.4953,0.8382 0.6096,0 1.143,-0.762 0.5334,-0.8001 1.2192,-2.2479 0.0381,-0.0381 0.1143,-0.2286 0.1143,-0.1905 0.2667,-0.1905 0.2286,0 0.2286,0.4572 l -0.0762,0.6096 q -0.2667,1.2573 -1.1049,2.4765 -0.8001,1.2192 -1.8288,1.9812 -0.9906,0.7239 -1.7907,0.7239 -1.3335,0 -1.3335,-2.1717 0,-0.8382 0.1905,-1.7145 l 0.6477,-3.3147 h -0.0381 q -1.8288,3.2004 -3.9243,5.2197 -2.0574,1.9812 -3.5433,1.9812 z m 1.7907,-3.1242 q 1.0668,0 2.4384,-1.6383 1.4097,-1.6764 2.5908,-4.0767 1.2192,-2.4003 1.6764,-4.3053 l 0.6096,-2.438399 q -1.143,-0.762 -2.4003,-0.762 -1.6383,0 -3.0099,1.905 -1.3335,1.866899 -2.0955,4.571999 -0.762,2.667 -0.762,4.8387 0,0.9525 0.1905,1.4478 0.2286,0.4572 0.762,0.4572 z" />
                         <path d="m 63.882695,37.422668 q -1.7145,0 -2.7432,-1.2954 -0.9906,-1.3335 -0.9906,-3.6576 0,-2.8194 1.3335,-6.0198 1.3716,-3.2385 3.5052,-5.372099 2.1336,-2.1717 4.3053,-2.1717 1.9812,0 1.9812,2.4003 0,1.943099 -1.143,3.809999 -1.143,1.8669 -3.0861,3.3147 -1.905,1.4097 -4.191,2.1717 0,2.0574 0.6477,2.9718 0.6858,0.9144 1.9812,0.9144 1.3716,0 2.5146,-0.8763 1.143,-0.8763 1.9431,-2.4003 0.1143,-0.2286 0.2286,-0.381 0.1143,-0.1524 0.3048,-0.1524 0.3048,0 0.3048,0.4572 0,1.0287 -1.0287,2.5527 -1.0287,1.524 -2.6289,2.6289 -1.6002,1.1049 -3.2385,1.1049 z m 0.1905,-8.8392 q 0.9906,0 2.0955,-0.6858 1.143,-0.7239 1.905,-1.9431 0.762,-1.2192 0.762,-2.7432 0,-1.790699 -1.2573,-1.790699 -1.0287,0 -1.9812,1.1049 -0.9144,1.104899 -1.5621,2.743199 -0.6096,1.6383 -0.8382,3.1623 0.2286,0.1524 0.8763,0.1524 z" />
@@ -79,13 +79,13 @@
 
             <h2 id='vael_victus_subtitle' class='w-full sm:w-1/2 m-0 mt-1 mx-auto text-base sm:text-lg flex flex-wrap justify-center items-center gap-x-6 gap-y-2'>
                 <span id='web_dev' class="flex items-center justify-center">
-                    <img src='img/laptop.svg' aria-hidden> Web Dev
+                    <img src='img/laptop.svg' alt="" aria-hidden="true"> Web Dev
                 </span>
                 <span id='game_dev' class="flex items-center justify-center">
-                    <img src='img/sword.svg' aria-hidden> Game Dev
+                    <img src='img/sword.svg' alt="" aria-hidden="true"> Game Dev
                 </span>
                 <span id='writer' class="flex items-center justify-center">
-                    <img src='img/square-pen.svg' aria-hidden> Writer
+                    <img src='img/square-pen.svg' alt="" aria-hidden="true"> Writer
                 </span>
             </h2>
         </div>
@@ -110,7 +110,7 @@
                     </div>
                     
                     <div class='mt-2'>
-                        I live in upstate South Carolina with my wife, <a href='https://500px.com/p/evelynvictus?view=photos'>Evelyn Victus</a>, and our four kids: Abel <span class='age'>(<?=$abel?> old)</span>, Violet <span class='age'>(<?=$violet?> old)</span>, Olivia <span class='age'>(<?=$olivia?> old)</span>, and Everett <span class='age'>(<?=$everett?> old)</span>. I also have five cats! <span id="view_pets" aria-expanded="false">show<span class="arrow">&#9662;</span></span> I spend most of my time making games, playing games, and raising my kids. I'm a <a href='https://www.youtube.com/playlist?list=PLKQKi0BW3i8xEeDhUJkUnuQVLjMaNnzAE'>motivation junkie</a> and love staying productive, whether it's code, writing, fitness, or research.
+                        I live in upstate South Carolina with my wife, <a href='https://500px.com/p/evelynvictus?view=photos'>Evelyn Victus</a>, and our four kids: Abel <span class='age'>(<?=$abel?> old)</span>, Violet <span class='age'>(<?=$violet?> old)</span>, Olivia <span class='age'>(<?=$olivia?> old)</span>, and Everett <span class='age'>(<?=$everett?> old)</span>. I also have five cats! <button id="view_pets" type="button" aria-expanded="false" aria-controls="pets_section">show<span class="arrow">&#9662;</span></button> I spend most of my time making games, playing games, and raising my kids. I'm a <a href='https://www.youtube.com/playlist?list=PLKQKi0BW3i8xEeDhUJkUnuQVLjMaNnzAE'>motivation junkie</a> and love staying productive, whether it's code, writing, fitness, or research.
                     </div>
                 </div>
             </section>
