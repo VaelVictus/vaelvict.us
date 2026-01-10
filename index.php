@@ -24,6 +24,10 @@
 
     <? require_once __DIR__ . '/inc/head_static.php'; ?>
 
+    <script type="speculationrules">
+    {"prefetch":[{"source":"list","urls":["/blog/"]}]}
+    </script>
+
     <title>Vael Victus</title>
 
     <meta name="title" content="Vael Victus">

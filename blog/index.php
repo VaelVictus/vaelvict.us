@@ -34,6 +34,20 @@ if ($show_all) {
     $pagination = paginate($sorted_posts, $page, $per_page);
 }
 
+// prefetch first 3 visible posts
+$prefetch_urls = [];
+foreach (array_slice($pagination['items'], 0, 3) as $prefetch_post) {
+    $prefetch_urls[] = build_post_url($prefetch_post);
+}
+$speculation_rules = json_encode([
+    'prefetch' => [
+        [
+            'source' => 'list',
+            'urls' => $prefetch_urls,
+        ],
+    ],
+], JSON_UNESCAPED_SLASHES);
+
 // helper to build pagination urls
 function build_url(int $page, int $per_page, string $order, bool $show_all): string {
     $params = [];
@@ -88,6 +102,10 @@ function format_date(string $iso_date): string {
     <meta property="og:description" content="Blog posts from Vael Victus - game designer and web developer." />
     <meta property="og:url" content="https://vaelvict.us/blog/" />
     <meta property="og:site_name" content="Vael Victus" />
+
+    <? if (!empty($prefetch_urls)) { ?>
+        <script type="speculationrules"><?= $speculation_rules ?></script>
+    <? } ?>
 
 </head>
 

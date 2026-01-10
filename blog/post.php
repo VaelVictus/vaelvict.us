@@ -135,7 +135,7 @@ $canonical_url = $post !== null ? 'https://vaelvict.us' . $post_url : 'https://v
                         <nav class="post_nav">
                             <div class="post_nav_prev">
                                 <? if ($prev_post !== null) { ?>
-                                    <a href="<?= build_post_url($prev_post) ?>">
+                                    <a class="post_nav_link" data_preload="1" href="<?= build_post_url($prev_post) ?>">
                                         <span class="post_nav_arrow">&larr;</span>
                                         <span class="post_nav_title"><?= !empty($prev_post['title']) ? $prev_post['title'] : '[Untitled]' ?></span>
                                     </a>
@@ -148,7 +148,7 @@ $canonical_url = $post !== null ? 'https://vaelvict.us' . $post_url : 'https://v
                             </div>
                             <div class="post_nav_next">
                                 <? if ($next_post !== null) { ?>
-                                    <a href="<?= build_post_url($next_post) ?>">
+                                    <a class="post_nav_link" data_preload="1" href="<?= build_post_url($next_post) ?>">
                                         <span class="post_nav_title"><?= !empty($next_post['title']) ? $next_post['title'] : '[Untitled]' ?></span>
                                         <span class="post_nav_arrow">&rarr;</span>
                                     </a>
@@ -195,7 +195,7 @@ $canonical_url = $post !== null ? 'https://vaelvict.us' . $post_url : 'https://v
                         <nav class="post_nav post_nav_bottom">
                             <div class="post_nav_prev">
                                 <? if ($prev_post !== null) { ?>
-                                    <a href="<?= build_post_url($prev_post) ?>">
+                                    <a class="post_nav_link" data_preload="1" href="<?= build_post_url($prev_post) ?>">
                                         <span class="post_nav_arrow">&larr;</span>
                                         <span class="post_nav_title"><?= !empty($prev_post['title']) ? $prev_post['title'] : '[Untitled]' ?></span>
                                     </a>
@@ -208,7 +208,7 @@ $canonical_url = $post !== null ? 'https://vaelvict.us' . $post_url : 'https://v
                             </div>
                             <div class="post_nav_next">
                                 <? if ($next_post !== null) { ?>
-                                    <a href="<?= build_post_url($next_post) ?>">
+                                    <a class="post_nav_link" data_preload="1" href="<?= build_post_url($next_post) ?>">
                                         <span class="post_nav_title"><?= !empty($next_post['title']) ? $next_post['title'] : '[Untitled]' ?></span>
                                         <span class="post_nav_arrow">&rarr;</span>
                                     </a>
@@ -220,5 +220,53 @@ $canonical_url = $post !== null ? 'https://vaelvict.us' . $post_url : 'https://v
             </section>
         </div>
     </main>
+
+    <script>
+    (() => {
+        const preloaded_urls = new Set();
+
+        function ensurePreloadLink(url) {
+            const selector = `link[rel="preload"][as="document"][href="${url}"]`;
+            if (document.head.querySelector(selector)) {
+                return;
+            }
+
+            const preload_el = document.createElement('link');
+            preload_el.rel = 'preload';
+            preload_el.as = 'document';
+            preload_el.href = url;
+            document.head.appendChild(preload_el);
+        }
+
+        function warmCache(url) {
+            fetch(url, { credentials: 'include' }).catch(() => {});
+        }
+
+        function preloadUrl(url) {
+            if (!url || preloaded_urls.has(url)) {
+                return;
+            }
+
+            preloaded_urls.add(url);
+            ensurePreloadLink(url);
+            warmCache(url);
+        }
+
+        function bindHoverPreload(link_el) {
+            const url = link_el.getAttribute('href');
+            if (!url) {
+                return;
+            }
+
+            link_el.addEventListener('mouseenter', () => preloadUrl(url), { passive: true });
+            link_el.addEventListener('focus', () => preloadUrl(url), { passive: true });
+            link_el.addEventListener('touchstart', () => preloadUrl(url), { passive: true });
+        }
+
+        document.querySelectorAll('a.post_nav_link[data_preload="1"][href]').forEach((link_el) => {
+            bindHoverPreload(link_el);
+        });
+    })();
+    </script>
 </body>
 </html>
