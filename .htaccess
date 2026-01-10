@@ -1,3 +1,6 @@
+# enable symlinks for mod_rewrite (required on some hosts)
+Options +FollowSymLinks
+
 # block HTTP access to secrets.php
 <Files "secrets.php">
     Require all denied
