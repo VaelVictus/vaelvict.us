@@ -3,6 +3,9 @@ import './src/style.css'
 document.addEventListener('DOMContentLoaded', () => {
   const content_delay = 900;
 
+  // fade in vael victus
+  document.getElementById('vael_victus').classList.add('fadeIn');
+
   // fade in each section
   document.querySelectorAll('section').forEach((el, i) => {
     setTimeout(() => {

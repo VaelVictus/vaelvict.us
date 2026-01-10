@@ -114,7 +114,7 @@ function format_date(string $iso_date): string {
 
             <section style='opacity: 1; transform: none;'>
                 <div class="w-full px-2 sm:px-3 pt-1 sm:pt-3 shadow-xs section_header blog_header">
-                    <h2 class='m-0'>Blog</h2>
+                    <h2 class='m-0'>Vael's Blog</h2>
                 </div>
 
                 <div class='w-full px-2 sm:px-3 p-3 overflow-auto bg-white'>
