@@ -4,3 +4,5 @@ node_modules
 
 # secrets file with API keys
 secrets.php
+
+storage/tumblr/
