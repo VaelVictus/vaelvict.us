@@ -30,18 +30,18 @@ This repo is a vanilla PHP personal/portfolio site with a small PHP blog that re
 This project expects **two** processes in dev:
 
 - **PHP server** (Apache/Laragon, or any PHP host) serving the project root
-- **Vite dev server** on port **1337** for JS/CSS HMR
+- **Vite dev server** starting at port **1337** for JS/CSS HMR (auto-increments if busy)
 
 Commands:
 
 - `npm install`
-- `npm run dev` (Vite on `http://localhost:1337`)
+- `npm run dev` (Vite starts at `http://localhost:1337` and uses the next free port if needed)
 - `npm run style` (Tailwind CLI watch → writes `css/style.css`)
 
 In dev mode, PHP pages load scripts from the Vite server:
 
-- `index.php` loads `http://localhost:1337/main.js`
-- blog pages load `http://localhost:1337/blog.js`
+- `index.php` loads `http://localhost:<vite-port>/main.js`
+- blog pages load `http://localhost:<vite-port>/blog.js`
 
 Dev/prod mode is decided in `inc/helpers.php` based on `$_SERVER['SERVER_NAME']` / `$_SERVER['HTTP_HOST']`.
 
@@ -82,5 +82,6 @@ Follow these repo conventions when editing code:
 
 - `secrets.php` is required by `inc/helpers.php`; missing it will break the site.
 - Vite dev uses port **1337** (see `vite.config.js`); if you change it, update PHP templates accordingly.
+- Vite dev starts at port **1337** (see `vite.config.js`) and auto-increments; PHP discovers the active port at runtime.
 - The blog will appear empty until `storage/tumblr/posts_index.json` exists (run the sync script).
 

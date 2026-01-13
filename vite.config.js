@@ -5,7 +5,7 @@ export default {
     // config options
     server: {
         port: 1337,
-        strictPort: true,
+        strictPort: false,
         https: true,
         cors: true,
     },

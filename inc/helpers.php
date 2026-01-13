@@ -14,8 +14,10 @@ $is_local_host = ($server_name === 'localhost'
     || $http_host === 'localhost');
 
 $vite_host = '127.0.0.1';
-$vite_ports = [1337];
-$vite_timeout_seconds = 0.5; // increased timeout
+$vite_port_start = 1337;
+$vite_port_end = 1350;
+$vite_ports = range($vite_port_start, $vite_port_end);
+$vite_timeout_seconds = 0.3;
 
 $dev_server_running = false;
 $vite_origin = '';
@@ -23,25 +25,45 @@ $vite_origin = '';
 // allow forcing dev mode for debugging
 $force_dev = isset($_GET['force_dev']);
 
+function is_vite_dev_server_port(int $vite_port, float $vite_timeout_seconds): bool {
+    // validate we're talking to vite, not just any open port
+    $url = "https://localhost:$vite_port/@vite/client";
+    $context = stream_context_create([
+        'http' => [
+            'timeout' => $vite_timeout_seconds,
+            'ignore_errors' => true,
+        ],
+        'ssl' => [
+            'verify_peer' => false,
+            'verify_peer_name' => false,
+            'allow_self_signed' => true,
+        ],
+    ]);
+
+    $body = @file_get_contents($url, false, $context);
+    if (!is_string($body) || $body === '') {
+        return false;
+    }
+
+    return str_contains($body, '@vite/client')
+        || str_contains($body, 'import.meta.hot')
+        || str_contains($body, '__vite');
+}
+
 if ($is_local_host || $force_dev) {
     foreach ($vite_ports as $vite_port) {
-        // try 127.0.0.1 first, then localhost
-        $hosts = ['127.0.0.1', 'localhost'];
-        foreach ($hosts as $host) {
-            $socket = @fsockopen($host, $vite_port, $errno, $errstr, $vite_timeout_seconds);
-            if (is_resource($socket)) {
-                fclose($socket);
-                $dev_server_running = true;
-                $vite_origin = "https://localhost:$vite_port";
-                break 2;
-            }
+        if (is_vite_dev_server_port($vite_port, $vite_timeout_seconds)) {
+            $dev_server_running = true;
+            $vite_origin = "https://localhost:$vite_port";
+            break;
         }
     }
 }
 
 if (($is_local_host && $dev_server_running) || $force_dev) {
     define('DEV_ENV', 'dev');
-    define('VITE_ORIGIN', $vite_origin ?: "https://localhost:1337");
+    $fallback_port = $vite_ports[0] ?? 1337;
+    define('VITE_ORIGIN', $vite_origin ?: "https://localhost:$fallback_port");
 } else {
     define('DEV_ENV', 'prod');
     define('VITE_ORIGIN', '');

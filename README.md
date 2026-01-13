@@ -5,7 +5,7 @@ Single-page personal/portfolio site built with **vanilla PHP**, **Vite**, and **
 ## Tech stack
 
 - **PHP**: server-rendered pages (`index.php`, `blog/*`)
-- **Vite**: JS/CSS bundling + dev server (port **1337**)
+- **Vite**: JS/CSS bundling + dev server (starts at **1337**, auto-increments if busy)
 - **Tailwind CLI**: generates `css/style.css` from `src/style.css`
 
 ## Prerequisites
@@ -34,7 +34,7 @@ Run the Tailwind watcher (writes `css/style.css`):
 npm run style
 ```
 
-Run the Vite dev server (port **1337**):
+Run the Vite dev server (starts at **1337**, uses the next free port if needed):
 
 ```bash
 npm run dev
@@ -44,8 +44,8 @@ Serve the project root via your PHP server (Laragon is typical for this repo).
 
 In dev mode, PHP pages load scripts from the Vite server:
 
-- Homepage: `http://localhost:1337/main.js`
-- Blog: `http://localhost:1337/blog.js`
+- Homepage: `http://localhost:<vite-port>/main.js`
+- Blog: `http://localhost:<vite-port>/blog.js`
 
 Dev/prod switching is determined in `inc/helpers.php` based on host/server name.
 
