@@ -27,27 +27,65 @@ $force_dev = isset($_GET['force_dev']);
 
 function is_vite_dev_server_port(int $vite_port, float $vite_timeout_seconds): bool {
     // validate we're talking to vite, not just any open port
-    $url = "https://localhost:$vite_port/@vite/client";
-    $context = stream_context_create([
-        'http' => [
-            'timeout' => $vite_timeout_seconds,
-            'ignore_errors' => true,
-        ],
-        'ssl' => [
-            'verify_peer' => false,
-            'verify_peer_name' => false,
-            'allow_self_signed' => true,
-        ],
-    ]);
+    // note: on windows, localhost may resolve to ipv6 (::1), so try both.
+    $hosts = ['127.0.0.1', 'localhost'];
 
-    $body = @file_get_contents($url, false, $context);
-    if (!is_string($body) || $body === '') {
-        return false;
+    foreach ($hosts as $host) {
+        $context = stream_context_create([
+            'ssl' => [
+                'verify_peer' => false,
+                'verify_peer_name' => false,
+                'allow_self_signed' => true,
+            ],
+        ]);
+
+        $socket = @stream_socket_client(
+            "ssl://$host:$vite_port",
+            $errno,
+            $errstr,
+            $vite_timeout_seconds,
+            STREAM_CLIENT_CONNECT,
+            $context
+        );
+
+        if (!is_resource($socket)) {
+            continue;
+        }
+
+        stream_set_timeout($socket, (int)ceil($vite_timeout_seconds));
+
+        $request = "GET /@vite/client HTTP/1.1\r\n"
+            . "Host: $host:$vite_port\r\n"
+            . "Connection: close\r\n\r\n";
+
+        fwrite($socket, $request);
+
+        $response = '';
+        while (!feof($socket)) {
+            $chunk = fread($socket, 4096);
+            if (!is_string($chunk) || $chunk === '') {
+                break;
+            }
+            $response .= $chunk;
+            if (strlen($response) > 200000) {
+                break;
+            }
+        }
+
+        fclose($socket);
+
+        if ($response === '') {
+            continue;
+        }
+
+        if (str_contains($response, '@vite/client')
+            || str_contains($response, 'import.meta.hot')
+            || str_contains($response, '__vite')) {
+            return true;
+        }
     }
 
-    return str_contains($body, '@vite/client')
-        || str_contains($body, 'import.meta.hot')
-        || str_contains($body, '__vite');
+    return false;
 }
 
 if ($is_local_host || $force_dev) {

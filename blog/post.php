@@ -156,7 +156,7 @@ $canonical_url = $post !== null ? 'https://vaelvict.us' . $post_url : 'https://v
                             </div>
                         </nav>
 
-                        <article>
+                        <article class='px-0 sm:px-2'>
                             <header class="blog_post_header">
                                 <? if (!empty($post['title'])) { ?>
                                     <h1 class="blog_post_title"><?= $post['title'] ?></h1>

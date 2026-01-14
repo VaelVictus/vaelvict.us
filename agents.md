@@ -1,6 +1,6 @@
 # Agents: `vaelvict.us`
 
-This repo is a vanilla PHP personal/portfolio site with a small PHP blog that renders from a filesystem cache (synced from Tumblr). Frontend assets are bundled by Vite and CSS is generated via Tailwind CLI.
+This repo is a vanilla PHP personal/portfolio site with a small PHP blog that renders from a filesystem cache (synced from Tumblr). Frontend assets are bundled by Vite and CSS is generated via Tailwind (Vite/PostCSS).
 
 ## Quick orientation
 
@@ -11,8 +11,7 @@ This repo is a vanilla PHP personal/portfolio site with a small PHP blog that re
 - **Frontend**
   - `main.js`: homepage JS entry (Vite dev + build)
   - `blog.js`: blog JS entry (Vite dev + build)
-  - `src/style.css`: Tailwind source
-  - `css/style.css`: Tailwind output (imported by JS)
+  - `src/style.css`: Tailwind source (compiled by Vite/PostCSS)
 - **Build output**
   - `dist/manifest.json`: Vite manifest consumed by PHP to load hashed assets in prod
   - `dist/assets/*`: built assets
@@ -36,7 +35,6 @@ Commands:
 
 - `npm install`
 - `npm run dev` (Vite starts at `http://localhost:1337` and uses the next free port if needed)
-- `npm run style` (Tailwind CLI watch → writes `css/style.css`)
 
 In dev mode, PHP pages load scripts from the Vite server:
 

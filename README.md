@@ -6,7 +6,7 @@ Single-page personal/portfolio site built with **vanilla PHP**, **Vite**, and **
 
 - **PHP**: server-rendered pages (`index.php`, `blog/*`)
 - **Vite**: JS/CSS bundling + dev server (starts at **1337**, auto-increments if busy)
-- **Tailwind CLI**: generates `css/style.css` from `src/style.css`
+- **Tailwind**: compiled via Vite/PostCSS from `src/style.css`
 
 ## Prerequisites
 
@@ -27,12 +27,6 @@ Create `secrets.php` (required at runtime; ignored by git):
 - It is required by `inc/helpers.php` and by `bin/sync_tumblr.php`.
 
 ## Development (local)
-
-Run the Tailwind watcher (writes `css/style.css`):
-
-```bash
-npm run style
-```
 
 Run the Vite dev server (starts at **1337**, uses the next free port if needed):
 
@@ -80,7 +74,6 @@ Note: `bin/sync_tumblr.php` currently contains a stub `fetch_tumblr_posts(...)` 
 - `blog/index.php`, `blog/post.php`: blog list + post pages
 - `main.js`, `blog.js`: Vite entrypoints
 - `src/style.css`: Tailwind source
-- `css/style.css`: Tailwind output
 - `dist/`: Vite build output (including `manifest.json`)
 - `storage/tumblr/`: cached blog data
 
