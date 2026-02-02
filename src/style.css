@@ -49,6 +49,17 @@ body {
     to { opacity: 1; }
 }
 
+:root {
+    --color_about: rgb(0, 42, 105);
+    --color_work: rgb(116, 2, 2);
+    --color_connect: rgb(14, 82, 0);
+    --color_pets: rgb(88, 24, 124);
+    --color_blog: rgb(100, 50, 0);
+    --color_blog_light: rgb(130, 65, 0);
+    --color_blog_lighter: rgb(140, 70, 0);
+    --color_blog_hover: rgba(100, 50, 0, 0.06);
+}
+
 *, *::before, *::after {
     box-sizing: border-box;
 }
@@ -128,11 +139,11 @@ section {
 }
 
 #about_header {
-    color: rgb(0, 42, 105);
+    color: var(--color_about);
 }
 
 #about_header h2 {
-    border-bottom: 3px solid rgb(0, 42, 105);
+    border-bottom: 3px solid var(--color_about);
 }
 
 #about_pic {
@@ -141,19 +152,19 @@ section {
 }
 
 #work_header {
-    color: rgb(116, 2, 2);
+    color: var(--color_work);
 }
 
 #work_header h2 {
-    border-bottom: 3px solid rgb(116, 2, 2);
+    border-bottom: 3px solid var(--color_work);
 }
 
 #connect_header {
-    color: rgb(14, 82, 0);
+    color: var(--color_connect);
 }
 
 #connect_header h2 {
-    border-bottom: 3px solid rgb(14, 82, 0);
+    border-bottom: 3px solid var(--color_connect);
 }
 
 /* Connect */
@@ -182,11 +193,11 @@ section {
 
 /* Pets */
 #pets_header {
-    color: rgb(128, 0, 128);
+    color: var(--color_pets);
 }
 
 #pets_header h3 {
-    border-bottom: 3px solid rgb(128, 0, 128);
+    border-bottom: 3px solid var(--color_pets);
     font-size: 22px;
     padding-bottom: 5px;
     margin: 0;
@@ -283,7 +294,7 @@ section {
 }
 
 #pets_section [role="tablist"] .tab_btn:focus-visible {
-    outline: 2px solid rgb(128, 0, 128);
+    outline: 2px solid var(--color_pets);
     outline-offset: 2px;
 }
 
@@ -297,7 +308,7 @@ section {
     position: absolute;
     left: 8px; right: 8px; bottom: -1px;
     height: 2px;
-    background: rgb(128, 0, 128);
+    background: var(--color_pets);
 }
 
 /* css-only tab behavior using :checked and :has() */
@@ -323,7 +334,7 @@ section {
     position: absolute;
     left: 8px; right: 8px; bottom: -1px;
     height: 2px;
-    background: rgb(128, 0, 128);
+    background: var(--color_pets);
     border-radius: 2px;
 }
 
@@ -389,10 +400,10 @@ section {
 
 /* blog styles */
 .blog_header {
-    color: rgb(100, 50, 0);
+    color: var(--color_blog);
 }
 .blog_header h2 {
-    border-bottom: 3px solid rgb(100, 50, 0);
+    border-bottom: 3px solid var(--color_blog);
 }
 .blog_post_item {
     font-weight: normal;
@@ -408,13 +419,13 @@ section {
     text-decoration: none;
 }
 .blog_post_link:visited {
-    color: rgb(128, 0, 128);
+    color: var(--color_pets);
 }
 .blog_post_link * {
     text-decoration: none;
 }
 .blog_post_link:hover {
-    background: rgba(100, 50, 0, 0.06);
+    background: var(--color_blog_hover);
 }
 .blog_post_hr {
     background: linear-gradient(to right, transparent 0%, #ccc 1%, #ccc 99%, transparent 100%);
@@ -453,16 +464,16 @@ section {
     color: rgb(37 99 235);
 }
 .blog_pagination a:visited {
-    color: rgb(128, 0, 128);
+    color: var(--color_pets);
 }
 .blog_pagination a:hover {
     background: #f5f5f5;
     text-decoration: none;
 }
 .blog_pagination .current_page {
-    background: rgb(100, 50, 0);
+    background: var(--color_header_brown);
     color: white;
-    border-color: rgb(100, 50, 0);
+    border-color: var(--color_header_brown);
 }
 .blog_pagination .disabled {
     color: #666;
@@ -483,7 +494,7 @@ section {
     text-decoration: none;
 }
 .blog_sort_controls a:visited {
-    color: rgb(128, 0, 128);
+    color: var(--color_pets);
 }
 .blog_sort_controls a:hover {
     text-decoration: none;
@@ -507,7 +518,7 @@ section {
 article > header .blog_post_title {
     font-size: 1.75rem;
     font-weight: bold;
-    color: rgb(100, 50, 0);
+    color: var(--color_blog);
     margin-bottom: 0.5rem;
 }
 article > header .blog_post_meta {
@@ -533,7 +544,7 @@ article > header .blog_post_meta {
     color: rgb(37 99 235);
 }
 .blog_post_content a:visited {
-    color: rgb(128, 0, 128);
+    color: var(--color_pets);
 }
 .age {
     font-size: 15px;
@@ -564,7 +575,7 @@ article > header .blog_post_meta {
     color: #666;
 }
 .blog_error h3 {
-    color: rgb(116, 2, 2);
+    color: var(--color_work);
 }
 
 /* blog navigation */
@@ -581,7 +592,7 @@ article > header .blog_post_meta {
     transition: color 0.2s;
 }
 .blog_back_nav a:hover {
-    color: rgb(140, 70, 0);
+    color: var(--color_blog_lighter);
 }
 
 /* post navigation (prev/next) */
@@ -623,16 +634,16 @@ article > header .blog_post_meta {
     text-decoration: none;
     font-weight: bold; font-size: 15px;
     padding: 0.25rem 0.5rem;
-    background-color: rgb(100, 50, 0);
-    border: 1px solid rgb(100, 50, 0);
+    background-color: var(--color_blog);
+    border: 1px solid var(--color_blog);
     border-radius: 4px;
     transition: background-color 0.2s;
     cursor: pointer;
 }
 .button_primary:hover,
 .button_primary:focus-visible {
-    background-color: rgb(130, 65, 0);
-    border-color: rgb(130, 65, 0);
+    background-color: var(--color_blog_light);
+    border-color: var(--color_blog_light);
 }
 .post_nav_prev a,
 .post_nav_next a {
@@ -646,7 +657,7 @@ article > header .blog_post_meta {
 }
 .post_nav_prev a:visited,
 .post_nav_next a:visited {
-    color: rgb(128, 0, 128);
+    color: var(--color_pets);
 }
 .post_nav_prev a:hover,
 .post_nav_next a:hover {

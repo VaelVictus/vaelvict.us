@@ -162,7 +162,7 @@ function format_date(string $iso_date): string {
                                     <? } ?>
                                 <? } ?>
                             </div>
-                            <div class="blog_post_meta mb-1">
+                            <div class="blog_post_meta">
                                 <?= format_date($post['date_iso']) ?>
                                 <? if ($post['type'] !== 'text') { ?>
                                     &middot; <?= ucfirst($post['type']) ?>
