@@ -471,9 +471,9 @@ section {
     text-decoration: none;
 }
 .blog_pagination .current_page {
-    background: var(--color_header_brown);
+    background: var(--color_blog);
     color: white;
-    border-color: var(--color_header_brown);
+    border-color: var(--color_blog);
 }
 .blog_pagination .disabled {
     color: #666;
