@@ -88,17 +88,8 @@ $canonical_url = $post !== null ? 'https://vaelvict.us' . $post_url : 'https://v
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<? if (DEV_ENV == 'prod') { ?>
-    <? $manifest = json_decode(file_get_contents($project_root . '/dist/manifest.json'), true); ?>
-    <? foreach ($manifest['index.html']['css'] as $path) { ?>
-        <link rel="stylesheet" href="/dist/<?=$path?>">
-    <? } ?>
-<? } else { ?>
-    <link rel="stylesheet" href="<?= VITE_ORIGIN ?>/src/style.css">
-    <script type="module" src="<?= VITE_ORIGIN ?>/blog.js"></script>
-<? } ?>
-
     <? require_once $project_root . '/inc/head_static.php'; ?>
+    <? render_vite_assets(null); ?>
 
     <title>Vael Victus - <?= $page_title ?></title>
 

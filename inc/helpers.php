@@ -136,3 +136,128 @@ function months($date) {
     $diff = $start_date->diff($now);
     return ($diff->y * 12) + $diff->m;
 }
+
+function get_vite_manifest(): array {
+    static $manifest = null;
+
+    if ($manifest !== null) {
+        return $manifest;
+    }
+
+    $manifest_path = __DIR__ . '/../dist/manifest.json';
+    if (!is_file($manifest_path)) {
+        $manifest = [];
+        return $manifest;
+    }
+
+    $manifest_json = file_get_contents($manifest_path);
+    if (!is_string($manifest_json) || $manifest_json === '') {
+        $manifest = [];
+        return $manifest;
+    }
+
+    $decoded_manifest = json_decode($manifest_json, true);
+    $manifest = is_array($decoded_manifest) ? $decoded_manifest : [];
+
+    return $manifest;
+}
+
+function find_vite_manifest_entry(array $manifest, string $entry): ?array {
+    $entry_keys = [$entry, '/' . $entry, './' . $entry];
+
+    if ($entry === 'main.js') {
+        $entry_keys[] = 'index.html';
+    }
+
+    foreach ($entry_keys as $entry_key) {
+        if (isset($manifest[$entry_key]) && is_array($manifest[$entry_key])) {
+            return $manifest[$entry_key];
+        }
+    }
+
+    foreach ($manifest as $manifest_entry) {
+        if (!is_array($manifest_entry) || !isset($manifest_entry['src'])) {
+            continue;
+        }
+
+        if ($manifest_entry['src'] === $entry || $manifest_entry['src'] === '/' . $entry) {
+            return $manifest_entry;
+        }
+    }
+
+    return null;
+}
+
+function collect_vite_css_paths(array $manifest, ?array $entry_item): array {
+    $css_paths = [];
+    $style_entry = find_vite_manifest_entry($manifest, 'src/style.css');
+
+    if ($style_entry !== null && isset($style_entry['file']) && substr((string)$style_entry['file'], -4) === '.css') {
+        $css_paths[] = (string)$style_entry['file'];
+    }
+
+    if ($entry_item !== null && isset($entry_item['css']) && is_array($entry_item['css'])) {
+        foreach ($entry_item['css'] as $css_path) {
+            $css_paths[] = (string)$css_path;
+        }
+    }
+
+    $fallback_entry = find_vite_manifest_entry($manifest, 'main.js');
+    if (empty($css_paths) && $fallback_entry !== null && isset($fallback_entry['css']) && is_array($fallback_entry['css'])) {
+        foreach ($fallback_entry['css'] as $css_path) {
+            $css_paths[] = (string)$css_path;
+        }
+    }
+
+    return array_values(array_unique($css_paths));
+}
+
+function render_vite_modulepreloads(array $manifest, array $entry_item, array &$seen_imports): void {
+    if (!isset($entry_item['imports']) || !is_array($entry_item['imports'])) {
+        return;
+    }
+
+    foreach ($entry_item['imports'] as $import_key) {
+        if (isset($seen_imports[$import_key]) || !isset($manifest[$import_key]) || !is_array($manifest[$import_key])) {
+            continue;
+        }
+
+        $seen_imports[$import_key] = true;
+        $import_item = $manifest[$import_key];
+
+        if (isset($import_item['file'])) {
+            echo '    <link rel="modulepreload" crossorigin href="/dist/' . $import_item['file'] . '">' . "\n";
+        }
+
+        render_vite_modulepreloads($manifest, $import_item, $seen_imports);
+    }
+}
+
+function render_vite_assets(?string $entry = null): void {
+    if (DEV_ENV === 'dev') {
+        echo '    <link rel="stylesheet" href="' . VITE_ORIGIN . '/src/style.css">' . "\n";
+        echo '    <link rel="stylesheet" href="/fonts/inter/inter.css">' . "\n";
+        if ($entry !== null) {
+            echo '    <script type="module" src="' . VITE_ORIGIN . '/' . $entry . '"></script>' . "\n";
+        }
+        return;
+    }
+
+    $manifest = get_vite_manifest();
+    $entry_item = $entry !== null ? find_vite_manifest_entry($manifest, $entry) : null;
+    $css_paths = collect_vite_css_paths($manifest, $entry_item);
+
+    foreach ($css_paths as $css_path) {
+        echo '    <link rel="stylesheet" href="/dist/' . $css_path . '">' . "\n";
+    }
+
+    echo '    <link rel="stylesheet" href="/fonts/inter/inter.css">' . "\n";
+
+    if ($entry_item === null || !isset($entry_item['file']) || substr((string)$entry_item['file'], -3) !== '.js') {
+        return;
+    }
+
+    $seen_imports = [];
+    render_vite_modulepreloads($manifest, $entry_item, $seen_imports);
+    echo '    <script type="module" crossorigin src="/dist/' . $entry_item['file'] . '"></script>' . "\n";
+}

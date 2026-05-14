@@ -46,6 +46,11 @@ export default {
             target: 'es2022'
         },
         rollupOptions: {
+            input: {
+                main: path.resolve(__dirname, 'main.js'),
+                blog: path.resolve(__dirname, 'blog.js'),
+                style: path.resolve(__dirname, 'src/style.css'),
+            },
             output: {
               entryFileNames: `assets/[name].[hash].js`,
               chunkFileNames: `assets/[name].[hash].js`,

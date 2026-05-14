@@ -7,22 +7,11 @@
     $everett = get_age('2025-05-14');
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" style='background-color: #b0b0b0;'> <? /* Ultra fouc-killer! */ ?>
   <head>
 
-<? if (DEV_ENV == 'prod') { ?>
-    <? $manifest = json_decode(file_get_contents('./dist/manifest.json'), true); ?>
-    <? foreach ($manifest['index.html']['css'] as $path) { ?>
-        <link rel="stylesheet" href="dist/<?=$path?>">
-    <? } ?>
-
-    <script type="module" crossorigin src="dist/<?=$manifest['index.html']['file']?>"></script>
-<? } else { ?>
-    <link rel="stylesheet" href="<?= VITE_ORIGIN ?>/src/style.css">
-    <script type="module" src="<?= VITE_ORIGIN ?>/main.js"></script>
-<? } ?>
-
     <? require_once __DIR__ . '/inc/head_static.php'; ?>
+    <? render_vite_assets('main.js'); ?>
 
     <script type="speculationrules">
     {"prefetch":[{"source":"list","urls":["/blog/"]}]}
@@ -83,13 +72,13 @@
 
             <h2 id='vael_victus_subtitle' class='w-full sm:w-1/2 m-0 mt-1 mx-auto text-base sm:text-lg flex flex-wrap justify-center items-center gap-x-6 gap-y-2'>
                 <span id='web_dev' class="flex items-center justify-center">
-                    <img src='img/laptop.svg' alt="" aria-hidden="true"> Web Dev
+                    <img src='img/laptop.svg' width='28' height='28' decoding='async' alt="" aria-hidden="true"> Web Dev
                 </span>
                 <span id='game_dev' class="flex items-center justify-center">
-                    <img src='img/sword.svg' alt="" aria-hidden="true"> Game Dev
+                    <img src='img/sword.svg' width='28' height='28' decoding='async' alt="" aria-hidden="true"> Game Dev
                 </span>
                 <span id='writer' class="flex items-center justify-center">
-                    <img src='img/square-pen.svg' alt="" aria-hidden="true"> Writer
+                    <img src='img/square-pen.svg' width='28' height='28' decoding='async' alt="" aria-hidden="true"> Writer
                 </span>
             </h2>
         </div>
@@ -101,14 +90,14 @@
                 </a>
                 */ 
             ?>
-            <section class='mt-0 sm:mt-1' style='opacity: 0; transform: translateY(-20px);'>
+            <section class='js_reveal mt-0 sm:mt-1' data_home_reveal>
                 <div class="w-full px-2 sm:px-3 pt-1 sm:pt-3 shadow-xs section_header" id='about_header'>
                     <h2 class='m-0'>About Me</h2>
                 </div>
                 
                 <div class='w-full px-2 sm:px-3 p-3 overflow-auto'>
                     <div>
-                        <img id='about_pic' class='mb-1 mr-2 float-left' src='img/vael_headshot_2025.jpg' alt='Vael Victus'> 
+                        <img id='about_pic' class='mb-1 mr-2 float-left' src='img/vael_headshot_2025.jpg' width='150' height='186' fetchpriority='high' decoding='async' alt='Vael Victus'> 
 
                         I am Spencer "Vael" Victus. I work in the financial tech industry and in my spare time I run <a href='https://tinydark.com'>Tinydark</a>, a player-first indie game studio.
                     </div>
@@ -133,12 +122,12 @@
 
 					<div id="cats_dead" class="pets-grid">
 						<div class="pet-card">
-							<img src="img/pets/arya.png" alt="Arya">
+							<img src="img/pets/arya.png" loading='lazy' decoding='async' alt="Arya">
 							<div class="pet-name">Arya</div>
 							<div class='memento_mori'>Oct 15th, 2025</div>
 						</div>
 						<div class="pet-card">
-							<img src="img/pets/raja.png" alt="Raja">
+							<img src="img/pets/raja.png" loading='lazy' decoding='async' alt="Raja">
 							<div class="pet-name">Raja</div>
 							<div class='memento_mori'>Oct 2nd, 2022</div>
 						</div>
@@ -146,23 +135,23 @@
 
 					<div id="cats_living" class="pets-grid">
 						<div class="pet-card">
-							<img src="img/pets/osiris.png" alt="Osiris">
+							<img src="img/pets/osiris.png" loading='lazy' decoding='async' alt="Osiris">
 							<div class="pet-name">Osiris</div>
 						</div>
 						<div class="pet-card">
-							<img src="img/pets/primordus.png" alt="Primordus">
+							<img src="img/pets/primordus.png" loading='lazy' decoding='async' alt="Primordus">
 							<div class="pet-name">Primordus</div>
 						</div>
 						<div class="pet-card">
-							<img src="img/pets/fennec.png" alt="Fennec">
+							<img src="img/pets/fennec.png" loading='lazy' decoding='async' alt="Fennec">
 							<div class="pet-name">Fennec</div>
 						</div>
 						<div class="pet-card">
-							<img src="img/pets/fox.png" alt="Fox">
+							<img src="img/pets/fox.png" loading='lazy' decoding='async' alt="Fox">
 							<div class="pet-name">Fox</div>
 						</div>
 						<div class="pet-card">
-							<img src="img/pets/willow.png" alt="Willow">
+							<img src="img/pets/willow.png" loading='lazy' decoding='async' alt="Willow">
 							<div class="pet-name">Willow</div>
 						</div>
 					</div>
@@ -170,10 +159,10 @@
 					<div id='credits'>
 						Thanks to <a href='https://pixelcatsend.com'>Pixel Cat's End</a> for the art
 					</div>
-				</div>
+                </div>
             </section>
             
-            <section class='container_shadow mt-0 sm:mt-4' style='opacity: 0; transform: translateY(-20px);'>
+            <section class='js_reveal container_shadow mt-0 sm:mt-4' data_home_reveal>
                 <div class="w-full px-2 sm:px-3 pt-3 shadow-xs section_header" id="work_header">
                     <h2 class='m-0'>My Work</h2>
                 </div>
@@ -209,7 +198,7 @@
                 </div>
             </section>
 
-            <section id='connect' class='pl-0 mt-0 sm:mt-4 sm:mb-5' style='opacity: 0; transform: translateY(-20px);'>
+            <section id='connect' class='js_reveal pl-0 mt-0 sm:mt-4 sm:mb-5' data_home_reveal>
                 <div class="w-full px-2 sm:px-3 pt-3 shadow-xs section_header" id='connect_header'>
                     <h2 class='m-0'>Connect</h2>
                 </div>
@@ -219,7 +208,7 @@
                     <? /* Email.  Mobile: most people have mailto: functionality */ ?>
                     <a class='flex align-items no-underline bg-white  text-black sm:hidden
                                 connect_border' href='mailto:vael@tinydark.com' target='_blank'>
-                        <img class='w-1/6 sm:w-1/5 mx-1 my-3 px-2 md:px-0 p-1' src='img/brands/email.svg' alt='email'>
+                        <img class='w-1/6 sm:w-1/5 mx-1 my-3 px-2 md:px-0 p-1' src='img/brands/email.svg' loading='lazy' decoding='async' alt='email'>
                         <div class='w-4/5 card_txt text-base pl-1'>
                             <span class='underline'>vael@tinydark.com</span>
                             <div class='text-gray-600 text-xs mt-1'>tap to mail</div>
@@ -230,7 +219,7 @@
                     <div class='hidden align-items bg-white text-black sm:flex cursor-pointer
                                 connect_border' onClick="copyToClipboard('vael@tinydark.com')" 
                                 role='button' tabindex="0">
-                        <img class='w-1/6 sm:w-1/5 mx-1 my-3 px-1 md:px-0' src='img/brands/email.svg' alt='email'>
+                        <img class='w-1/6 sm:w-1/5 mx-1 my-3 px-1 md:px-0' src='img/brands/email.svg' loading='lazy' decoding='async' alt='email'>
                         <div class='w-4/5 card_txt text-sm pl-1'>
                             vael@tinydark.com
                             <div class='text-gray-600 text-xs mt-1' id='click2copy'>click to copy</div>
@@ -240,7 +229,7 @@
                     <? /* Discord */ ?>
                     <a href="https://discord.com/users/71398206692401152" class='flex align-items no-underline bg-white 
                     connect_border' target='_blank' title="Note: link only works if we share a server (Discord limitation)">
-                        <img class='w-1/6 sm:w-1/5 mx-1 my-3 px-1 md:px-0' src='img/brands/discord.svg' alt='Discord logo'>
+                        <img class='w-1/6 sm:w-1/5 mx-1 my-3 px-1 md:px-0' src='img/brands/discord.svg' loading='lazy' decoding='async' alt='Discord logo'>
                         <div class='w-4/5 card_txt text-base pl-1' style='color: #2e3dda;'> <? # slightly darker #5865F2 (discord blue) ?>
                             vaelvictus
                             <div class='text-xs mt-1'>Discord</div>
@@ -250,7 +239,7 @@
                     <? /* Twitch */ ?>
                     <a class='flex align-items no-underline bg-white 
                                 connect_border' href='https://www.twitch.tv/vaelvictus' target='_blank' style='color: #6441a4;'>
-                        <img class='w-1/6 sm:w-1/5 mx-1 my-3 px-1 md:px-0' src='img/brands/twitch.svg' alt='Twitch logo'>
+                        <img class='w-1/6 sm:w-1/5 mx-1 my-3 px-1 md:px-0' src='img/brands/twitch.svg' loading='lazy' decoding='async' alt='Twitch logo'>
                         <div class='w-4/5 card_txt text-base pl-1'>
                             <span class='underline'>Vael Victus</span>
                             <div class='text-xs mt-1'>Twitch</div>
@@ -260,7 +249,7 @@
                     <? /* Twitter */ ?>
                     <a class='flex align-items no-underline text-white
                                 connect_border' href='https://twitter.com/VaelVictus' target='_blank' style='background: #1DA1F2;'>
-                        <img class='w-1/6 sm:w-1/5 mx-1 my-3 px-1 md:px-0' src='img/brands/twitter.svg' alt='Twitter logo'>
+                        <img class='w-1/6 sm:w-1/5 mx-1 my-3 px-1 md:px-0' src='img/brands/twitter.svg' loading='lazy' decoding='async' alt='Twitter logo'>
                         <div class='w-4/5 card_txt text-base pl-1'>
                             <span class='underline'>@VaelVictus</span>
                             <div class='text-xs mt-1'>X/Twitter</div>
@@ -270,7 +259,7 @@
                     <? /* Steam */ ?>
                     <a class='flex align-items no-underline  text-white
                                 connect_border' href='https://steamcommunity.com/id/vaelvictus/' target='_blank' style='background: #231f20;'>
-                        <img class='w-1/6 sm:w-1/5 mx-1 my-3 px-1 md:px-0' src='img/brands/steam.svg' alt='Steam logo'>
+                        <img class='w-1/6 sm:w-1/5 mx-1 my-3 px-1 md:px-0' src='img/brands/steam.svg' loading='lazy' decoding='async' alt='Steam logo'>
                         <div class='w-4/5 card_txt text-base pl-1'>
                             <span class='underline'>Vael Victus</span>
                             <div class='text-xs mt-1'>Steam</div>
@@ -280,7 +269,7 @@
                     <? /* Github */ ?>
                     <a class='flex align-items no-underline text-white
                                 connect_border' href='https://github.com/VaelVictus' target='_blank' style='background: #111;'>
-                        <img class='w-1/6 sm:w-1/5 mx-1 my-3 px-1 md:px-0' src='img/brands/github.svg' alt='GitHub logo'>
+                        <img class='w-1/6 sm:w-1/5 mx-1 my-3 px-1 md:px-0' src='img/brands/github.svg' loading='lazy' decoding='async' alt='GitHub logo'>
                         <div class='w-4/5 card_txt text-base pl-1'>
                             <span class='underline'>Vael Victus</span>
                             <div class='text-xs mt-1'>GitHub</div>
@@ -290,7 +279,7 @@
                     <? /* Stack Exchange */ ?>
                     <a class='flex align-items no-underline bg-white  text-black
                                 connect_border' href='https://stackexchange.com/users/262546/vael-victus' target='_blank'>
-                        <img class='w-1/6 sm:w-1/5 mx-1 my-3 px-1 md:px-0' src='img/brands/stackexchange.svg' alt='Stack Exchange logo'>
+                        <img class='w-1/6 sm:w-1/5 mx-1 my-3 px-1 md:px-0' src='img/brands/stackexchange.svg' loading='lazy' decoding='async' alt='Stack Exchange logo'>
                         <div class='w-4/5 card_txt text-base pl-1'>
                             <span class='underline'>Vael Victus</span>
                             <div class='text-xs mt-1'>Stack Exchange</div>

@@ -72,6 +72,17 @@ a {
     opacity: 1 !important;
 }
 
+.js_reveal {
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 1.4s ease, transform 0.65s ease;
+}
+
+.js_reveal.is_visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 /* Grid Bubbles */
 .grid-bubbles {
     grid-template-columns: repeat(auto-fill, 100%);
@@ -626,5 +637,14 @@ article > header .blog_post_meta {
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .fadeIn,
+    .js_reveal,
+    section,
+    #pets_section {
+        transition-duration: 0.01ms;
+    }
 }
  

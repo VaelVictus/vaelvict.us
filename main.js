@@ -1,30 +1,26 @@
-import './src/style.css'
-
 document.addEventListener('DOMContentLoaded', () => {
   const content_delay = 900;
 
   // fade in vael victus
   document.getElementById('vael_victus').classList.add('fadeIn');
 
-  // fade in each section
-  document.querySelectorAll('section').forEach((el, i) => {
+  document.querySelectorAll('[data_home_reveal]').forEach((el, i) => {
     setTimeout(() => {
-      el.style.opacity = 1;
-      el.style.transform = 'translateY(0px)';
+      el.classList.add('is_visible');
     }, content_delay + i*300)
   });
     
   setTimeout(() => {
-    document.getElementById("web_dev").classList.add('fadeIn');
-    document.getElementById("game_dev").classList.add('fadeIn');
-    document.getElementById("writer").classList.add('fadeIn');
+    document.getElementById('web_dev').classList.add('fadeIn');
+    document.getElementById('game_dev').classList.add('fadeIn');
+    document.getElementById('writer').classList.add('fadeIn');
   }, 750);
 });
 
 const pets_section = document.getElementById('pets_section');
 
-document.getElementById('view_pets').addEventListener('click', () => {
-  const view_pets_text = document.getElementById('view_pets');
+document.getElementById('view_pets').addEventListener('click', (event) => {
+  const view_pets_text = event.currentTarget;
 
   if (pets_section.classList.contains('vael-show')) {
       // hide the section

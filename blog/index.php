@@ -79,17 +79,8 @@ function format_date(string $iso_date): string {
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<? if (DEV_ENV == 'prod') { ?>
-    <? $manifest = json_decode(file_get_contents($project_root . '/dist/manifest.json'), true); ?>
-    <? foreach ($manifest['index.html']['css'] as $path) { ?>
-        <link rel="stylesheet" href="/dist/<?=$path?>">
-    <? } ?>
-<? } else { ?>
-    <link rel="stylesheet" href="<?= VITE_ORIGIN ?>/src/style.css">
-    <script type="module" src="<?= VITE_ORIGIN ?>/blog.js"></script>
-<? } ?>
-
     <? require_once $project_root . '/inc/head_static.php'; ?>
+    <? render_vite_assets('blog.js'); ?>
 
     <title>Vael Victus - Blog</title>
 
@@ -112,14 +103,14 @@ function format_date(string $iso_date): string {
 <body>
     <main class="text-base overflow-auto bg-cover w-full h-full">
         <div class="w-full max-w-3xl flex flex-wrap mx-auto">
-            <nav class="blog_back_nav">
+            <nav class="js_reveal blog_back_nav" data_blog_reveal>
                 <a href="/">
                     <span class="post_nav_arrow">&larrhk;</span>
                     <span>Back to Home Page</span>
                 </a>
             </nav>
 
-            <section style='opacity: 1; transform: none;'>
+            <section class='js_reveal' data_blog_reveal>
                 <div class="w-full px-2 sm:px-3 pt-1 sm:pt-3 shadow-xs section_header blog_header">
                     <h2 class='m-0'>Blog</h2>
                 </div>
