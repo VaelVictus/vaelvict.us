@@ -13,11 +13,10 @@ $is_local_host = ($server_name === 'localhost'
     || str_contains($http_host, '192.168')
     || $http_host === 'localhost');
 
-$vite_host = '127.0.0.1';
 $vite_port_start = 1337;
 $vite_port_end = 1350;
-$vite_ports = range($vite_port_start, $vite_port_end);
-$vite_timeout_seconds = 0.3;
+$vite_status_path = __DIR__ . '/../storage/vite/dev-server.local';
+$vite_timeout_seconds = 0.05;
 
 $dev_server_running = false;
 $vite_origin = '';
@@ -25,62 +24,43 @@ $vite_origin = '';
 // allow forcing dev mode for debugging
 $force_dev = isset($_GET['force_dev']);
 
-function is_vite_dev_server_port(int $vite_port, float $vite_timeout_seconds): bool {
-    // validate we're talking to vite, not just any open port
-    // note: on windows, localhost may resolve to ipv6 (::1), so try both.
+function get_vite_status_port(string $vite_status_path): ?int {
+    if (!is_file($vite_status_path)) {
+        return null;
+    }
+
+    $status_json = file_get_contents($vite_status_path);
+    if (!is_string($status_json) || $status_json === '') {
+        return null;
+    }
+
+    $status = json_decode($status_json, true);
+    if (!is_array($status) || !isset($status['port'])) {
+        return null;
+    }
+
+    $vite_port = (int)$status['port'];
+    if ($vite_port < 1 || $vite_port > 65535) {
+        return null;
+    }
+
+    return $vite_port;
+}
+
+function is_vite_dev_server_port_open(int $vite_port, float $vite_timeout_seconds): bool {
     $hosts = ['127.0.0.1', 'localhost'];
 
     foreach ($hosts as $host) {
-        $context = stream_context_create([
-            'ssl' => [
-                'verify_peer' => false,
-                'verify_peer_name' => false,
-                'allow_self_signed' => true,
-            ],
-        ]);
-
         $socket = @stream_socket_client(
-            "ssl://$host:$vite_port",
+            "tcp://$host:$vite_port",
             $errno,
             $errstr,
             $vite_timeout_seconds,
-            STREAM_CLIENT_CONNECT,
-            $context
+            STREAM_CLIENT_CONNECT
         );
 
-        if (!is_resource($socket)) {
-            continue;
-        }
-
-        stream_set_timeout($socket, (int)ceil($vite_timeout_seconds));
-
-        $request = "GET /@vite/client HTTP/1.1\r\n"
-            . "Host: $host:$vite_port\r\n"
-            . "Connection: close\r\n\r\n";
-
-        fwrite($socket, $request);
-
-        $response = '';
-        while (!feof($socket)) {
-            $chunk = fread($socket, 4096);
-            if (!is_string($chunk) || $chunk === '') {
-                break;
-            }
-            $response .= $chunk;
-            if (strlen($response) > 200000) {
-                break;
-            }
-        }
-
-        fclose($socket);
-
-        if ($response === '') {
-            continue;
-        }
-
-        if (str_contains($response, '@vite/client')
-            || str_contains($response, 'import.meta.hot')
-            || str_contains($response, '__vite')) {
+        if (is_resource($socket)) {
+            fclose($socket);
             return true;
         }
     }
@@ -89,8 +69,19 @@ function is_vite_dev_server_port(int $vite_port, float $vite_timeout_seconds): b
 }
 
 if ($is_local_host || $force_dev) {
+    $vite_status_port = get_vite_status_port($vite_status_path);
+    $vite_ports = [];
+
+    if ($vite_status_port !== null) {
+        $vite_ports[] = $vite_status_port;
+    }
+
+    $vite_ports[] = $vite_port_start;
+    $vite_ports = array_merge($vite_ports, range($vite_port_start + 1, $vite_port_end));
+    $vite_ports = array_values(array_unique($vite_ports));
+
     foreach ($vite_ports as $vite_port) {
-        if (is_vite_dev_server_port($vite_port, $vite_timeout_seconds)) {
+        if (is_vite_dev_server_port_open($vite_port, $vite_timeout_seconds)) {
             $dev_server_running = true;
             $vite_origin = "https://localhost:$vite_port";
             break;
@@ -100,7 +91,7 @@ if ($is_local_host || $force_dev) {
 
 if (($is_local_host && $dev_server_running) || $force_dev) {
     define('DEV_ENV', 'dev');
-    $fallback_port = $vite_ports[0] ?? 1337;
+    $fallback_port = $vite_status_port ?? $vite_port_start;
     define('VITE_ORIGIN', $vite_origin ?: "https://localhost:$fallback_port");
 } else {
     define('DEV_ENV', 'prod');
