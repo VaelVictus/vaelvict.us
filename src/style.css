@@ -7,9 +7,21 @@
     navigation: auto;
 }
 
-/* Target body element for smoother transitions */
-body {
+/* Keep the document/background out of View Transition snapshots; only fade the content column. */
+html, body {
+    view-transition-name: none;
+}
+
+main > div {
     view-transition-name: page-content;
+    contain: layout;
+}
+
+/* Stop the browser's default root cross-fade from flashing the body background. */
+::view-transition-old(root),
+::view-transition-new(root) {
+    animation: none;
+    mix-blend-mode: normal;
 }
 
 /* Custom transition animations - smoother fade */
