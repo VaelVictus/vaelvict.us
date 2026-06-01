@@ -103,7 +103,7 @@
                     </div>
                     
                     <div class='mt-2'>
-                        I live in upstate South Carolina with my wife, <a href='https://500px.com/p/evelynvictus?view=photos'>Evelyn Victus</a>, and our four kids: Abel <span class='age'>(<?=$abel?> old)</span>, Violet <span class='age'>(<?=$violet?> old)</span>, Olivia <span class='age'>(<?=$olivia?> old)</span>, and Everett <span class='age'>(<?=$everett?> old)</span>. I also have five cats! <button id="view_pets" type="button" aria-expanded="false" aria-controls="pets_section">show<span class="arrow">&#9662;</span></button> I spend most of my time making games, playing games, and raising my kids. I'm a <a href='https://www.youtube.com/playlist?list=PLKQKi0BW3i8xEeDhUJkUnuQVLjMaNnzAE'>motivation junkie</a> and love staying productive, whether it's code, writing, fitness, or research.
+                        I live in upstate South Carolina with my wife, <a href='https://500px.com/p/evelynvictus?view=photos'>Evelyn Victus</a>, and our four kids: Abel <span class='age'>(<?=$abel?> old)</span>, Violet <span class='age'>(<?=$violet?> old)</span>, Olivia <span class='age'>(<?=$olivia?> old)</span>, and Everett <span class='age'>(<?=$everett?> old)</span>. I also have six cats! <button id="view_pets" type="button" aria-expanded="false" aria-controls="pets_section">show<span class="arrow">&#9662;</span></button> I spend most of my time making games, playing games, and raising my kids. I'm a <a href='https://www.youtube.com/playlist?list=PLKQKi0BW3i8xEeDhUJkUnuQVLjMaNnzAE'>motivation junkie</a> and love staying productive, whether it's code, writing, fitness, or research.
                     </div>
                 </div>
             </section>
@@ -121,12 +121,12 @@
 					</div>
 
 					<div id="cats_dead" class="pets-grid">
-						<div class="pet-card">
+						<div class="pet-card" title="A runt named after Arya Stark because we found her abandoned on the street. Passed from thyroid issues.">
 							<img src="img/pets/arya.png" loading='lazy' decoding='async' alt="Arya">
 							<div class="pet-name">Arya</div>
 							<div class='memento_mori'>Oct 15th, 2025</div>
 						</div>
-						<div class="pet-card">
+						<div class="pet-card" title="Our first cat, inherited from my mother-in-law. His name means 'king.' Likely passed from an unfortunate encounter with a toad.">
 							<img src="img/pets/raja.png" loading='lazy' decoding='async' alt="Raja">
 							<div class="pet-name">Raja</div>
 							<div class='memento_mori'>Oct 2nd, 2022</div>
@@ -134,25 +134,29 @@
 					</div>
 
 					<div id="cats_living" class="pets-grid">
-						<div class="pet-card">
+						<div class="pet-card" title="Named for his coloring">
 							<img src="img/pets/osiris.png" loading='lazy' decoding='async' alt="Osiris">
 							<div class="pet-name">Osiris</div>
 						</div>
-						<div class="pet-card">
+						<div class="pet-card" title="Named after the fire dragon from Guild Wars 2 because I thought it'd be funny for this cute little kitty to be named after such a ferocious beast!">
 							<img src="img/pets/primordus.png" loading='lazy' decoding='async' alt="Primordus">
 							<div class="pet-name">Primordus</div>
 						</div>
-						<div class="pet-card">
+						<div class="pet-card" title="Named for his coloring and resemblance to a fennec fox">
 							<img src="img/pets/fennec.png" loading='lazy' decoding='async' alt="Fennec">
 							<div class="pet-name">Fennec</div>
 						</div>
-						<div class="pet-card">
+						<div class="pet-card" title="Named for his coloring and pairing with Fennec (they're brothers)">
 							<img src="img/pets/fox.png" loading='lazy' decoding='async' alt="Fox">
 							<div class="pet-name">Fox</div>
 						</div>
-						<div class="pet-card">
+						<div class="pet-card" title="Named after the willow tree">
 							<img src="img/pets/willow.png" loading='lazy' decoding='async' alt="Willow">
 							<div class="pet-name">Willow</div>
+						</div>
+						<div class="pet-card" title="Named after Prince Lune from The Cat Returns">
+							<img src="img/pets/lune.png" loading='lazy' decoding='async' alt="Lune">
+							<div class="pet-name">Lune</div>
 						</div>
 					</div>
 
