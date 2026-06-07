@@ -89,7 +89,7 @@ if ($is_local_host || $force_dev) {
     }
 }
 
-if (($is_local_host && $dev_server_running) || $force_dev) {
+if ($is_local_host || $force_dev) {
     define('DEV_ENV', 'dev');
     $fallback_port = $vite_status_port ?? $vite_port_start;
     define('VITE_ORIGIN', $vite_origin ?: "https://localhost:$fallback_port");
@@ -235,10 +235,10 @@ function render_vite_modulepreloads(array $manifest, array $entry_item, array &$
 
 function render_vite_assets(?string $entry = null): void {
     if (DEV_ENV === 'dev') {
-        echo '    <link rel="stylesheet" href="' . VITE_ORIGIN . '/src/style.css">' . "\n";
+        echo '    <link rel="stylesheet" href="/css/style.css">' . "\n";
         echo '    <link rel="stylesheet" href="/fonts/inter/inter.css">' . "\n";
         if ($entry !== null) {
-            echo '    <script type="module" src="' . VITE_ORIGIN . '/' . $entry . '"></script>' . "\n";
+            echo '    <script type="module" src="/' . $entry . '"></script>' . "\n";
         }
         return;
     }
