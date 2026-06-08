@@ -232,23 +232,22 @@ section {
     bottom: calc(100% + 10px);
     z-index: 40;
     display: grid;
-    grid-template-columns: 40% 60%;
+    grid-template-columns: 50% 50%;
     grid-template-rows: auto 1fr;
-    width: 250px;
+    width: 300px;
     height: auto;
-    min-height: 94px;
+    min-height: 70px;
     overflow: visible;
     border: 1px solid color-mix(in srgb, var(--color_pets) 22%, transparent);
-    border-radius: 8px;
+    border-radius: 2px;
     background: color-mix(in srgb, #fff 92%, var(--color_pets));
     color: #25190d;
     line-height: 1.25;
-    opacity: 0;
     pointer-events: none;
     text-align: left;
     transform: translate(var(--pet_tooltip_x), var(--pet_tooltip_y)) scale(0.98);
     transform-origin: bottom center;
-    transition: opacity 150ms ease, transform 150ms ease, visibility 150ms ease;
+    transition: transform 150ms ease, visibility 150ms ease;
     visibility: hidden;
 }
 
@@ -266,22 +265,20 @@ section {
 }
 
 .pet-card:is(:hover, :focus, :focus-within) .pet_tooltip {
-    opacity: 1;
     transform: translate(var(--pet_tooltip_x), var(--pet_tooltip_y)) scale(1);
     visibility: visible;
 }
 
 .pet_tooltip .pet_tooltip_img {
     grid-row: 1 / span 2;
-    align-self: stretch;
+    align-self: start;
     width: 100%;
-    height: 100%;
-    min-height: 94px;
+    height: 185px;
+    min-height: 185px;
+    max-height: 185px;
     margin: 0;
-    padding: 8px;
-    border-radius: 7px 0 0 7px;
-    background: linear-gradient(135deg, rgba(255,255,255,0.72), rgba(140,90,20,0.1));
-    object-fit: contain;
+    border-radius: 1px 0 0 1px;
+    object-fit: cover;
 }
 
 .pet_tooltip_name {
