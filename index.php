@@ -1,5 +1,6 @@
 <? 
     require_once('inc/helpers.php');
+    require_once('inc/pets.php');
 
     $abel   = get_age('2011-01-03');
     $violet = get_age('2021-01-05');
@@ -7,7 +8,7 @@
     $everett = get_age('2025-05-14');
 ?>
 <!DOCTYPE html>
-<html lang="en" style='background-color: #b0b0b0;'> <? /* Ultra fouc-killer! */ ?>
+<html lang="en" style='background-color: #fff;'> <? /* fouc-killer; desktop gradient applied via css */ ?>
   <head>
 
     <? require_once __DIR__ . '/inc/head_static.php'; ?>
@@ -120,85 +121,15 @@
 						<label for="tab_dead" class="tab_btn px-3 py-1 text-sm rounded-t-md border border-b-0" title="kitty graveyard :(">😿</label>
 					</div>
 
-					<div id="cats_dead" class="pets-grid">
-						<div class="pet-card" tabindex="0" aria-describedby="cat_tooltip_arya">
-							<img src="img/pets/arya.png" loading='lazy' decoding='async' alt="Arya">
-							<div class="pet-name">Arya</div>
-							<div class='memento_mori'>Oct 15th, 2025</div>
-							<div class="pet_tooltip" id="cat_tooltip_arya" role="tooltip">
-								<img class="pet_tooltip_img" src="img/pet_photos/arya_optimized.webp" loading='lazy' decoding='async' alt="">
-								<div class="pet_tooltip_name">Arya</div>
-								<div class="pet_tooltip_description">A runt named after Arya Stark because we found her abandoned on the street. Passed from thyroid issues.</div>
-							</div>
-						</div>
-						<div class="pet-card" tabindex="0" aria-describedby="cat_tooltip_raja">
-							<img src="img/pets/raja.png" loading='lazy' decoding='async' alt="Raja">
-							<div class="pet-name">Raja</div>
-							<div class='memento_mori'>Oct 2nd, 2022</div>
-							<div class="pet_tooltip" id="cat_tooltip_raja" role="tooltip">
-								<img class="pet_tooltip_img" src="img/pet_photos/raja_optimized.webp" loading='lazy' decoding='async' alt="">
-								<div class="pet_tooltip_name">Raja</div>
-								<div class="pet_tooltip_description">Our first cat, inherited from my mother-in-law. His name means 'king.' Likely passed from an unfortunate encounter with a toad.</div>
-							</div>
-						</div>
-					</div>
+					<? render_pets_tab('cats_dead', 'pet_dead', $cats_dead); ?>
+					<? render_pets_tab('cats_living', 'pet_living', $cats_living); ?>
 
-					<div id="cats_living" class="pets-grid">
-						<div class="pet-card" tabindex="0" aria-describedby="cat_tooltip_osiris">
-							<img src="img/pets/osiris.png" loading='lazy' decoding='async' alt="Osiris">
-							<div class="pet-name">Osiris</div>
-							<div class="pet_tooltip" id="cat_tooltip_osiris" role="tooltip">
-								<img class="pet_tooltip_img" src="img/pet_photos/osiris_optimized.webp" loading='lazy' decoding='async' alt="">
-								<div class="pet_tooltip_name">Osiris</div>
-								<div class="pet_tooltip_description">Named for his coloring.</div>
-							</div>
-						</div>
-						<div class="pet-card" tabindex="0" aria-describedby="cat_tooltip_primordus">
-							<img src="img/pets/primordus.png" loading='lazy' decoding='async' alt="Primordus">
-							<div class="pet-name">Primordus</div>
-							<div class="pet_tooltip" id="cat_tooltip_primordus" role="tooltip">
-								<img class="pet_tooltip_img" src="img/pet_photos/primordus_optimized.webp" loading='lazy' decoding='async' alt="">
-								<div class="pet_tooltip_name">Primordus</div>
-								<div class="pet_tooltip_description">Named after the fire dragon from Guild Wars 2 because I thought it'd be funny for this cute little kitty to be named after such a ferocious beast!</div>
-							</div>
-						</div>
-						<div class="pet-card" tabindex="0" aria-describedby="cat_tooltip_fennec">
-							<img src="img/pets/fennec.png" loading='lazy' decoding='async' alt="Fennec">
-							<div class="pet-name">Fennec</div>
-							<div class="pet_tooltip" id="cat_tooltip_fennec" role="tooltip">
-								<img class="pet_tooltip_img" src="img/pet_photos/fennec_optimized.webp" loading='lazy' decoding='async' alt="">
-								<div class="pet_tooltip_name">Fennec</div>
-								<div class="pet_tooltip_description">Named for his coloring and resemblance to a fennec fox.</div>
-							</div>
-						</div>
-						<div class="pet-card" tabindex="0" aria-describedby="cat_tooltip_fox">
-							<img src="img/pets/fox.png" loading='lazy' decoding='async' alt="Fox">
-							<div class="pet-name">Fox</div>
-							<div class="pet_tooltip" id="cat_tooltip_fox" role="tooltip">
-								<img class="pet_tooltip_img" src="img/pet_photos/fox_optimized.webp" loading='lazy' decoding='async' alt="">
-								<div class="pet_tooltip_name">Fox</div>
-								<div class="pet_tooltip_description">Named for his coloring and pairing with Fennec (they're brothers).</div>
-							</div>
-						</div>
-						<div class="pet-card" tabindex="0" aria-describedby="cat_tooltip_willow">
-							<img src="img/pets/willow.png" loading='lazy' decoding='async' alt="Willow">
-							<div class="pet-name">Willow</div>
-							<div class="pet_tooltip" id="cat_tooltip_willow" role="tooltip">
-								<img class="pet_tooltip_img" src="img/pet_photos/willow_optimized.webp" loading='lazy' decoding='async' alt="">
-								<div class="pet_tooltip_name">Willow</div>
-								<div class="pet_tooltip_description">Named after the willow tree.</div>
-							</div>
-						</div>
-						<div class="pet-card" tabindex="0" aria-describedby="cat_tooltip_lune">
-							<img src="img/pets/lune.png" loading='lazy' decoding='async' alt="Lune">
-							<div class="pet-name">Lune</div>
-							<div class="pet_tooltip" id="cat_tooltip_lune" role="tooltip">
-								<img class="pet_tooltip_img" src="img/pet_photos/lune_optimized.webp" loading='lazy' decoding='async' alt="">
-								<div class="pet_tooltip_name">Lune</div>
-								<div class="pet_tooltip_description">Named after Prince Lune from The Cat Returns.</div>
-							</div>
-						</div>
-					</div>
+					<style>
+					@media only screen and (max-width: 767px) {
+					<? render_pets_mobile_select_styles('cats_dead', $cats_dead); ?>
+					<? render_pets_mobile_select_styles('cats_living', $cats_living); ?>
+					}
+					</style>
 
 					<div id='credits'>
 						Thanks to <a href='https://pixelcatsend.com'>Pixel Cat's End</a> for the art
