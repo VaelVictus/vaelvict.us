@@ -36,16 +36,14 @@ export default {
     server: {
         port: 1337,
         strictPort: false,
-        https: true,
+        https: {},
         cors: true,
     },
     build: { 
-        manifest: true,
+        manifest: 'manifest.json',
         cssTarget: 'chrome112',
-        esbuild: {
-            target: 'es2022'
-        },
-        rollupOptions: {
+        target: 'es2022',
+        rolldownOptions: {
             input: {
                 main: path.resolve(__dirname, 'main.js'),
                 blog: path.resolve(__dirname, 'blog.js'),
@@ -54,8 +52,8 @@ export default {
             output: {
               entryFileNames: `assets/[name].[hash].js`,
               chunkFileNames: `assets/[name].[hash].js`,
-              assetFileNames: assetInfo => {
-                const type = assetInfo.name.substr(assetInfo.name.lastIndexOf('.') + 1);
+              assetFileNames: asset_info => {
+                const type = path.extname(asset_info.names[0] ?? '').slice(1);
                 if (type === 'js' || type === 'css') {
                   return `assets/[name].[hash].[ext]`;
                 } else {

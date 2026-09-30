@@ -1,17 +1,23 @@
 {
   "blog.js": {
-    "file": "assets/blog.805a2034.js",
-    "isEntry": true,
-    "src": "blog.js"
+    "file": "assets/blog.inSgzqfT.js",
+    "name": "blog",
+    "src": "blog.js",
+    "isEntry": true
   },
   "main.js": {
-    "file": "assets/main.dc311f18.js",
-    "isEntry": true,
-    "src": "main.js"
+    "file": "assets/main.C9DZrN7h.js",
+    "name": "main",
+    "src": "main.js",
+    "isEntry": true
   },
   "src/style.css": {
-    "file": "assets/style.7b45cc90.css",
-    "isEntry": true,
-    "src": "src/style.css"
+    "file": "assets/style.CDs6T51q.css",
+    "name": "style",
+    "names": [
+      "style.css"
+    ],
+    "src": "src/style.css",
+    "isEntry": true
   }
 }

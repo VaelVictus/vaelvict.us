@@ -104,14 +104,14 @@
                     </div>
                     
                     <div class='mt-2'>
-                        I live in upstate South Carolina with my wife, <a href='https://500px.com/p/evelynvictus?view=photos'>Evelyn Victus</a>, and our four kids: Abel <span class='age'>(<?=$abel?> old)</span>, Violet <span class='age'>(<?=$violet?> old)</span>, Olivia <span class='age'>(<?=$olivia?> old)</span>, and Everett <span class='age'>(<?=$everett?> old)</span>. I also have six cats! <button id="view_pets" type="button" aria-expanded="false" aria-controls="pets_section">show<span class="arrow">&#9662;</span></button> I spend most of my time making games, playing games, and raising my kids. I'm a <a href='https://www.youtube.com/playlist?list=PLKQKi0BW3i8xEeDhUJkUnuQVLjMaNnzAE'>motivation junkie</a> and love staying productive, whether it's code, writing, fitness, or research.
+                        I live in upstate South Carolina with my wife, <a href='https://500px.com/p/evelynvictus?view=photos'>Evelyn Victus</a>, and our four kids: Abel <span class='age'>(<?=$abel?> old)</span>, Violet <span class='age'>(<?=$violet?> old)</span>, Olivia <span class='age'>(<?=$olivia?> old)</span>, and Everett <span class='age'>(<?=$everett?> old)</span>. I also have six cats! <button id="view_pets" type="button" aria-expanded="false" aria-controls="pets_section">show<span class="arrow">&#9662;</span></button> I spend most of my time making games, playing games, and raising my kids.
                     </div>
                 </div>
             </section>
 
             <section id="pets_section" class="container_shadow mt-0 sm:mt-4">
                 <div class="w-full px-2 sm:px-3 pt-3 shadow-xs section_header" id="pets_header">
-                    <h3 class="m-0">Our Cats</h3>
+                    <h3 class="m-0">Victus Family Cats</h3>
                 </div>
 				<div class='w-full bg-white px-2 sm:px-3 p-3'>
 					<div class="w-full mb-4 flex border-b" role="tablist" aria-label="cats tabs">
@@ -146,7 +146,7 @@
                     <h3 class='m-0'>Games</h3>
 
                     <div class='mb-2'>
-                        I publish my games under <a href='https://tinydark.com'>Tinydark</a>. I adhere to a <a href='https://tinydark.com/mission'>code of ethics</a> with my design, because I believe games should be doing more to directly benefit the player.
+                        I publish my games under <a href='https://tinydark.com'>Tinydark</a>. I adhere to a <a href='https://tinydark.com/mission'>code of ethics</a> with my design, because I believe games should be focused on benefiting the player, not the developer.
                     </div>
 
                     <ul>
