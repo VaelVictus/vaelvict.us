@@ -92,7 +92,7 @@
                 */ 
             ?>
             <section class='js_reveal mt-0 sm:mt-1' data_home_reveal>
-                <div class="w-full px-2 sm:px-3 pt-1 sm:pt-3 shadow-xs section_header" id='about_header'>
+                <div class="w-full px-2 sm:px-3 pt-1 sm:pt-3 section_header" id='about_header'>
                     <h2 class='m-0'>About Me</h2>
                 </div>
                 
@@ -110,15 +110,15 @@
             </section>
 
             <section id="pets_section" class="container_shadow mt-0 sm:mt-4">
-                <div class="w-full px-2 sm:px-3 pt-3 shadow-xs section_header" id="pets_header">
+                <div class="w-full px-2 sm:px-3 pt-3 section_header" id="pets_header">
                     <h3 class="m-0">Victus Family Cats</h3>
                 </div>
 				<div class='w-full bg-white px-2 sm:px-3 p-3'>
-					<div class="w-full mb-4 flex border-b" role="tablist" aria-label="cats tabs">
+					<div class="w-full mb-4 flex" role="tablist" aria-label="cats tabs">
 						<input type="radio" name="cats_tabs" id="tab_living" class="tab_radio" checked>
-						<label for="tab_living" class="tab_btn mr-2 px-3 py-1 text-sm rounded-t-md border border-b-0">🐱</label>
+						<label for="tab_living" class="tab_btn mr-2 px-3 py-1 text-sm rounded-t-md">🐱</label>
 						<input type="radio" name="cats_tabs" id="tab_dead" class="tab_radio">
-						<label for="tab_dead" class="tab_btn px-3 py-1 text-sm rounded-t-md border border-b-0" title="kitty graveyard :(">😿</label>
+						<label for="tab_dead" class="tab_btn px-3 py-1 text-sm rounded-t-md" title="kitty graveyard :(">😿</label>
 					</div>
 
 					<? render_pets_tab('cats_dead', 'pet_dead', $cats_dead); ?>
@@ -138,7 +138,7 @@
             </section>
             
             <section class='js_reveal container_shadow mt-0 sm:mt-4' data_home_reveal>
-                <div class="w-full px-2 sm:px-3 pt-3 shadow-xs section_header" id="work_header">
+                <div class="w-full px-2 sm:px-3 pt-3 section_header" id="work_header">
                     <h2 class='m-0'>My Work</h2>
                 </div>
 
@@ -174,7 +174,7 @@
             </section>
 
             <section id='connect' class='js_reveal pl-0 mt-0 sm:mt-4 sm:mb-5' data_home_reveal>
-                <div class="w-full px-2 sm:px-3 pt-3 shadow-xs section_header" id='connect_header'>
+                <div class="w-full px-2 sm:px-3 pt-3 section_header" id='connect_header'>
                     <h2 class='m-0'>Connect</h2>
                 </div>
 

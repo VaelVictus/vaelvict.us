@@ -1,6 +1,20 @@
-/* @tailwind base; */
-@tailwind components;
-@tailwind utilities;
+/* keep preflight disabled and utilities unlayered to preserve the existing cascade */
+@import "tailwindcss/theme.css" layer(theme);
+@import "tailwindcss/utilities.css" source(none);
+
+@source "../*.php";
+@source "../blog/*.php";
+@source "../inc/*.php";
+@source "../*.js";
+
+/* preserve v3 colors and fixed line heights inherited by custom typography */
+@theme {
+    --color-gray-600: #4b5563;
+    --text-xs--line-height: 1rem;
+    --text-sm--line-height: 1.25rem;
+    --text-base--line-height: 1.5rem;
+    --text-lg--line-height: 1.75rem;
+}
 
 :root {
     --color_about: rgb(0, 55, 137);

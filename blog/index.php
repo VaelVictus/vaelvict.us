@@ -111,7 +111,7 @@ function format_date(string $iso_date): string {
             </nav>
 
             <section class='js_reveal' data_blog_reveal>
-                <div class="w-full px-2 sm:px-3 pt-1 sm:pt-3 shadow-xs section_header blog_header">
+                <div class="w-full px-2 sm:px-3 pt-1 sm:pt-3 section_header blog_header">
                     <h2 class='m-0'>Blog</h2>
                 </div>
 
